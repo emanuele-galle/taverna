@@ -68,6 +68,13 @@ body {
 /* ===== Background Patterns ===== */
 
 .bg-pattern-dark {
+  position: relative;
+  isolation: isolate;
+}
+.bg-pattern-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image:
     repeating-linear-gradient(
       45deg,
@@ -76,11 +83,22 @@ body {
       rgba(196,163,90,0.03) 40px,
       rgba(196,163,90,0.03) 41px
     );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .bg-pattern-light {
+  position: relative;
+  isolation: isolate;
+}
+.bg-pattern-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image: radial-gradient(circle at 1px 1px, rgba(196,163,90,0.08) 1px, transparent 0);
   background-size: 32px 32px;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ===== Text Utilities ===== */
