@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-charcoal: #1a1a1a;
-  --color-burgundy: #722F37;
+  --color-charcoal: #2C2C2C;
+  --color-burgundy: #800020;
   --color-gold: #C4A35A;
-  --color-cream: #FAF3E0;
+  --color-cream: #FAF9F6;
   --color-warm-grey: #6B7280;
+  --color-terracotta: #E07A5F;
+  --color-wine: #722F37;
 }
 
 html {
@@ -15,7 +17,7 @@ html {
 body {
   font-family: system-ui, -apple-system, sans-serif;
   color: #1a1a1a;
-  background: #FAF3E0;
+  background: #FAF9F6;
 }
 
 .font-serif {
