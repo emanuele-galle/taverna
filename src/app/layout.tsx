@@ -1,12 +1,38 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+const siteUrl = 'https://taverna.fodivps2.cloud'
+const description = 'Ristorante di carni alla brace di alta qualità a Milano. Dal 1997, qualità, esperienza e cultura dell\'ospitalità. Scottona bavarese, controfiletti argentini, fiorentina.'
+
 export const metadata: Metadata = {
   title: {
     default: 'La Taverna degli Amici - Carni alla Brace | Milano',
     template: '%s | La Taverna degli Amici',
   },
-  description: 'Ristorante di carni alla brace di alta qualità a Milano. Dal 1997, qualità, esperienza e cultura dell\'ospitalità. Scottona bavarese, controfiletti argentini, fiorentina.',
+  description,
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: 'La Taverna degli Amici - Carni alla Brace | Milano',
+    description,
+    url: siteUrl,
+    siteName: 'La Taverna degli Amici',
+    locale: 'it_IT',
+    type: 'website',
+    images: [
+      {
+        url: '/images/hero/hero-fallback.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'La Taverna degli Amici - Ristorante di carni alla brace a Milano',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'La Taverna degli Amici - Carni alla Brace | Milano',
+    description,
+    images: ['/images/hero/hero-fallback.jpg'],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
