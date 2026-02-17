@@ -21,3 +21,12 @@ body {
 .font-serif {
   font-family: Georgia, 'Times New Roman', serif;
 }
+
+@keyframes pulse-subtle {
+  0%, 100% { box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+  50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}

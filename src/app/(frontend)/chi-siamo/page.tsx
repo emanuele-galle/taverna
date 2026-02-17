@@ -6,39 +6,44 @@ export const metadata: Metadata = { title: 'Chi Siamo' }
 const timeline = [
   {
     year: '1997',
-    title: "L'Inizio",
-    desc: 'Nasce La Taverna degli Amici, un piccolo ristorante nel cuore di Milano con una grande passione: la carne alla brace e l\'ospitalità autentica.',
+    title: "L'Inizio di un Sogno",
+    desc: 'Ernesto Notaro, ristoratore di origini calabresi da Tiriolo, e sua moglie Rita fondano La Taverna degli Amici. La cucina si basa sulla selezione di carni pregiate, tutte cotte visibilmente sulla brace. Antipasti di eccellenza tradizionale regionale.',
   },
   {
     year: 'Anni 2000',
     title: 'La Cantina',
-    desc: 'La nostra cantina cresce fino a superare le 500 etichette. Dai grandi rossi piemontesi e toscani alle migliori bollicine, ogni bottiglia racconta una storia.',
+    desc: 'La cantina cresce fino a superare le 500 etichette di vini italiani e internazionali. Dai grandi rossi piemontesi e toscani alle migliori bollicine, ogni bottiglia racconta una storia.',
   },
   {
     year: 'Anni 2010',
     title: "L'Eccellenza",
-    desc: 'Selezioniamo le migliori carni del mondo: scottona bavarese, controfiletti argentini, fiorentina toscana. La nostra brace diventa un punto di riferimento.',
+    desc: 'Selezione delle migliori carni del mondo. La brace diventa un punto di riferimento a Milano per gli amanti della carne di qualità.',
   },
   {
     year: 'Oggi',
     title: 'Tradizione e Innovazione',
-    desc: 'Oltre 25 anni di esperienza. Continuiamo a innovare rispettando la tradizione, con un servizio attento e un\'atmosfera che fa sentire ogni ospite a casa.',
+    desc: 'Oltre 28 anni di esperienza. Tre piani con diverse salette, tavoloni in legno e affreschi a trompe l\'oeil. Ernesto e Rita continuano a garantire un servizio impeccabile.',
   },
 ]
 
 const philosophy = [
   {
     title: 'Qualità',
-    desc: 'Selezioniamo personalmente ogni taglio di carne, ogni ingrediente. Solo il meglio arriva sulla nostra brace e nei piatti dei nostri ospiti.',
+    desc: 'Carni certificate selezionate con cura maniacale. Scottona bavarese, controfiletto argentino e uruguaiano, cotte a vista sulla brace a legna.',
   },
   {
     title: 'Cantina da 500 Etichette',
-    desc: 'Una delle cantine più fornite di Milano, curata con passione. Il nostro sommelier saprà consigliarvi l\'abbinamento perfetto per ogni piatto.',
+    desc: 'Una delle cantine più fornite di Milano. Oltre 50 tipi di formaggi italiani ed esteri. Una selezione che completa ogni esperienza a tavola.',
   },
   {
-    title: 'Esperienza dal 1997',
-    desc: 'Oltre un quarto di secolo di ospitalità milanese. La nostra esperienza si traduce in un servizio impeccabile e un\'atmosfera unica.',
+    title: 'Ospitalità dal 1997',
+    desc: 'Ogni cliente è trattato come un amico. "Se l\'accoglienza conta, e conta, la Taverna parte decisamente in pole position."',
   },
+]
+
+const pressQuotes = [
+  { text: 'La migliore carne di Milano', source: 'TripAdvisor' },
+  { text: 'Buono, amichevole, con un gemello parigino', source: 'Corriere della Sera' },
 ]
 
 export default function ChiSiamoPage() {
@@ -86,6 +91,40 @@ export default function ChiSiamoPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Press Quotes */}
+      <section className="py-20 bg-cream">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl text-charcoal text-center mb-12">Dicono di Noi</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {pressQuotes.map((quote) => (
+              <blockquote
+                key={quote.source}
+                className="text-center p-8 rounded-2xl bg-charcoal/5 border border-charcoal/10"
+              >
+                <p className="font-serif text-xl text-charcoal italic mb-4">
+                  &ldquo;{quote.text}&rdquo;
+                </p>
+                <cite className="text-gold font-semibold text-sm not-italic">
+                  &mdash; {quote.source}
+                </cite>
+              </blockquote>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote */}
+      <section className="py-16 bg-charcoal">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <blockquote className="font-serif text-2xl text-cream/90 italic">
+            &ldquo;Non c&rsquo;è amore più sincero di quello per il cibo buono&rdquo;
+          </blockquote>
+          <cite className="block mt-4 text-gold text-sm not-italic">
+            &mdash; George Bernard Shaw
+          </cite>
         </div>
       </section>
 

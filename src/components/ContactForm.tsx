@@ -23,7 +23,7 @@ export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
@@ -134,15 +134,20 @@ export default function ContactForm() {
       {/* Subject */}
       <div>
         <label htmlFor="contact-subject" className="block text-sm text-cream mb-1.5">Oggetto</label>
-        <input
-          type="text"
+        <select
           id="contact-subject"
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          placeholder="Informazioni, eventi privati, collaborazioni..."
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
-        />
+          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm focus:outline-none focus:border-gold transition-colors"
+        >
+          <option value="" className="bg-charcoal">Seleziona un oggetto</option>
+          <option value="Richiesta Informazioni" className="bg-charcoal">Richiesta Informazioni</option>
+          <option value="Prenotazione" className="bg-charcoal">Prenotazione</option>
+          <option value="Eventi Privati" className="bg-charcoal">Eventi Privati</option>
+          <option value="Feedback" className="bg-charcoal">Feedback</option>
+          <option value="Altro" className="bg-charcoal">Altro</option>
+        </select>
       </div>
 
       {/* Message */}
