@@ -18,11 +18,8 @@ export default function Footer() {
                 className="h-[60px] w-auto"
               />
             </Link>
-            <p className="font-serif text-lg text-cream mb-2">
-              La Taverna degli Amici
-            </p>
             <p className="text-sm text-white/60 mb-4">
-              Qualit&agrave;, esperienza e cultura dell&apos;ospitalit&agrave;
+              Dal 1997 portiamo a Milano la tradizione della vera carne alla brace con passione e qualit&agrave;.
             </p>
             {/* Social Icons */}
             <div className="flex items-center gap-3">
@@ -70,10 +67,11 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
+                { href: '/', label: 'Home' },
+                { href: '/chi-siamo', label: 'La Taverna' },
                 { href: '/menu', label: 'Menu' },
+                { href: '/galleria', label: 'Gallery' },
                 { href: '/prenota', label: 'Prenota' },
-                { href: '/galleria', label: 'Galleria' },
-                { href: '/chi-siamo', label: 'Chi Siamo' },
                 { href: '/contatti', label: 'Contatti' },
               ].map((link) => (
                 <li key={link.href}>
@@ -81,7 +79,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-sm text-white/60 hover:text-gold transition-colors duration-200"
                   >
-                    {link.label}
+                    &rarr; {link.label}
                   </Link>
                 </li>
               ))}
@@ -146,9 +144,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Dal 1997 + Diamante separatore */}
+        {/* Diamante separatore */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-gold/80 font-medium mb-6">Dal 1997 con passione | Milano</p>
           <div className="text-gold/40 text-lg mb-6">&#9670;</div>
         </div>
 
@@ -157,6 +154,7 @@ export default function Footer() {
           <p className="text-xs text-white/40">
             &copy; {new Date().getFullYear()} La Taverna degli Amici. Tutti i diritti riservati.
           </p>
+          <p className="text-sm text-gold/80 font-medium">Dal 1997 con passione | Milano</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link href="/privacy" className="text-xs text-white/40 hover:text-gold transition-colors">
               Privacy Policy
