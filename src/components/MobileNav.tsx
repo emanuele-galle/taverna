@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 
@@ -11,23 +11,45 @@ interface NavLink {
 
 export default function MobileNav({ links }: { links: NavLink[] }) {
   const [isOpen, setIsOpen] = useState(false)
+  const toggleButtonRef = useRef<HTMLButtonElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (isOpen) {
+      closeButtonRef.current?.focus()
+    }
+  }, [isOpen])
+
+  const handleClose = () => {
+    setIsOpen(false)
+    toggleButtonRef.current?.focus()
+  }
 
   return (
     <div className="md:hidden">
       <button
+        ref={toggleButtonRef}
         onClick={() => setIsOpen(true)}
         className="p-2 text-cream hover:text-gold transition-colors"
         aria-label="Apri menu"
+        aria-expanded={isOpen}
+        aria-controls="mobile-nav-panel"
       >
         <Menu className="w-6 h-6" />
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-charcoal/98 backdrop-blur-lg">
+        <div
+          id="mobile-nav-panel"
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 bg-charcoal/98 backdrop-blur-lg"
+        >
           <div className="flex flex-col h-full">
             <div className="flex items-center justify-end p-4">
               <button
-                onClick={() => setIsOpen(false)}
+                ref={closeButtonRef}
+                onClick={handleClose}
                 className="p-2 text-cream hover:text-gold transition-colors"
                 aria-label="Chiudi menu"
               >
@@ -40,7 +62,7 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleClose}
                   className="text-2xl font-serif text-cream hover:text-gold transition-colors duration-200"
                 >
                   {link.label}
@@ -48,7 +70,7 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
               ))}
               <Link
                 href="/prenota"
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="mt-4 inline-flex items-center px-8 py-3 bg-gold text-charcoal font-semibold rounded-full hover:bg-gold-light transition-colors duration-200"
               >
                 Prenota Ora

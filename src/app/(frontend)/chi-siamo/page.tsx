@@ -256,10 +256,10 @@ export default function ChiSiamoPage() {
       <section className="py-16 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <blockquote className="font-serif text-2xl text-charcoal/90 italic">
-            &ldquo;Non c&rsquo;è amore più sincero di quello per il cibo buono&rdquo;
+            &ldquo;La vera ospitalit&agrave; nasce dal cuore: ogni cliente che entra dalla nostra porta non &egrave; un estraneo, ma un amico che ancora non conosce il sapore della nostra brace.&rdquo;
           </blockquote>
           <cite className="block mt-4 text-gold text-sm not-italic">
-            &mdash; George Bernard Shaw
+            &mdash; Ernesto Notaro, Fondatore
           </cite>
         </div>
       </section>

@@ -1,6 +1,20 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Cookie Policy' }
+export const metadata: Metadata = {
+  title: 'Cookie Policy',
+  description: 'Cookie Policy de La Taverna degli Amici. Informazioni sull\'utilizzo dei cookie sul nostro sito.',
+  openGraph: {
+    title: 'Cookie Policy | La Taverna degli Amici',
+    description: 'Cookie Policy de La Taverna degli Amici. Informazioni sull\'utilizzo dei cookie sul nostro sito.',
+    url: 'https://taverna.fodivps2.cloud/cookie',
+    images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cookie Policy | La Taverna degli Amici',
+    description: 'Cookie Policy de La Taverna degli Amici. Informazioni sull\'utilizzo dei cookie sul nostro sito.',
+  },
+}
 
 export default function CookiePage() {
   return (

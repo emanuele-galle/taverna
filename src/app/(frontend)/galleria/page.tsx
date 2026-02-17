@@ -2,7 +2,21 @@ import type { Metadata } from 'next'
 import prisma from '@/lib/prisma'
 import GalleryGrid from '@/components/GalleryGrid'
 
-export const metadata: Metadata = { title: 'Galleria' }
+export const metadata: Metadata = {
+  title: 'Galleria',
+  description: 'Galleria fotografica de La Taverna degli Amici: le nostre carni alla brace, i piatti della tradizione, l\'ambiente caldo e accogliente del nostro ristorante a Milano.',
+  openGraph: {
+    title: 'Galleria | La Taverna degli Amici',
+    description: 'Galleria fotografica de La Taverna degli Amici: le nostre carni alla brace, i piatti della tradizione, l\'ambiente caldo e accogliente del nostro ristorante a Milano.',
+    url: 'https://taverna.fodivps2.cloud/galleria',
+    images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Galleria | La Taverna degli Amici',
+    description: 'Galleria fotografica de La Taverna degli Amici: le nostre carni alla brace, i piatti della tradizione, l\'ambiente caldo e accogliente del nostro ristorante a Milano.',
+  },
+}
 export const dynamic = 'force-dynamic'
 
 export default async function GalleriaPage() {

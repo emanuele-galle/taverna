@@ -8,25 +8,25 @@ const reviews = [
     city: 'Milano',
     date: 'Settembre 2024',
     stars: 5,
-    text: 'Finalmente la vera carbonara a Milano! Cremosa, saporita, esattamente come a Roma. Il guanciale è croccante al punto giusto e la mantecatura perfetta. Tornerò sicuramente!',
+    text: 'La fiorentina di scottona è semplicemente perfetta: crosta croccante, interno rosa e succulento. Ernesto sa come trattare la carne alla brace come nessun altro a Milano. Torneremo sicuramente!',
   },
   {
-    name: 'Giulia Rossi',
+    name: 'Giulia Ferretti',
     initial: 'G',
     color: 'bg-gold',
     city: 'Roma',
     date: 'Ottobre 2024',
     stars: 5,
-    text: 'Ambiente familiare e accogliente. La coda alla vaccinara è da provare assolutamente! Chef Roberto è un artista, si vede la passione in ogni piatto.',
+    text: 'Abbiamo ordinato la grigliata mista e il controfiletto argentino: carni straordinarie, cottura impeccabile. L\'atmosfera è calda e accogliente, ci si sente davvero tra amici. Cantina eccezionale!',
   },
   {
-    name: 'Alessandro Marini',
+    name: 'Alessandro Conti',
     initial: 'A',
     color: 'bg-charcoal',
     city: 'Milano',
     date: 'Novembre 2024',
     stars: 5,
-    text: 'Ho portato amici romani ed erano stupiti: \'Sembra di essere a Trastevere!\' Ingredienti di qualità, porzioni generose, prezzi onesti. Consigliatissimo!',
+    text: 'Da quasi 30 anni un punto di riferimento per le carni alla brace. Gli arrosticini sono i migliori che abbia mai assaggiato fuori dall\'Abruzzo. Porzioni generose, prezzi onesti, servizio familiare.',
   },
 ]
 
@@ -49,7 +49,7 @@ export default function ReviewsSection() {
             >
               <div className="flex items-center gap-1 mb-3">
                 {Array.from({ length: review.stars }).map((_, i) => (
-                  <span key={i} className="text-gold text-lg">★</span>
+                  <span key={i} className="text-gold text-lg">&#9733;</span>
                 ))}
               </div>
               <p className="text-charcoal/80 text-sm italic leading-relaxed mb-4">

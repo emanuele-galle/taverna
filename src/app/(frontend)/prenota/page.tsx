@@ -2,8 +2,21 @@ import type { Metadata } from 'next'
 import BookingForm from '@/components/BookingForm'
 import { Clock, Phone, MapPin } from 'lucide-react'
 
-export const metadata: Metadata = { title: 'Prenota' }
-export const dynamic = 'force-dynamic'
+export const metadata: Metadata = {
+  title: 'Prenota un Tavolo',
+  description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedi al sabato, pranzo e cena.',
+  openGraph: {
+    title: 'Prenota un Tavolo | La Taverna degli Amici',
+    description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedi al sabato, pranzo e cena.',
+    url: 'https://taverna.fodivps2.cloud/prenota',
+    images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Prenota un Tavolo | La Taverna degli Amici',
+    description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedi al sabato, pranzo e cena.',
+  },
+}
 
 export default function PrenotaPage() {
   return (

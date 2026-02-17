@@ -8,6 +8,8 @@
   --color-warm-grey: #6B7280;
   --color-terracotta: #E07A5F;
   --color-wine: #722F37;
+  --color-charcoal-light: #3D3D3D;
+  --color-gold-light: #D4B06A;
 }
 
 html {
@@ -31,4 +33,13 @@ body {
 
 .animate-pulse-subtle {
   animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
 }

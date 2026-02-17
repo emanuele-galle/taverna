@@ -1,6 +1,20 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Privacy Policy' }
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Privacy Policy de La Taverna degli Amici. Informativa sul trattamento dei dati personali ai sensi del GDPR.',
+  openGraph: {
+    title: 'Privacy Policy | La Taverna degli Amici',
+    description: 'Privacy Policy de La Taverna degli Amici. Informativa sul trattamento dei dati personali ai sensi del GDPR.',
+    url: 'https://taverna.fodivps2.cloud/privacy',
+    images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | La Taverna degli Amici',
+    description: 'Privacy Policy de La Taverna degli Amici. Informativa sul trattamento dei dati personali ai sensi del GDPR.',
+  },
+}
 
 export default function PrivacyPage() {
   return (

@@ -3,8 +3,6 @@ import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import ReviewsSection from '@/components/ReviewsSection'
 
-export const dynamic = 'force-dynamic'
-
 const featuredSpecialties = [
   {
     name: 'Costata di Scottona',
@@ -71,17 +69,17 @@ export default async function HomePage() {
               {
                 icon: '🥩',
                 title: 'Carni di Alta Qualità',
-                desc: 'Selezioniamo le migliori carni: scottona bavarese, controfiletto argentino e uruguaiano, tutte cotte a vista sulla brace.',
+                desc: 'Selezioniamo le migliori carni: scottona bavarese, controfiletto argentino e uruguaiano, fiorentine da oltre 1kg. Tutte cotte a vista sulla brace.',
               },
               {
                 icon: '🍷',
                 title: 'Oltre 500 Etichette',
-                desc: 'Una cantina ricca e curata con oltre 500 etichette di vini selezionati per accontentare ogni tipo di tasca e palato.',
+                desc: 'Una cantina ricca e curata con oltre 500 etichette di vini italiani e internazionali, selezionati per esaltare ogni taglio di carne.',
               },
               {
                 icon: '⭐',
                 title: 'Dal 1997',
-                desc: 'Quasi 30 anni di esperienza e passione nel servire carni alla brace di eccellenza a Milano.',
+                desc: 'Quasi 30 anni di esperienza e passione. Migliaia di clienti soddisfatti e la stessa dedizione del primo giorno nel servire carni alla brace di eccellenza.',
               },
             ].map((item) => (
               <div
@@ -131,44 +129,6 @@ export default async function HomePage() {
             >
               Scopri Tutta la Nostra Storia
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* La Nostra Filosofia - bg white */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl md:text-4xl text-burgundy text-center mb-4">
-            La Nostra Filosofia
-          </h2>
-          <div className="w-16 h-1 bg-gold mx-auto mb-12" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: '🥩',
-                title: 'Qualità Eccellente',
-                desc: 'Selezioniamo solo le migliori carni: scottona bavarese, controfiletti argentini e uruguaiani, fiorentine da oltre 1kg. Qualità senza compromessi.',
-              },
-              {
-                icon: '⭐',
-                title: 'Esperienza dal 1997',
-                desc: 'Quasi 30 anni di esperienza nella cottura alla brace. Maestria, passione e dedizione per offrire carni cotte alla perfezione.',
-              },
-              {
-                icon: '❤️',
-                title: "Cultura dell'Ospitalità",
-                desc: 'Vi accogliamo come amici in un ambiente caldo e familiare. Ogni cliente è speciale e merita il nostro miglior servizio.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="text-center p-8 rounded-2xl bg-cream/50 border border-charcoal/5 hover:shadow-md transition-all duration-300"
-              >
-                <span className="text-5xl mb-4 block">{item.icon}</span>
-                <h3 className="font-serif text-xl text-burgundy mb-3">{item.title}</h3>
-                <p className="text-warm-grey text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -265,7 +225,7 @@ export default async function HomePage() {
             </a>
           </div>
           <p className="text-cream/70 text-sm">
-            📍 Via Spartaco, 4, 20154 Milano MI &nbsp;&middot;&nbsp; 📞 +39 02 55194005
+            📍 Via Spartaco, 4, 20135 Milano MI &nbsp;&middot;&nbsp; 📞 +39 02 55194005
           </p>
         </div>
       </section>

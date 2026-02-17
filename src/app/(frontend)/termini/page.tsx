@@ -1,6 +1,20 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Termini e Condizioni' }
+export const metadata: Metadata = {
+  title: 'Termini e Condizioni',
+  description: 'Termini e condizioni d\'uso del sito La Taverna degli Amici e delle prenotazioni online.',
+  openGraph: {
+    title: 'Termini e Condizioni | La Taverna degli Amici',
+    description: 'Termini e condizioni d\'uso del sito La Taverna degli Amici e delle prenotazioni online.',
+    url: 'https://taverna.fodivps2.cloud/termini',
+    images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Termini e Condizioni | La Taverna degli Amici',
+    description: 'Termini e condizioni d\'uso del sito La Taverna degli Amici e delle prenotazioni online.',
+  },
+}
 
 export default function TerminiPage() {
   return (

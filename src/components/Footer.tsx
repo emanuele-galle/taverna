@@ -70,7 +70,7 @@ export default function Footer() {
                 { href: '/', label: 'Home' },
                 { href: '/chi-siamo', label: 'La Taverna' },
                 { href: '/menu', label: 'Menu' },
-                { href: '/galleria', label: 'Gallery' },
+                { href: '/galleria', label: 'Galleria' },
                 { href: '/prenota', label: 'Prenota' },
                 { href: '/contatti', label: 'Contatti' },
               ].map((link) => (
@@ -119,7 +119,7 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-white/60">
-                  Via Spartaco, 4, 20154 Milano MI
+                  Via Spartaco, 4, 20135 Milano MI
                 </span>
               </li>
               <li className="flex items-center gap-2">

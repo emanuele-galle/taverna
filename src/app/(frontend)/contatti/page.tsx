@@ -3,7 +3,21 @@ import ContactForm from '@/components/ContactForm'
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react'
 import { restaurant } from '@/data/restaurant'
 
-export const metadata: Metadata = { title: 'Contatti' }
+export const metadata: Metadata = {
+  title: 'Contatti',
+  description: 'Contatta La Taverna degli Amici: Via Spartaco 4, 20135 Milano. Telefono 02 5519 4005. Aperto dal lunedi al sabato per pranzo e cena.',
+  openGraph: {
+    title: 'Contatti | La Taverna degli Amici',
+    description: 'Contatta La Taverna degli Amici: Via Spartaco 4, 20135 Milano. Telefono 02 5519 4005. Aperto dal lunedi al sabato per pranzo e cena.',
+    url: 'https://taverna.fodivps2.cloud/contatti',
+    images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contatti | La Taverna degli Amici',
+    description: 'Contatta La Taverna degli Amici: Via Spartaco 4, 20135 Milano. Telefono 02 5519 4005. Aperto dal lunedi al sabato per pranzo e cena.',
+  },
+}
 
 export default function ContattiPage() {
   return (

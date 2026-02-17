@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -24,6 +24,8 @@ export default function GalleryLightbox({
   onPrev,
   onNext,
 }: GalleryLightboxProps) {
+  const touchStartX = useRef<number | null>(null)
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
@@ -42,10 +44,31 @@ export default function GalleryLightbox({
     }
   }, [handleKeyDown])
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return
+    const delta = e.changedTouches[0].clientX - touchStartX.current
+    if (delta > 50) onPrev()
+    else if (delta < -50) onNext()
+    touchStartX.current = null
+  }
+
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) onClose()
+  }
+
   const current = images[currentIndex]
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+    <div
+      className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
+      onClick={handleBackdropClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Close */}
       <button
         onClick={onClose}
@@ -70,7 +93,7 @@ export default function GalleryLightbox({
       </button>
 
       {/* Image */}
-      <div className="relative w-full h-full max-w-5xl max-h-[80vh] mx-16">
+      <div className="relative w-full h-full max-w-5xl max-h-[75vh] mx-16">
         <Image
           src={current.src}
           alt={current.alt}
@@ -80,6 +103,11 @@ export default function GalleryLightbox({
           priority
         />
       </div>
+
+      {/* Caption */}
+      <p className="text-white/70 text-sm mt-4 text-center px-4 max-w-2xl">
+        {current.alt}
+      </p>
 
       {/* Next */}
       <button

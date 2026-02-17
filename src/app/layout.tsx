@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import CookieConsent from '@/components/CookieConsent'
 import './globals.css'
 
 const siteUrl = 'https://taverna.fodivps2.cloud'
@@ -38,7 +39,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <CookieConsent />
+        {/* TODO: Add Google Analytics 4 script here when GA4 ID is provided by client */}
+      </body>
     </html>
   )
 }

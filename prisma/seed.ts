@@ -1,19 +1,12 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { Pool } from "pg";
-import { randomBytes, createHash } from "crypto";
+import bcrypt from "bcryptjs";
+import { randomBytes } from "crypto";
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
-
-function hashPassword(password: string): string {
-  const salt = randomBytes(16).toString("hex");
-  const hash = createHash("sha256")
-    .update(salt + password)
-    .digest("hex");
-  return `${salt}:${hash}`;
-}
 
 async function main() {
   console.log("Seeding database...");
@@ -124,10 +117,14 @@ async function main() {
   console.log(`Seeded ${menuItems.length} menu items`);
 
   // --- ADMIN USER ---
-  const passwordHash = hashPassword("admin123");
+  const password = process.env.ADMIN_SEED_PASSWORD || randomBytes(12).toString("base64url");
+  if (!process.env.ADMIN_SEED_PASSWORD) {
+    console.log(`Generated admin password: ${password}`);
+  }
+  const passwordHash = await bcrypt.hash(password, 12);
   await prisma.adminUser.create({
     data: {
-      username: "admin",
+      username: "taverna_admin",
       email: "admin@latavernadegliamici.it",
       passwordHash,
       fullName: "Amministratore",
@@ -135,7 +132,7 @@ async function main() {
       isActive: true,
     },
   });
-  console.log("Seeded admin user");
+  console.log("Seeded admin user (username: taverna_admin)");
 
   // --- GALLERY IMAGES ---
   const galleryImages = [
