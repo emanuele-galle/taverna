@@ -32,37 +32,38 @@ const reviews = [
 
 export default function ReviewsSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-charcoal bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-3xl md:text-4xl text-burgundy text-center mb-4">
+        <h2 className="font-serif text-3xl md:text-4xl text-cream text-center mb-4">
           Cosa Dicono i Nostri Clienti
         </h2>
         <div className="w-16 h-1 bg-gold mx-auto mb-6" />
-        <p className="text-warm-grey text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-cream/60 text-center mb-12 max-w-2xl mx-auto">
           Recensioni autentiche da chi ha assaporato le nostre carni alla brace
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="bg-cream/50 rounded-xl p-6 border border-charcoal/5 hover:shadow-md transition-all duration-300"
+              className="glass-card rounded-xl p-8 hover-lift hover-glow-gold"
             >
+              <span className="font-serif text-5xl text-gold/15 leading-none block -mb-2">&ldquo;</span>
               <div className="flex items-center gap-1 mb-3">
                 {Array.from({ length: review.stars }).map((_, i) => (
-                  <span key={i} className="text-gold text-lg">&#9733;</span>
+                  <span key={i} className="text-gold text-xl">&#9733;</span>
                 ))}
               </div>
-              <p className="text-charcoal/80 text-sm italic leading-relaxed mb-4">
+              <p className="text-cream/80 text-sm italic leading-relaxed mb-4">
                 &ldquo;{review.text}&rdquo;
               </p>
-              <div className="border-t border-charcoal/5 pt-4">
+              <div className="border-t border-white/10 pt-4">
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center`}>
+                  <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center ring-2 ring-gold/30`}>
                     <span className="text-cream font-semibold text-sm">{review.initial}</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-charcoal">{review.name}</p>
-                    <p className="text-warm-grey text-sm">
+                    <p className="font-semibold text-cream">{review.name}</p>
+                    <p className="text-cream/50 text-sm">
                       {review.city} &bull; {review.date}
                     </p>
                   </div>

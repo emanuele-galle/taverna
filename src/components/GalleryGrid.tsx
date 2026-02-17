@@ -29,10 +29,10 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+            className={`px-5 pb-2 text-sm font-medium transition-all duration-200 ${
               activeCategory === cat
-                ? 'bg-gold text-charcoal'
-                : 'bg-charcoal/10 text-charcoal hover:bg-charcoal/20'
+                ? 'text-burgundy border-b-2 border-gold font-semibold'
+                : 'text-warm-grey hover:text-burgundy border-b-2 border-transparent'
             }`}
           >
             {cat}
@@ -55,7 +55,9 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
               className="object-cover transition-transform duration-300 group-hover:scale-110"
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+              <span className="text-cream font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-wider uppercase">{image.category}</span>
+            </div>
           </button>
         ))}
       </div>

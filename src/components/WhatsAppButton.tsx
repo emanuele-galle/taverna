@@ -1,10 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { restaurant } from '@/data/restaurant'
 
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false)
+  const [showTooltip, setShowTooltip] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowTooltip(false), 3000)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <a
@@ -17,17 +23,17 @@ export default function WhatsAppButton() {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Tooltip */}
-      {hovered && (
+      {(hovered || showTooltip) && (
         <span className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-charcoal text-cream text-xs rounded-lg whitespace-nowrap shadow-lg">
           Scrivici su WhatsApp
         </span>
       )}
 
       {/* Button */}
-      <div className="w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse-subtle hover:shadow-xl transition-shadow duration-300">
+      <div className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse-subtle hover:shadow-xl transition-shadow duration-300">
         <svg
-          width="30"
-          height="30"
+          width="32"
+          height="32"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

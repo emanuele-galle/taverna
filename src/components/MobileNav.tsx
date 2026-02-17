@@ -43,7 +43,7 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
           id="mobile-nav-panel"
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-charcoal/98 backdrop-blur-lg"
+          className="fixed inset-0 z-50 bg-gradient-to-b from-charcoal via-charcoal-light to-charcoal backdrop-blur-lg"
         >
           <div className="flex flex-col h-full">
             <div className="flex items-center justify-end p-4">
@@ -57,21 +57,25 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
               </button>
             </div>
 
-            <nav className="flex flex-col items-center justify-center flex-1 gap-8">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleClose}
-                  className="text-2xl font-serif text-cream hover:text-gold transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
+            <nav className="flex flex-col items-center justify-center flex-1 gap-6">
+              {links.map((link, index) => (
+                <div key={link.href} className="flex flex-col items-center gap-6">
+                  <Link
+                    href={link.href}
+                    onClick={handleClose}
+                    className="text-2xl font-serif text-cream hover:text-gold transition-colors duration-200 uppercase tracking-[0.1em]"
+                  >
+                    {link.label}
+                  </Link>
+                  {index < links.length - 1 && (
+                    <div className="w-8 h-px bg-gold/20" />
+                  )}
+                </div>
               ))}
               <Link
                 href="/prenota"
                 onClick={handleClose}
-                className="mt-4 inline-flex items-center px-8 py-3 bg-gold text-charcoal font-semibold rounded-full hover:bg-gold-light transition-colors duration-200"
+                className="mt-4 inline-flex items-center px-8 py-3 bg-gradient-to-r from-gold to-gold-light text-charcoal font-semibold rounded-full hover:shadow-[0_0_20px_rgba(196,163,90,0.3)] transition-all duration-300"
               >
                 Prenota Ora
               </Link>

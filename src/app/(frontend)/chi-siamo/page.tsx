@@ -46,10 +46,10 @@ export default function ChiSiamoPage() {
       {/* Intro */}
       <section className="py-20 bg-cream">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-block px-4 py-1.5 bg-gold/10 text-gold font-semibold text-sm rounded-full mb-6">
+            <span className="inline-block px-5 py-2 bg-gold/10 text-gold font-semibold text-sm rounded-full mb-6 border border-gold/20">
               Dal 1997
             </span>
-            <p className="text-warm-grey text-lg leading-relaxed">
+            <p className="text-warm-grey text-lg md:text-xl leading-relaxed">
               <strong className="text-charcoal">La Taverna degli Amici</strong> &egrave; molto pi&ugrave; di un
               semplice ristorante: &egrave; un luogo dove la passione per le carni di alta qualit&agrave; incontra la
               cultura dell&rsquo;ospitalit&agrave;, un&rsquo;oasi di sapori autentici nel cuore di Milano,
@@ -116,7 +116,7 @@ export default function ChiSiamoPage() {
                   l&rsquo;oeil creano un&rsquo;atmosfera calda e accogliente. Tre piani con diverse
                   salette, ognuna con il suo carattere, per ospitare cene intime e grandi tavolate.
                 </p>
-                <blockquote className="border-l-2 border-gold/50 pl-4 mt-6">
+                <blockquote className="border-l-2 border-gold pl-5 mt-6 bg-white/5 rounded-r-lg py-3 pr-4">
                   <p className="text-cream/60 text-sm italic">
                     &ldquo;Le cinque sale allestite da Ernesto sono un capolavoro di ospitalit&agrave;, dove
                     ogni dettaglio &egrave; pensato per far sentire l&rsquo;ospite a casa.&rdquo;
@@ -131,7 +131,7 @@ export default function ChiSiamoPage() {
                 <h3 className="font-serif text-2xl text-cream mb-4">
                   Un Locale Caldo e Amichevole
                 </h3>
-                <blockquote className="border-l-2 border-gold/50 pl-4 mb-4">
+                <blockquote className="border-l-2 border-gold pl-5 mb-4 bg-white/5 rounded-r-lg py-3 pr-4">
                   <p className="text-cream/80 text-sm italic">
                     &ldquo;Se l&rsquo;accoglienza conta, e conta, la Taverna degli Amici parte
                     decisamente in pole position.&rdquo;
@@ -168,7 +168,7 @@ export default function ChiSiamoPage() {
 
             <div className="flex flex-col md:flex-row items-start gap-10">
               <div className="md:w-1/3">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden ring-2 ring-gold/20 ring-offset-4 ring-offset-cream">
                   <Image
                     src="/images/gallery/ambiente/ernesto-proprietario-fondatore.jpg"
                     alt="Ernesto Notaro, fondatore della Taverna degli Amici"
@@ -194,7 +194,7 @@ export default function ChiSiamoPage() {
                   {pressQuotes.map((quote) => (
                     <blockquote
                       key={quote.source}
-                      className="flex-1 p-4 rounded-xl bg-charcoal/5 border border-charcoal/10"
+                      className="flex-1 p-4 rounded-xl bg-charcoal/5 border border-gold/10 hover-lift"
                     >
                       <p className="font-serif text-charcoal italic text-sm">
                         &ldquo;{quote.text}&rdquo;
@@ -219,7 +219,7 @@ export default function ChiSiamoPage() {
                   <ul className="space-y-2">
                     {fioriAllOcchiello.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-warm-grey">
-                        <span className="text-gold mt-0.5">&#9679;</span>
+                        <svg className="w-4 h-4 text-gold shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                         {item}
                       </li>
                     ))}
@@ -241,7 +241,7 @@ export default function ChiSiamoPage() {
               {philosophy.map((item) => (
                 <div
                   key={item.title}
-                  className="text-center p-8 rounded-2xl bg-white/5 border border-white/10"
+                  className="text-center p-8 rounded-2xl glass-card hover-lift hover-glow-gold"
                 >
                   <span className="text-4xl mb-4 block">{item.emoji}</span>
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>

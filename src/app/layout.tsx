@@ -1,6 +1,19 @@
 import type { Metadata } from 'next'
+import { Playfair_Display, DM_Sans } from 'next/font/google'
 import CookieConsent from '@/components/CookieConsent'
 import './globals.css'
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 const siteUrl = 'https://taverna.fodivps2.cloud'
 const description = 'Ristorante di carni alla brace di alta qualità a Milano. Dal 1997, qualità, esperienza e cultura dell\'ospitalità. Scottona bavarese, controfiletti argentini, fiorentina.'
@@ -38,7 +51,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it">
+    <html lang="it" className={`${playfair.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         {children}
         <CookieConsent />

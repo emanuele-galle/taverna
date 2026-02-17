@@ -35,7 +35,7 @@ export default function PrenotaPage() {
               <BookingForm />
             </div>
             <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold">
                 <div className="flex items-center gap-3 mb-3">
                   <Clock className="w-5 h-5 text-gold" />
                   <h3 className="font-serif text-lg text-charcoal">Orari</h3>
@@ -47,7 +47,7 @@ export default function PrenotaPage() {
                   <p className="mt-2"><span className="font-medium text-charcoal">Domenica:</span> Chiuso</p>
                 </div>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold">
                 <div className="flex items-center gap-3 mb-3">
                   <Phone className="w-5 h-5 text-gold" />
                   <h3 className="font-serif text-lg text-charcoal">Telefono</h3>
@@ -56,7 +56,7 @@ export default function PrenotaPage() {
                   02 5519 4005
                 </a>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold">
                 <div className="flex items-center gap-3 mb-3">
                   <MapPin className="w-5 h-5 text-gold" />
                   <h3 className="font-serif text-lg text-charcoal">Indirizzo</h3>

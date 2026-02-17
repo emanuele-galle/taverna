@@ -48,7 +48,7 @@ export default function FixedMenus() {
               key={menu.name}
               className={`relative bg-cream rounded-xl p-6 border-2 ${
                 menu.badge
-                  ? 'border-gold shadow-lg shadow-gold/10'
+                  ? 'border-gold shadow-xl shadow-gold/20'
                   : 'border-gold/40'
               }`}
             >
@@ -61,7 +61,7 @@ export default function FixedMenus() {
                 {menu.name}
               </h3>
               <p className="text-center mb-5">
-                <span className="font-serif text-4xl text-gold font-bold">
+                <span className="font-serif text-5xl text-gold font-bold">
                   &euro;{menu.price}
                 </span>
                 <span className="text-warm-grey text-sm">/persona</span>
@@ -72,7 +72,7 @@ export default function FixedMenus() {
                     key={item}
                     className="flex items-center gap-2 text-charcoal/80 text-sm"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+                    <svg className="w-4 h-4 text-gold shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                     {item}
                   </li>
                 ))}

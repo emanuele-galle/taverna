@@ -16,14 +16,14 @@ interface MenuItem {
 
 export default function MenuCard({ item }: { item: MenuItem }) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
+    <div className="group bg-white rounded-xl overflow-hidden shadow-sm hover-lift hover-glow-gold">
       {item.image && (
         <div className="relative w-full h-[200px]">
           <Image
             src={item.image}
             alt={item.name}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
@@ -33,7 +33,7 @@ export default function MenuCard({ item }: { item: MenuItem }) {
           <h3 className="font-serif font-bold text-charcoal text-lg leading-tight">
             {item.name}
           </h3>
-          <span className="font-bold text-gold whitespace-nowrap">
+          <span className="bg-gold/10 px-3 py-1 rounded-full font-bold text-gold whitespace-nowrap text-sm">
             {formatPrice(item.price)}
           </span>
         </div>

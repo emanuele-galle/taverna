@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-charcoal/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-charcoal/95 backdrop-blur-md shadow-lg border-b border-gold/20' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,10 +49,10 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 ${
+                className={`relative text-xs font-medium uppercase tracking-wider transition-colors duration-300 ${
                   pathname === link.href
-                    ? 'text-gold'
-                    : 'text-white hover:text-gold'
+                    ? 'text-gold nav-link-active'
+                    : 'text-white hover:text-gold underline-grow'
                 }`}
               >
                 {link.label}
@@ -63,7 +63,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/prenota"
-              className="inline-flex items-center px-6 py-2.5 bg-gold text-charcoal text-sm font-semibold rounded-full hover:bg-cream transition-colors duration-200"
+              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-gold to-gold-light text-charcoal text-xs font-semibold uppercase tracking-wider rounded-full hover:shadow-[0_0_20px_rgba(196,163,90,0.3)] transition-all duration-300"
             >
               Prenota
             </Link>

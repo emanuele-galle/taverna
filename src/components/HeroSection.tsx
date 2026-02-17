@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronDown } from 'lucide-react'
+
 
 export default function HeroSection() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
@@ -39,20 +39,22 @@ export default function HeroSection() {
         </video>
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-charcoal/90" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="inline-block mb-6">
-          <span className="px-4 py-1.5 border border-gold/60 rounded-full text-gold text-xs font-medium tracking-widest uppercase">
+          <span className="px-4 py-1.5 border border-gold/60 rounded-full text-gold text-xs font-medium tracking-[0.2em] uppercase shimmer-border">
             Dal 1997
           </span>
         </div>
 
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-cream mb-4 leading-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-gold mb-4 leading-tight">
           La Taverna degli Amici
         </h1>
 
-        <p className="font-serif text-xl sm:text-2xl md:text-3xl text-gold mb-4">
+        <div className="w-20 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-5" />
+
+        <p className="text-sm sm:text-base uppercase tracking-[0.15em] text-cream/90 mb-4">
           Carni alla Brace di Alta Qualit&agrave;
         </p>
 
@@ -63,21 +65,22 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/prenota"
-            className="inline-flex items-center px-8 py-3 bg-gold text-charcoal font-semibold rounded-full hover:bg-gold-light transition-colors duration-200 text-base"
+            className="inline-flex items-center px-8 py-3.5 bg-gradient-to-r from-gold to-gold-light text-charcoal font-semibold rounded-full hover:shadow-[0_0_30px_rgba(196,163,90,0.3)] transition-all duration-300 text-base"
           >
             Prenota il Tuo Tavolo
           </Link>
           <Link
             href="/menu"
-            className="inline-flex items-center px-8 py-3 border-2 border-cream/60 text-cream font-semibold rounded-full hover:border-gold hover:text-gold transition-colors duration-200 text-base"
+            className="inline-flex items-center px-8 py-3.5 border border-gold/60 text-gold font-semibold rounded-full hover:bg-gold/10 transition-all duration-300 text-base"
           >
             Esplora il Menu
           </Link>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <ChevronDown className="w-8 h-8 text-cream/60 animate-bounce-subtle" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        <div className="w-px h-8 bg-gradient-to-b from-transparent to-cream/40" />
+        <div className="w-1.5 h-1.5 rounded-full bg-cream/60 animate-bounce-subtle" />
       </div>
     </section>
   )

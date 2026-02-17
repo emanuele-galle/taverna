@@ -57,8 +57,8 @@ export default function ContattiPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Info Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
-              <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold text-center">
+              <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-5 h-5 text-gold" />
               </div>
               <h3 className="font-serif text-lg text-charcoal mb-2">Dove Siamo</h3>
@@ -73,8 +73,8 @@ export default function ContattiPage() {
               </a>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
-              <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold text-center">
+              <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-5 h-5 text-gold" />
               </div>
               <h3 className="font-serif text-lg text-charcoal mb-2">Telefono</h3>
@@ -84,8 +84,8 @@ export default function ContattiPage() {
               <p className="text-xs text-warm-grey mt-2">Lun-Sab 12:00-15:00, 19:00-23:00</p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
-              <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold text-center">
+              <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-5 h-5 text-gold" />
               </div>
               <h3 className="font-serif text-lg text-charcoal mb-2">Email</h3>
@@ -95,8 +95,8 @@ export default function ContattiPage() {
               <p className="text-xs text-warm-grey mt-2">Risposta entro 24h</p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
-              <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold text-center">
+              <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-5 h-5 text-gold" />
               </div>
               <h3 className="font-serif text-lg text-charcoal mb-2">WhatsApp</h3>
@@ -113,7 +113,7 @@ export default function ContattiPage() {
           </div>
 
           {/* Orari di Apertura */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow mb-12 max-w-2xl mx-auto">
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-gold/10 hover-lift hover-glow-gold mb-12 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Clock className="w-5 h-5 text-gold" />
               <h3 className="font-serif text-xl text-charcoal">Orari di Apertura</h3>
@@ -144,7 +144,7 @@ export default function ContattiPage() {
           </div>
 
           {/* Google Maps */}
-          <div className="rounded-xl overflow-hidden shadow-sm">
+          <div className="rounded-xl overflow-hidden shadow-sm border border-gold/10">
             <iframe
               src={restaurant.googleMapsEmbed}
               width="100%"

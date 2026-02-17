@@ -70,26 +70,32 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
+                  counter: '1kg+',
                   icon: '🥩',
                   title: 'Carni di Alta Qualita',
                   desc: 'Selezioniamo le migliori carni: scottona bavarese, controfiletto argentino e uruguaiano, fiorentine da oltre 1kg. Tutte cotte a vista sulla brace.',
                 },
                 {
+                  counter: '500+',
                   icon: '🍷',
                   title: 'Oltre 500 Etichette',
                   desc: 'Una cantina ricca e curata con oltre 500 etichette di vini italiani e internazionali, selezionati per esaltare ogni taglio di carne.',
                 },
                 {
+                  counter: '28+',
                   icon: '⭐',
-                  title: 'Dal 1997',
+                  title: 'Anni di Eccellenza',
                   desc: 'Quasi 30 anni di esperienza e passione. Migliaia di clienti soddisfatti e la stessa dedizione del primo giorno nel servire carni alla brace di eccellenza.',
                 },
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="text-center p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300"
+                  className="text-center p-8 rounded-2xl glass-card hover-lift hover-glow-gold border border-gold/10"
                 >
-                  <span className="text-5xl mb-4 block">{item.icon}</span>
+                  <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-3xl">{item.icon}</span>
+                  </div>
+                  <span className="font-serif text-4xl text-gradient-gold block mb-2">{item.counter}</span>
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
                   <p className="text-cream/70 text-sm leading-relaxed">{item.desc}</p>
                 </div>
@@ -112,13 +118,13 @@ export default async function HomePage() {
             </p>
             <div className="relative max-w-3xl mx-auto">
               {/* Timeline line on left */}
-              <div className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-gold/30" />
+              <div className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold/10 via-gold/40 to-gold/10" />
               <div className="space-y-12">
                 {timelineSteps.map((step) => (
-                  <div key={step.year} className="relative pl-12 md:pl-16">
+                  <div key={step.year} className="relative pl-12 md:pl-16 hover:translate-x-1 transition-transform duration-300">
                     {/* Dot */}
-                    <div className="absolute left-2.5 md:left-4.5 top-1 w-4 h-4 rounded-full bg-burgundy border-4 border-cream" />
-                    <span className="inline-block font-serif text-lg text-burgundy font-bold mb-1">
+                    <div className="absolute left-2 md:left-4 top-1 w-5 h-5 rounded-full bg-gold border-4 border-cream" />
+                    <span className="inline-block font-serif text-xl text-burgundy font-bold mb-1">
                       {step.year}
                     </span>
                     <h3 className="font-semibold text-charcoal text-lg mb-2">{step.title}</h3>
@@ -154,7 +160,7 @@ export default async function HomePage() {
               {featuredSpecialties.map((item) => (
                 <div
                   key={item.name}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300"
+                  className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-charcoal/5"
                 >
                   {/* Image with overlay title */}
                   <div className="relative h-56">
@@ -162,16 +168,16 @@ export default async function HomePage() {
                       src={item.image}
                       alt={`${item.name} - La Taverna degli Amici`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <h3 className="font-serif text-xl text-cream mb-2">{item.name}</h3>
                       <div className="flex flex-wrap gap-2">
                         {item.badges.map((badge) => (
                           <span
                             key={badge}
-                            className="text-xs bg-white/20 backdrop-blur-sm text-cream border border-white/30 px-2 py-0.5 rounded-full"
+                            className="text-xs bg-gold/90 text-charcoal font-medium px-2.5 py-0.5 rounded-full"
                           >
                             {badge}
                           </span>
@@ -185,10 +191,10 @@ export default async function HomePage() {
                       {item.description}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-burgundy font-semibold text-lg">
+                      <span className="bg-gold/10 text-burgundy font-bold text-lg px-3 py-1 rounded-full">
                         &euro;{item.price},00
                       </span>
-                      <span className="text-gold text-sm">★★★★★ {item.rating}</span>
+                      <span className="text-gold font-semibold text-sm">🔥 {item.rating}</span>
                     </div>
                   </div>
                 </div>

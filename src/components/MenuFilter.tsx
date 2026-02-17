@@ -13,10 +13,10 @@ export default function MenuFilter({ categories, activeCategory, onFilter }: Men
         <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
           <button
             onClick={() => onFilter('Tutti')}
-            className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
+            className={`flex-shrink-0 px-4 pb-2 text-sm font-medium transition-all duration-200 ${
               activeCategory === 'Tutti'
-                ? 'bg-gold text-charcoal'
-                : 'bg-white/10 text-white hover:bg-white/20'
+                ? 'text-gold border-b-2 border-gold'
+                : 'text-white/70 hover:text-gold border-b-2 border-transparent'
             }`}
           >
             Tutti
@@ -25,10 +25,10 @@ export default function MenuFilter({ categories, activeCategory, onFilter }: Men
             <button
               key={category}
               onClick={() => onFilter(category)}
-              className={`flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 ${
+              className={`flex-shrink-0 px-4 pb-2 text-sm font-medium transition-all duration-200 ${
                 activeCategory === category
-                  ? 'bg-gold text-charcoal'
-                  : 'bg-white/10 text-white hover:bg-white/20'
+                  ? 'text-gold border-b-2 border-gold'
+                  : 'text-white/70 hover:text-gold border-b-2 border-transparent'
               }`}
             >
               {category}
