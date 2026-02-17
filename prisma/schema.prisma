@@ -1,0 +1,148 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model MenuItem {
+  id            Int      @id @default(autoincrement())
+  name          String
+  category      String
+  categoryOrder Int      @default(0) @map("category_order")
+  displayOrder  Int      @default(0) @map("display_order")
+  description   String?
+  ingredients   String?
+  price         Decimal  @db.Decimal(10, 2)
+  image         String?
+  isVegetarian  Boolean  @default(false) @map("is_vegetarian")
+  isVegan       Boolean  @default(false) @map("is_vegan")
+  isGlutenFree  Boolean  @default(false) @map("is_gluten_free")
+  isSpicy       Boolean  @default(false) @map("is_spicy")
+  isChefSpecial Boolean  @default(false) @map("is_chef_special")
+  allergens     String?
+  active        Boolean  @default(true)
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@map("menu_items")
+}
+
+model Booking {
+  id               Int       @id @default(autoincrement())
+  bookingDate      DateTime  @db.Date @map("booking_date")
+  bookingTime      String    @map("booking_time")
+  numGuests        Int       @map("num_guests")
+  customerName     String    @map("customer_name")
+  customerEmail    String    @map("customer_email")
+  customerPhone    String    @map("customer_phone")
+  specialRequests  String?   @map("special_requests")
+  status           String    @default("pending")
+  confirmationCode String    @unique @map("confirmation_code")
+  tableNumber      String?   @map("table_number")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+
+  @@map("bookings")
+}
+
+model AdminUser {
+  id           Int           @id @default(autoincrement())
+  username     String        @unique
+  email        String        @unique
+  passwordHash String        @map("password_hash")
+  fullName     String        @map("full_name")
+  role         String        @default("staff")
+  isActive     Boolean       @default(true) @map("is_active")
+  lastLogin    DateTime?     @map("last_login")
+  createdAt    DateTime      @default(now()) @map("created_at")
+  updatedAt    DateTime      @updatedAt @map("updated_at")
+  activityLogs ActivityLog[]
+
+  @@map("admin_users")
+}
+
+model GalleryImage {
+  id           Int      @id @default(autoincrement())
+  title        String?
+  description  String?
+  imagePath    String   @map("image_path")
+  category     String   @default("piatti")
+  displayOrder Int      @default(0) @map("display_order")
+  isFeatured   Boolean  @default(false) @map("is_featured")
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("gallery_images")
+}
+
+model Event {
+  id                  Int       @id @default(autoincrement())
+  title               String
+  slug                String    @unique
+  description         String
+  eventDate           DateTime  @db.Date @map("event_date")
+  eventTime           String?   @map("event_time")
+  image               String?
+  maxParticipants     Int?      @map("max_participants")
+  currentParticipants Int       @default(0) @map("current_participants")
+  price               Decimal?  @db.Decimal(10, 2)
+  active              Boolean   @default(true)
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+
+  @@map("events")
+}
+
+model NewsletterSubscriber {
+  id             Int       @id @default(autoincrement())
+  email          String    @unique
+  name           String?
+  status         String    @default("active")
+  subscribedAt   DateTime  @default(now()) @map("subscribed_at")
+  unsubscribedAt DateTime? @map("unsubscribed_at")
+
+  @@map("newsletter_subscribers")
+}
+
+model ContactMessage {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  status    String    @default("new")
+  repliedAt DateTime? @map("replied_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  @@map("contact_messages")
+}
+
+model Setting {
+  id          Int      @id @default(autoincrement())
+  key         String   @unique @map("setting_key")
+  value       String?  @map("setting_value")
+  type        String   @default("string") @map("setting_type")
+  description String?
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}
+
+model ActivityLog {
+  id          Int        @id @default(autoincrement())
+  adminUserId Int?       @map("admin_user_id")
+  action      String
+  entityType  String?    @map("entity_type")
+  entityId    Int?       @map("entity_id")
+  details     String?
+  ipAddress   String?    @map("ip_address")
+  createdAt   DateTime   @default(now()) @map("created_at")
+  admin       AdminUser? @relation(fields: [adminUserId], references: [id], onDelete: SetNull)
+
+  @@map("activity_log")
+}

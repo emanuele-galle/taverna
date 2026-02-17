@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #1a1a1a;
+  --color-burgundy: #722F37;
+  --color-gold: #C4A35A;
+  --color-cream: #FAF3E0;
+  --color-warm-grey: #6B7280;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1a1a1a;
+  background: #FAF3E0;
+}
+
+.font-serif {
+  font-family: Georgia, 'Times New Roman', serif;
+}

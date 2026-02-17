@@ -1,0 +1,28 @@
+services:
+  app:
+    build: .
+    container_name: taverna_app
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    networks:
+      - traefik-public
+      - panel-internal
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 10s
+      start_period: 40s
+      retries: 3
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.taverna.rule=Host(`taverna.fodivps2.cloud`)"
+      - "traefik.http.routers.taverna.entrypoints=websecure"
+      - "traefik.http.routers.taverna.tls.certresolver=letsencrypt"
+      - "traefik.http.services.taverna.loadbalancer.server.port=3000"
+
+networks:
+  traefik-public:
+    external: true
+  panel-internal:
+    external: true

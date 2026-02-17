@@ -1,0 +1,180 @@
+'use client'
+
+import { useState } from 'react'
+import { z } from 'zod'
+
+const contactSchema = z.object({
+  name: z.string().min(2, 'Inserisci il tuo nome'),
+  email: z.string().email('Email non valida'),
+  phone: z.string().optional(),
+  subject: z.string().optional(),
+  message: z.string().min(10, 'Il messaggio deve contenere almeno 10 caratteri'),
+})
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  })
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setErrors({})
+    setErrorMessage('')
+
+    const parsed = contactSchema.safeParse(formData)
+
+    if (!parsed.success) {
+      const fieldErrors: Record<string, string> = {}
+      parsed.error.issues.forEach((err) => {
+        if (err.path[0]) fieldErrors[err.path[0] as string] = err.message
+      })
+      setErrors(fieldErrors)
+      return
+    }
+
+    setStatus('loading')
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(parsed.data),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Errore durante l\'invio')
+      }
+
+      setStatus('success')
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : 'Errore imprevisto')
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className="bg-charcoal-light rounded-2xl p-8 text-center">
+        <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="font-serif text-2xl text-cream mb-2">Messaggio Inviato!</h3>
+        <p className="text-warm-grey">
+          Ti risponderemo il prima possibile. Grazie per averci contattato.
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-charcoal-light rounded-2xl p-6 md:p-8 space-y-5">
+      {/* Name */}
+      <div>
+        <label htmlFor="contact-name" className="block text-sm text-cream mb-1.5">Nome *</label>
+        <input
+          type="text"
+          id="contact-name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Mario Rossi"
+          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+        />
+        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* Email */}
+        <div>
+          <label htmlFor="contact-email" className="block text-sm text-cream mb-1.5">Email *</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="mario@esempio.it"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+          />
+          {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+        </div>
+
+        {/* Phone */}
+        <div>
+          <label htmlFor="contact-phone" className="block text-sm text-cream mb-1.5">Telefono</label>
+          <input
+            type="tel"
+            id="contact-phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="+39 333 1234567"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+          />
+        </div>
+      </div>
+
+      {/* Subject */}
+      <div>
+        <label htmlFor="contact-subject" className="block text-sm text-cream mb-1.5">Oggetto</label>
+        <input
+          type="text"
+          id="contact-subject"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          placeholder="Informazioni, eventi privati, collaborazioni..."
+          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+        />
+      </div>
+
+      {/* Message */}
+      <div>
+        <label htmlFor="contact-message" className="block text-sm text-cream mb-1.5">Messaggio *</label>
+        <textarea
+          id="contact-message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows={5}
+          placeholder="Scrivi il tuo messaggio..."
+          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors resize-none"
+        />
+        {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
+      </div>
+
+      {/* Error */}
+      {status === 'error' && (
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm">
+          {errorMessage}
+        </div>
+      )}
+
+      {/* Submit */}
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        className="w-full py-3 bg-gold text-charcoal font-semibold rounded-full hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {status === 'loading' ? 'Invio in corso...' : 'Invia Messaggio'}
+      </button>
+    </form>
+  )
+}
