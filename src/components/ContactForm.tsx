@@ -9,6 +9,7 @@ const contactSchema = z.object({
   phone: z.string().optional(),
   subject: z.string().optional(),
   message: z.string().min(10, 'Il messaggio deve contenere almeno 10 caratteri'),
+  privacy: z.literal(true, { error: 'Devi accettare la privacy policy' }),
 })
 
 export default function ContactForm() {
@@ -18,14 +19,16 @@ export default function ContactForm() {
     phone: '',
     subject: '',
     message: '',
+    privacy: false,
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    const { name, value, type } = e.target
+    const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    setFormData((prev) => ({ ...prev, [name]: newValue }))
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }))
   }
 
@@ -48,10 +51,11 @@ export default function ContactForm() {
     setStatus('loading')
 
     try {
+      const { privacy: _, ...dataToSend } = parsed.data
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(parsed.data),
+        body: JSON.stringify(dataToSend),
       })
 
       const data = await res.json()
@@ -163,6 +167,24 @@ export default function ContactForm() {
           className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors resize-none"
         />
         {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
+      </div>
+
+      {/* Privacy Checkbox */}
+      <div>
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="privacy"
+            checked={formData.privacy}
+            onChange={handleChange}
+            className="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 text-gold focus:ring-gold/50 focus:ring-offset-0"
+          />
+          <span className="text-xs text-warm-grey leading-relaxed">
+            Accetto il trattamento dei dati personali secondo la{' '}
+            <a href="/privacy" className="text-gold hover:text-gold-light underline">privacy policy</a> *
+          </span>
+        </label>
+        {errors.privacy && <p className="text-red-400 text-xs mt-1">{errors.privacy}</p>}
       </div>
 
       {/* Error */}
