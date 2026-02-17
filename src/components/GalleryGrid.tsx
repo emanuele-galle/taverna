@@ -7,7 +7,7 @@ import GalleryLightbox from './GalleryLightbox'
 interface GalleryImage {
   src: string
   alt: string
-  category: 'Piatti' | 'Ambiente'
+  category: 'Piatti' | 'Dolci' | 'Ambiente'
 }
 
 export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
@@ -19,7 +19,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
     return images.filter((img) => img.category === activeCategory)
   }, [images, activeCategory])
 
-  const categories = ['Tutti', 'Piatti', 'Ambiente']
+  const categories = ['Tutti', 'Piatti', 'Dolci', 'Ambiente']
 
   return (
     <div>

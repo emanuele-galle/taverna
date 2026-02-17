@@ -14,7 +14,7 @@ export default async function GalleriaPage() {
   const images = dbImages.map((img) => ({
     src: img.imagePath,
     alt: img.title || 'Galleria',
-    category: (img.category === 'piatti' ? 'Piatti' : img.category === 'ambiente' ? 'Ambiente' : img.category.charAt(0).toUpperCase() + img.category.slice(1)) as 'Piatti' | 'Ambiente',
+    category: (img.category.charAt(0).toUpperCase() + img.category.slice(1)) as 'Piatti' | 'Dolci' | 'Ambiente',
   }))
 
   return (
