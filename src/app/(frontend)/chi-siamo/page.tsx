@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import PageHero from '@/components/PageHero'
-import FadeIn from '@/components/FadeIn'
 import SectionDivider from '@/components/SectionDivider'
 import CTASection from '@/components/CTASection'
 
@@ -45,8 +44,7 @@ export default function ChiSiamoPage() {
       <PageHero title="Chi Siamo" subtitle="La nostra storia, la nostra passione" />
 
       {/* Intro */}
-      <FadeIn>
-        <section className="py-20 bg-cream">
+      <section className="py-20 bg-cream">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span className="inline-block px-4 py-1.5 bg-gold/10 text-gold font-semibold text-sm rounded-full mb-6">
               Dal 1997
@@ -58,14 +56,12 @@ export default function ChiSiamoPage() {
               dove ogni cliente diventa un amico.
             </p>
           </div>
-        </section>
-      </FadeIn>
+      </section>
 
       <SectionDivider />
 
       {/* Timeline con immagini alternate */}
-      <FadeIn>
-        <section className="py-20 bg-charcoal bg-pattern-dark">
+      <section className="py-20 bg-charcoal bg-pattern-dark">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-3xl text-cream text-center mb-4">La Nostra Storia</h2>
             <div className="w-16 h-1 bg-gold mx-auto mb-16" />
@@ -160,14 +156,12 @@ export default function ChiSiamoPage() {
               </div>
             </div>
           </div>
-        </section>
-      </FadeIn>
+      </section>
 
       <SectionDivider />
 
       {/* Il Fondatore */}
-      <FadeIn>
-        <section className="py-20 bg-cream">
+      <section className="py-20 bg-cream">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-3xl text-charcoal text-center mb-4">Il Fondatore</h2>
             <div className="w-16 h-1 bg-gold mx-auto mb-12" />
@@ -234,14 +228,12 @@ export default function ChiSiamoPage() {
               </div>
             </div>
           </div>
-        </section>
-      </FadeIn>
+      </section>
 
       <SectionDivider />
 
       {/* Philosophy */}
-      <FadeIn>
-        <section className="py-20 bg-charcoal bg-pattern-dark">
+      <section className="py-20 bg-charcoal bg-pattern-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-3xl text-cream text-center mb-4">La Nostra Filosofia</h2>
             <div className="w-16 h-1 bg-gold mx-auto mb-12" />
@@ -258,8 +250,7 @@ export default function ChiSiamoPage() {
               ))}
             </div>
           </div>
-        </section>
-      </FadeIn>
+      </section>
 
       {/* Quote */}
       <section className="py-16 bg-cream">

@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import ReviewsSection from '@/components/ReviewsSection'
-import FadeIn from '@/components/FadeIn'
 import SectionDivider from '@/components/SectionDivider'
 import CTASection from '@/components/CTASection'
 
@@ -62,8 +61,7 @@ export default async function HomePage() {
       <HeroSection />
 
       {/* Perche Scegliere - gradient charcoal→burgundy→charcoal */}
-      <FadeIn>
-        <section className="py-20 bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
+      <section className="py-20 bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-3xl md:text-4xl text-cream text-center mb-4">
               Perch&eacute; Scegliere La Taverna degli Amici
@@ -98,14 +96,12 @@ export default async function HomePage() {
               ))}
             </div>
           </div>
-        </section>
-      </FadeIn>
+      </section>
 
       <SectionDivider />
 
       {/* Una Storia di Passione - bg cream, timeline a sinistra */}
-      <FadeIn>
-        <section className="py-24 bg-cream">
+      <section className="py-24 bg-cream">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-3xl md:text-4xl text-burgundy text-center mb-4">
               Una Storia di Passione
@@ -140,14 +136,12 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-        </section>
-      </FadeIn>
+      </section>
 
       <SectionDivider />
 
       {/* Le Nostre Specialita alla Brace - gradient cream→white */}
-      <FadeIn>
-        <section className="py-24 bg-gradient-to-br from-cream to-white">
+      <section className="py-24 bg-gradient-to-br from-cream to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-3xl md:text-4xl text-burgundy text-center mb-4">
               Le Nostre Specialit&agrave; alla Brace
@@ -209,14 +203,11 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-        </section>
-      </FadeIn>
+      </section>
 
       <SectionDivider />
 
-      <FadeIn>
-        <ReviewsSection />
-      </FadeIn>
+      <ReviewsSection />
 
       {/* CTA Prenota */}
       <CTASection
