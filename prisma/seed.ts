@@ -10,7 +10,7 @@ const prisma = new PrismaClient({ adapter });
 function hashPassword(password: string): string {
   const salt = randomBytes(16).toString("hex");
   const hash = createHash("sha256")
-    .update(`${salt}:${password}`)
+    .update(salt + password)
     .digest("hex");
   return `${salt}:${hash}`;
 }

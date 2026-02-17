@@ -10,7 +10,7 @@ export default function HeroSection() {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/images/hero-fallback.jpg"
+        poster="/images/hero/hero-fallback.jpg"
       >
         <source src="/videos/hero-background.mp4" type="video/mp4" />
       </video>
