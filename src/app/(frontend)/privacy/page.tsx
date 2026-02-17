@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -19,9 +21,10 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <section className="relative h-48 flex items-center justify-center bg-charcoal pt-20">
-        <h1 className="font-serif text-3xl md:text-4xl text-cream">Informativa sulla Privacy</h1>
-      </section>
+      <PageHero
+        title="Informativa sulla Privacy"
+        subtitle="Come trattiamo i tuoi dati personali"
+      />
 
       <section className="py-16 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm">
@@ -44,8 +47,8 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl text-charcoal mb-3">Finalità del Trattamento</h2>
-              <p>I dati personali sono trattati per le seguenti finalità:</p>
+              <h2 className="font-serif text-xl text-charcoal mb-3">Finalit&agrave; del Trattamento</h2>
+              <p>I dati personali sono trattati per le seguenti finalit&agrave;:</p>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>Gestione delle prenotazioni tavolo</li>
                 <li>Risposta alle richieste di contatto</li>
@@ -66,7 +69,7 @@ export default function PrivacyPage() {
               <h2 className="font-serif text-xl text-charcoal mb-3">Conservazione dei Dati</h2>
               <p>
                 I dati personali saranno conservati per il tempo strettamente necessario al perseguimento
-                delle finalità per cui sono stati raccolti, e comunque non oltre 24 mesi dall&apos;ultimo contatto.
+                delle finalit&agrave; per cui sono stati raccolti, e comunque non oltre 24 mesi dall&apos;ultimo contatto.
               </p>
             </div>
 
@@ -74,7 +77,7 @@ export default function PrivacyPage() {
               <h2 className="font-serif text-xl text-charcoal mb-3">Diritti dell&apos;Interessato</h2>
               <p>
                 Ai sensi degli artt. 15-22 del GDPR, l&apos;interessato ha diritto di accesso, rettifica,
-                cancellazione, limitazione del trattamento, portabilità dei dati e opposizione.
+                cancellazione, limitazione del trattamento, portabilit&agrave; dei dati e opposizione.
                 Per esercitare tali diritti, scrivere a: info@latavernadegliamici.it
               </p>
             </div>
@@ -83,6 +86,15 @@ export default function PrivacyPage() {
               Informativa ai sensi del D.Lgs. 196/2003 e del Regolamento UE 2016/679 (GDPR).
               Ultimo aggiornamento: Febbraio 2026.
             </p>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/"
+              className="inline-flex items-center px-6 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-charcoal/90 transition-colors duration-200 text-sm"
+            >
+              Torna alla Home
+            </Link>
           </div>
         </div>
       </section>

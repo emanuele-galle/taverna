@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
+import PageHero from '@/components/PageHero'
+import CTASection from '@/components/CTASection'
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react'
 import { restaurant } from '@/data/restaurant'
 
@@ -22,47 +24,40 @@ export const metadata: Metadata = {
 export default function ContattiPage() {
   return (
     <>
-      <section className="relative h-72 flex items-center justify-center bg-charcoal pt-20">
-        <div className="text-center">
-          <h1 className="font-serif text-4xl md:text-5xl text-cream mb-4">Contatti</h1>
-          <p className="text-warm-grey max-w-lg mx-auto mb-8">
-            Scrivici o vieni a trovarci
-          </p>
-          {/* Quick Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={`tel:${restaurant.phone}`}
-              className="flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold rounded-full px-5 py-2.5 text-sm font-medium hover:bg-gold/20 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              Chiamaci
-            </a>
-            <a
-              href={`mailto:${restaurant.email}`}
-              className="flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold rounded-full px-5 py-2.5 text-sm font-medium hover:bg-gold/20 transition-colors"
-            >
-              <Mail className="w-4 h-4" />
-              Scrivici
-            </a>
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.address)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold rounded-full px-5 py-2.5 text-sm font-medium hover:bg-gold/20 transition-colors"
-            >
-              <MapPin className="w-4 h-4" />
-              Vieni a trovarci
-            </a>
-          </div>
+      <PageHero title="Contatti" subtitle="Scrivici o vieni a trovarci">
+        {/* Quick Action Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+          <a
+            href={`tel:${restaurant.phone}`}
+            className="flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold rounded-full px-5 py-2.5 text-sm font-medium hover:bg-gold/20 transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            Chiamaci
+          </a>
+          <a
+            href={`mailto:${restaurant.email}`}
+            className="flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold rounded-full px-5 py-2.5 text-sm font-medium hover:bg-gold/20 transition-colors"
+          >
+            <Mail className="w-4 h-4" />
+            Scrivici
+          </a>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.address)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold rounded-full px-5 py-2.5 text-sm font-medium hover:bg-gold/20 transition-colors"
+          >
+            <MapPin className="w-4 h-4" />
+            Vieni a trovarci
+          </a>
         </div>
-      </section>
+      </PageHero>
 
       <section className="py-16 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Info Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {/* Dove Siamo */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 text-center">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
               <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-5 h-5 text-gold" />
               </div>
@@ -78,8 +73,7 @@ export default function ContattiPage() {
               </a>
             </div>
 
-            {/* Telefono */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 text-center">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
               <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-5 h-5 text-gold" />
               </div>
@@ -90,8 +84,7 @@ export default function ContattiPage() {
               <p className="text-xs text-warm-grey mt-2">Lun-Sab 12:00-15:00, 19:00-23:00</p>
             </div>
 
-            {/* Email */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 text-center">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
               <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Mail className="w-5 h-5 text-gold" />
               </div>
@@ -102,8 +95,7 @@ export default function ContattiPage() {
               <p className="text-xs text-warm-grey mt-2">Risposta entro 24h</p>
             </div>
 
-            {/* WhatsApp */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 text-center">
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow text-center">
               <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageCircle className="w-5 h-5 text-gold" />
               </div>
@@ -121,7 +113,7 @@ export default function ContattiPage() {
           </div>
 
           {/* Orari di Apertura */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 mb-12 max-w-2xl mx-auto">
+          <div className="bg-white rounded-xl p-6 shadow-sm border border-charcoal/5 hover:shadow-md transition-shadow mb-12 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
               <Clock className="w-5 h-5 text-gold" />
               <h3 className="font-serif text-xl text-charcoal">Orari di Apertura</h3>
@@ -166,6 +158,15 @@ export default function ContattiPage() {
           </div>
         </div>
       </section>
+
+      <CTASection
+        title="Vuoi Prenotare un Tavolo?"
+        subtitle="Scegli data e orario e ti confermeremo la prenotazione in pochi minuti."
+        primaryLabel="Prenota Ora"
+        primaryHref="/prenota"
+        secondaryLabel="Vedi il Menu"
+        secondaryHref="/menu"
+      />
     </>
   )
 }

@@ -34,7 +34,7 @@ const menus = [
 
 export default function FixedMenus() {
   return (
-    <section className="py-16 bg-charcoal">
+    <section className="py-16 bg-charcoal bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif text-3xl md:text-4xl text-cream text-center mb-4">
           I Nostri Menu

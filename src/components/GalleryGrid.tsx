@@ -32,7 +32,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
             className={`px-5 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
               activeCategory === cat
                 ? 'bg-gold text-charcoal'
-                : 'bg-white/10 text-cream hover:bg-white/20'
+                : 'bg-charcoal/10 text-charcoal hover:bg-charcoal/20'
             }`}
           >
             {cat}

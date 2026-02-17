@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy',
@@ -19,9 +21,10 @@ export const metadata: Metadata = {
 export default function CookiePage() {
   return (
     <>
-      <section className="relative h-48 flex items-center justify-center bg-charcoal pt-20">
-        <h1 className="font-serif text-3xl md:text-4xl text-cream">Cookie Policy</h1>
-      </section>
+      <PageHero
+        title="Cookie Policy"
+        subtitle="Informazioni sull'utilizzo dei cookie"
+      />
 
       <section className="py-16 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm">
@@ -52,7 +55,7 @@ export default function CookiePage() {
               <p>
                 Potremmo utilizzare cookie analitici (es. Google Analytics) per raccogliere
                 informazioni aggregate sull&apos;utilizzo del sito, al fine di migliorarne
-                contenuti e funzionalità. Questi dati sono anonimi e non consentono
+                contenuti e funzionalit&agrave;. Questi dati sono anonimi e non consentono
                 l&apos;identificazione dell&apos;utente.
               </p>
             </div>
@@ -60,8 +63,8 @@ export default function CookiePage() {
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">Come Gestire i Cookie</h2>
               <p>
-                L&apos;utente può gestire le preferenze relative ai cookie direttamente dal proprio browser.
-                La disattivazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito.
+                L&apos;utente pu&ograve; gestire le preferenze relative ai cookie direttamente dal proprio browser.
+                La disattivazione dei cookie tecnici potrebbe compromettere alcune funzionalit&agrave; del sito.
               </p>
               <p className="mt-2">
                 Per maggiori informazioni sulla gestione dei cookie, consulta la guida del tuo browser:
@@ -78,6 +81,15 @@ export default function CookiePage() {
               Cookie Policy ai sensi della Direttiva 2009/136/CE e del Provvedimento del Garante
               dell&apos;8 maggio 2014. Ultimo aggiornamento: Febbraio 2026.
             </p>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/"
+              className="inline-flex items-center px-6 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-charcoal/90 transition-colors duration-200 text-sm"
+            >
+              Torna alla Home
+            </Link>
           </div>
         </div>
       </section>

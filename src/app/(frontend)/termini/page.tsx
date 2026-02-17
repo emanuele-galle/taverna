@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Termini e Condizioni',
@@ -19,14 +21,10 @@ export const metadata: Metadata = {
 export default function TerminiPage() {
   return (
     <>
-      <section className="relative h-64 flex items-center justify-center bg-charcoal pt-20">
-        <div className="text-center">
-          <h1 className="font-serif text-4xl md:text-5xl text-cream mb-3">Termini e Condizioni</h1>
-          <p className="text-warm-grey max-w-lg mx-auto">
-            Condizioni di utilizzo del sito web
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Termini e Condizioni"
+        subtitle="Condizioni di utilizzo del sito web"
+      />
 
       <section className="py-16 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-neutral">
@@ -93,6 +91,15 @@ export default function TerminiPage() {
             <p className="text-xs text-warm-grey/60 pt-4 border-t border-charcoal/5">
               Ultimo aggiornamento: Febbraio 2026
             </p>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/"
+              className="inline-flex items-center px-6 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-charcoal/90 transition-colors duration-200 text-sm"
+            >
+              Torna alla Home
+            </Link>
           </div>
         </div>
       </section>

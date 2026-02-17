@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import prisma from '@/lib/prisma'
 import GalleryGrid from '@/components/GalleryGrid'
+import PageHero from '@/components/PageHero'
+import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = {
   title: 'Galleria',
@@ -33,19 +35,19 @@ export default async function GalleriaPage() {
 
   return (
     <>
-      <section className="relative h-64 flex items-center justify-center bg-charcoal pt-20">
-        <div className="text-center">
-          <h1 className="font-serif text-4xl md:text-5xl text-cream mb-3">La Nostra Galleria</h1>
-          <p className="text-warm-grey max-w-lg mx-auto">
-            Immagini dal nostro ristorante, dalla cucina e dai nostri piatti
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="La Nostra Galleria"
+        subtitle="Immagini dal nostro ristorante, dalla cucina e dai nostri piatti"
+      />
       <section className="py-16 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <GalleryGrid images={images} />
         </div>
       </section>
+      <CTASection
+        title="Ti Abbiamo Fatto Venire Fame?"
+        subtitle="Prenota il tuo tavolo e vieni a gustare dal vivo le nostre specialita alla brace."
+      />
     </>
   )
 }

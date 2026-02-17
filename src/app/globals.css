@@ -43,3 +43,8 @@ body {
 .animate-bounce-subtle {
   animation: bounce-subtle 2s ease-in-out infinite;
 }
+
+.bg-pattern-dark {
+  background-image: radial-gradient(circle at 1px 1px, rgba(196,163,90,0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}

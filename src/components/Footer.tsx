@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white">
+    <footer className="bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Col 1: Logo & Desc & Social */}
