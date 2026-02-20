@@ -44,7 +44,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="inline-block mb-6">
-          <span className="font-sc px-5 py-1.5 border border-gold/40 backdrop-blur-sm bg-white/5 rounded-full text-gold text-sm tracking-[0.25em]">
+          <span className="font-sc px-5 py-1.5 border border-gold/40 backdrop-blur-sm bg-white/5 rounded-full text-gold text-base tracking-[0.25em]">
             Dal 1997
           </span>
         </div>

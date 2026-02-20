@@ -14,7 +14,7 @@ export default function MenuFilter({ categories, activeCategory, onFilter, count
         <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-1">
           <button
             onClick={() => onFilter('Tutti')}
-            className={`flex-shrink-0 px-5 pb-2 font-sc text-sm tracking-[0.15em] transition-all duration-200 ${
+            className={`flex-shrink-0 px-5 pb-2 font-sc text-[13px] tracking-[0.15em] transition-all duration-200 ${
               activeCategory === 'Tutti'
                 ? 'text-gold border-b-2 border-gold'
                 : 'text-white/70 hover:text-gold border-b-2 border-transparent'
@@ -26,7 +26,7 @@ export default function MenuFilter({ categories, activeCategory, onFilter, count
             <button
               key={category}
               onClick={() => onFilter(category)}
-              className={`flex-shrink-0 px-5 pb-2 font-sc text-sm tracking-[0.15em] transition-all duration-200 ${
+              className={`flex-shrink-0 px-5 pb-2 font-sc text-[13px] tracking-[0.15em] transition-all duration-200 ${
                 activeCategory === category
                   ? 'text-gold border-b-2 border-gold'
                   : 'text-white/70 hover:text-gold border-b-2 border-transparent'

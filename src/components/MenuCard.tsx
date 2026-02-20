@@ -47,34 +47,34 @@ export default function MenuCard({ item }: { item: MenuItem }) {
         {/* Dietary Badges */}
         <div className="flex flex-wrap gap-1.5 mb-2">
           {item.isVegetarian && (
-            <span className="px-2.5 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+            <span className="px-2.5 py-0.5 bg-green-100 text-green-700 text-sm font-medium rounded-full">
               Vegetariano
             </span>
           )}
           {item.isVegan && (
-            <span className="px-2.5 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+            <span className="px-2.5 py-0.5 bg-green-100 text-green-700 text-sm font-medium rounded-full">
               Vegano
             </span>
           )}
           {item.isGlutenFree && (
-            <span className="px-2.5 py-0.5 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">
+            <span className="px-2.5 py-0.5 bg-amber-100 text-amber-700 text-sm font-medium rounded-full">
               Senza Glutine
             </span>
           )}
           {item.isSpicy && (
-            <span className="px-2.5 py-0.5 bg-red-100 text-red-700 text-xs font-medium rounded-full">
+            <span className="px-2.5 py-0.5 bg-red-100 text-red-700 text-sm font-medium rounded-full">
               Piccante
             </span>
           )}
           {item.isChefSpecial && (
-            <span className="px-2.5 py-0.5 bg-gold/20 text-gold-dark text-xs font-medium rounded-full">
+            <span className="px-2.5 py-0.5 bg-gold/20 text-gold-dark text-sm font-medium rounded-full">
               ★ Chef Special
             </span>
           )}
         </div>
 
         {item.allergens && (
-          <p className="text-xs text-warm-grey/70">
+          <p className="text-sm text-warm-grey/70">
             Allergeni: {item.allergens}
           </p>
         )}

@@ -27,7 +27,7 @@ export default function CTASection({
         </div>
         <h2 className="font-serif font-light text-3xl md:text-5xl text-gradient-gold mb-4 tracking-tight">{title}</h2>
         <div className="w-16 h-1 bg-gold mx-auto mb-6" />
-        <p className="text-cream/85 text-base leading-[1.8] mb-8 max-w-xl mx-auto">{subtitle}</p>
+        <p className="text-cream/85 text-lg leading-[1.8] mb-8 max-w-xl mx-auto">{subtitle}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href={primaryHref}

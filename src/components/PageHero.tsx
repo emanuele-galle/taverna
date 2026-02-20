@@ -43,7 +43,7 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
               { name: breadcrumb },
             ]} />
             <nav className="mb-4" aria-label="Breadcrumb">
-              <span className="font-sc tracking-[0.25em] text-gold/70 text-sm">
+              <span className="font-sc tracking-[0.25em] text-gold/70 text-base">
                 <Link href="/" className="hover:text-gold transition-colors">Home</Link>
                 <span className="mx-2 text-gold/40">/</span>
                 <span className="text-gold">{breadcrumb}</span>
@@ -51,9 +51,9 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
             </nav>
           </>
         )}
-        <h1 className="font-serif font-light text-5xl md:text-6xl text-cream tracking-tight mb-3 drop-shadow-sm">{title}</h1>
+        <h1 className="font-serif font-light text-[2.8rem] md:text-[3.5rem] text-cream tracking-tight mb-3 drop-shadow-sm">{title}</h1>
         {subtitle && (
-          <p className="text-lg font-serif italic text-cream/80 max-w-lg mx-auto mb-2">{subtitle}</p>
+          <p className="text-xl font-serif italic text-cream/80 max-w-2xl mx-auto mb-2">{subtitle}</p>
         )}
         <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4" />
         {children}

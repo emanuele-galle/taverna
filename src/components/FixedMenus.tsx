@@ -36,7 +36,7 @@ export default function FixedMenus() {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="font-sc tracking-[0.25em] text-gold/80 text-sm block text-center mb-3">La Nostra Offerta</span>
+        <span className="font-sc tracking-[0.25em] text-gold/80 text-base block text-center mb-3">La Nostra Offerta</span>
         <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
           I Nostri Menu
         </h2>
@@ -55,7 +55,7 @@ export default function FixedMenus() {
               }`}
             >
               {menu.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-sc text-xs tracking-[0.15em] px-4 py-1 rounded-full whitespace-nowrap">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-sc text-sm tracking-[0.15em] px-4 py-1 rounded-full whitespace-nowrap">
                   {menu.badge}
                 </span>
               )}
@@ -66,7 +66,7 @@ export default function FixedMenus() {
                 <span className="font-serif font-light text-6xl text-gradient-gold">
                   &euro;{menu.price}
                 </span>
-                <span className="text-cream/60 text-sm">/persona</span>
+                <span className="text-cream/60 text-base">/persona</span>
               </p>
               <ul className="space-y-2 mb-4">
                 {menu.items.map((item) => (
@@ -80,14 +80,14 @@ export default function FixedMenus() {
                 ))}
               </ul>
               {menu.note && (
-                <p className="text-cream/60 text-xs text-center font-serif italic">
+                <p className="text-cream/60 text-sm text-center font-serif italic">
                   {menu.note}
                 </p>
               )}
             </div>
           ))}
         </div>
-        <p className="text-cream/60 text-sm text-center mt-8">
+        <p className="text-cream/60 text-base text-center mt-8">
           Coperto: &euro;2,00 &middot; Comunicare eventuali intolleranze alimentari
         </p>
       </div>

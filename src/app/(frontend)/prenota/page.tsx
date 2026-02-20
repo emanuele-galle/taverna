@@ -26,6 +26,7 @@ export default function PrenotaPage() {
       <PageHero
         title="Prenota il Tuo Tavolo"
         subtitle="Compila il modulo e ti confermeremo la prenotazione"
+        image="/images/hero/interno.jpg"
         breadcrumb="Prenota"
       />
 
