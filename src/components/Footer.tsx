@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal-deep text-white bg-pattern-dark text-[16px]">
+    <footer className="bg-charcoal-deep text-white bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Col 1: Logo & Desc & Social */}
@@ -18,7 +18,7 @@ export default function Footer() {
                 className="h-[70px] w-auto"
               />
             </Link>
-            <p className="text-sm text-white/70 leading-relaxed mb-4">
+            <p className="text-base text-white/70 leading-relaxed mb-4">
               Dal 1997 portiamo a Milano la tradizione della vera carne alla brace con passione e qualit&agrave;.
             </p>
             {/* Social Icons */}
@@ -62,7 +62,7 @@ export default function Footer() {
 
           {/* Col 2: Menu Veloce + Legal */}
           <div>
-            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
+            <h3 className="font-sc text-gold text-base tracking-[0.25em] mb-4">
               Menu Veloce
             </h3>
             <ul className="space-y-3">
@@ -77,7 +77,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-gold transition-colors duration-200"
+                    className="text-base text-white/70 hover:text-gold transition-colors duration-200"
                   >
                     &rarr; {link.label}
                   </Link>
@@ -85,15 +85,15 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap gap-3">
-              <Link href="/privacy" className="text-xs text-white/50 hover:text-gold transition-colors">
+              <Link href="/privacy" className="text-base text-white/50 hover:text-gold transition-colors">
                 Privacy Policy
               </Link>
               <span className="text-white/20">&bull;</span>
-              <Link href="/cookie" className="text-xs text-white/50 hover:text-gold transition-colors">
+              <Link href="/cookie" className="text-base text-white/50 hover:text-gold transition-colors">
                 Cookie Policy
               </Link>
               <span className="text-white/20">&bull;</span>
-              <Link href="/termini" className="text-xs text-white/50 hover:text-gold transition-colors">
+              <Link href="/termini" className="text-base text-white/50 hover:text-gold transition-colors">
                 Termini e Condizioni
               </Link>
             </div>
@@ -101,13 +101,13 @@ export default function Footer() {
 
           {/* Col 3: Contatti + Orari */}
           <div>
-            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
+            <h3 className="font-sc text-gold text-base tracking-[0.25em] mb-4">
               Contatti
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-white/70">
+                <span className="text-base text-white/70">
                   Via Spartaco, 4, 20135 Milano MI
                 </span>
               </li>
@@ -115,7 +115,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="tel:+390255194005"
-                  className="text-sm text-white/70 hover:text-gold transition-colors"
+                  className="text-base text-white/70 hover:text-gold transition-colors"
                 >
                   02 5519 4005
                 </a>
@@ -124,30 +124,30 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="mailto:info@latavernadegliamici.it"
-                  className="text-sm text-white/70 hover:text-gold transition-colors"
+                  className="text-base text-white/70 hover:text-gold transition-colors"
                 >
                   info@latavernadegliamici.it
                 </a>
               </li>
             </ul>
 
-            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mt-6 mb-4">
+            <h3 className="font-sc text-gold text-base tracking-[0.25em] mt-6 mb-4">
               Orari di Apertura
             </h3>
             <div className="space-y-3">
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm text-white/80 font-medium">Lunedì - Sabato</p>
-                  <p className="text-sm text-white/60">Pranzo: 12:00 - 15:00</p>
-                  <p className="text-sm text-white/60">Cena: 19:30 - 02:00</p>
+                  <p className="text-base text-white/80 font-medium">Lunedì - Sabato</p>
+                  <p className="text-base text-white/60">Pranzo: 12:00 - 15:00</p>
+                  <p className="text-base text-white/60">Cena: 19:30 - 02:00</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-sm text-white/80 font-medium">Domenica</p>
-                  <p className="text-sm text-white/60">Chiuso</p>
+                  <p className="text-base text-white/80 font-medium">Domenica</p>
+                  <p className="text-base text-white/60">Chiuso</p>
                 </div>
               </div>
             </div>
@@ -156,10 +156,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex items-center justify-between">
-          <p className="text-xs text-white/50">
+          <p className="text-base text-white/50">
             &copy; {new Date().getFullYear()} La Taverna degli Amici. Tutti i diritti riservati.
           </p>
-          <p className="text-xs text-white/40">
+          <p className="text-base text-white/40">
             Sito sviluppato da{' '}
             <a
               href="https://fodisrl.it/"

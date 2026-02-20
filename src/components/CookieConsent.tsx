@@ -40,14 +40,14 @@ export default function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 text-[16px] transition-transform duration-500 ease-out"
+      className="fixed bottom-0 left-0 right-0 z-50 transition-transform duration-500 ease-out"
       style={{ transform: visible ? 'translateY(0)' : 'translateY(100%)' }}
     >
       <div className="bg-[#2C2C2C]/95 backdrop-blur-md border-t border-[#C8A97E]/20 px-4 py-5 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           {!showPreferences ? (
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <p className="text-[#F5F0EB] text-sm flex-1">
+              <p className="text-[#F5F0EB] text-base flex-1">
                 Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito.
                 Per saperne di più, consulta la nostra{' '}
                 <Link href="/cookie" className="text-[#C8A97E] underline hover:text-[#C8A97E]/80 transition-colors">
@@ -57,13 +57,13 @@ export default function CookieConsent() {
               <div className="flex items-center gap-3 shrink-0">
                 <button
                   onClick={() => setShowPreferences(true)}
-                  className="px-4 py-2 text-sm font-medium text-[#F5F0EB] border border-[#C8A97E]/40 rounded-lg hover:border-[#C8A97E] transition-colors"
+                  className="px-4 py-2 text-base font-medium text-[#F5F0EB] border border-[#C8A97E]/40 rounded-lg hover:border-[#C8A97E] transition-colors"
                 >
                   Gestisci Preferenze
                 </button>
                 <button
                   onClick={acceptAll}
-                  className="px-4 py-2 text-sm font-medium bg-[#C8A97E] text-[#2C2C2C] rounded-lg hover:bg-[#C8A97E]/90 transition-colors"
+                  className="px-4 py-2 text-base font-medium bg-[#C8A97E] text-[#2C2C2C] rounded-lg hover:bg-[#C8A97E]/90 transition-colors"
                 >
                   Accetta Tutti
                 </button>
@@ -71,13 +71,13 @@ export default function CookieConsent() {
             </div>
           ) : (
             <div className="space-y-4">
-              <p className="text-[#F5F0EB] text-sm font-medium">Gestisci le tue preferenze cookie</p>
+              <p className="text-[#F5F0EB] text-base font-medium">Gestisci le tue preferenze cookie</p>
 
               <div className="space-y-3">
                 <label className="flex items-center justify-between">
                   <div>
-                    <span className="text-[#F5F0EB] text-sm font-medium">Necessari</span>
-                    <p className="text-[#F5F0EB]/60 text-xs">Essenziali per il funzionamento del sito</p>
+                    <span className="text-[#F5F0EB] text-base font-medium">Necessari</span>
+                    <p className="text-[#F5F0EB]/60 text-base">Essenziali per il funzionamento del sito</p>
                   </div>
                   <div className="relative">
                     <input type="checkbox" checked disabled className="sr-only peer" />
@@ -88,8 +88,8 @@ export default function CookieConsent() {
 
                 <label className="flex items-center justify-between cursor-pointer">
                   <div>
-                    <span className="text-[#F5F0EB] text-sm font-medium">Statistici</span>
-                    <p className="text-[#F5F0EB]/60 text-xs">Ci aiutano a capire come usi il sito</p>
+                    <span className="text-[#F5F0EB] text-base font-medium">Statistici</span>
+                    <p className="text-[#F5F0EB]/60 text-base">Ci aiutano a capire come usi il sito</p>
                   </div>
                   <div className="relative">
                     <input
@@ -105,8 +105,8 @@ export default function CookieConsent() {
 
                 <label className="flex items-center justify-between cursor-pointer">
                   <div>
-                    <span className="text-[#F5F0EB] text-sm font-medium">Marketing</span>
-                    <p className="text-[#F5F0EB]/60 text-xs">Personalizzazione di annunci e contenuti</p>
+                    <span className="text-[#F5F0EB] text-base font-medium">Marketing</span>
+                    <p className="text-[#F5F0EB]/60 text-base">Personalizzazione di annunci e contenuti</p>
                   </div>
                   <div className="relative">
                     <input
@@ -124,13 +124,13 @@ export default function CookieConsent() {
               <div className="flex items-center gap-3 pt-2">
                 <button
                   onClick={() => setShowPreferences(false)}
-                  className="px-4 py-2 text-sm font-medium text-[#F5F0EB]/70 hover:text-[#F5F0EB] transition-colors"
+                  className="px-4 py-2 text-base font-medium text-[#F5F0EB]/70 hover:text-[#F5F0EB] transition-colors"
                 >
                   Indietro
                 </button>
                 <button
                   onClick={savePreferences}
-                  className="px-4 py-2 text-sm font-medium bg-[#C8A97E] text-[#2C2C2C] rounded-lg hover:bg-[#C8A97E]/90 transition-colors"
+                  className="px-4 py-2 text-base font-medium bg-[#C8A97E] text-[#2C2C2C] rounded-lg hover:bg-[#C8A97E]/90 transition-colors"
                 >
                   Salva Preferenze
                 </button>

@@ -103,7 +103,7 @@ export default function ContactForm() {
           placeholder="Mario Rossi"
           className={`${inputClass} placeholder:text-warm-grey/50`}
         />
-        {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+        {errors.name && <p className="text-red-400 text-base mt-1">{errors.name}</p>}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -119,7 +119,7 @@ export default function ContactForm() {
             placeholder="mario@esempio.it"
             className={`${inputClass} placeholder:text-warm-grey/50`}
           />
-          {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+          {errors.email && <p className="text-red-400 text-base mt-1">{errors.email}</p>}
         </div>
 
         {/* Phone */}
@@ -168,7 +168,7 @@ export default function ContactForm() {
           placeholder="Scrivi il tuo messaggio..."
           className={`${inputClass} placeholder:text-warm-grey/50 resize-none`}
         />
-        {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
+        {errors.message && <p className="text-red-400 text-base mt-1">{errors.message}</p>}
       </div>
 
       {/* Privacy Checkbox */}
@@ -181,17 +181,17 @@ export default function ContactForm() {
             onChange={handleChange}
             className="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 text-gold focus:ring-gold/50 focus:ring-offset-0"
           />
-          <span className="text-sm text-warm-grey leading-relaxed">
+          <span className="text-base text-warm-grey leading-relaxed">
             Accetto il trattamento dei dati personali secondo la{' '}
             <a href="/privacy" className="text-gold hover:text-gold-light underline">privacy policy</a> *
           </span>
         </label>
-        {errors.privacy && <p className="text-red-400 text-sm mt-1">{errors.privacy}</p>}
+        {errors.privacy && <p className="text-red-400 text-base mt-1">{errors.privacy}</p>}
       </div>
 
       {/* Error */}
       {status === 'error' && (
-        <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm">
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-base">
           {errorMessage}
         </div>
       )}

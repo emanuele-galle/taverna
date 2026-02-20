@@ -85,8 +85,8 @@ export default async function HomePage() {
       {/* Perché Scegliere - gradient charcoal→burgundy→charcoal */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold/80 text-sm block text-center mb-3">I Nostri Punti di Forza</span>
-            <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
+            <span className="font-sc tracking-[0.18em] text-gold/80 text-base block text-center mb-3">I Nostri Punti di Forza</span>
+            <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
               Perch&eacute; Scegliere La Taverna degli Amici
             </h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12" />
@@ -99,7 +99,7 @@ export default async function HomePage() {
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-3">
                     <item.icon className="w-6 h-6 text-gold" />
                   </div>
-                  <span className="font-serif font-light text-4xl text-gradient-gold block mb-2">{item.counter}</span>
+                  <span className="font-serif font-normal text-4xl text-gradient-gold block mb-2">{item.counter}</span>
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
                   <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
                 </div>
@@ -112,7 +112,7 @@ export default async function HomePage() {
       <section className="py-16 md:py-24 bg-smoke">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="border-l-2 border-gold/30 pl-6 mb-12 max-w-2xl">
-              <h2 className="font-serif font-light text-3xl md:text-5xl text-burgundy mb-3 tracking-tight">
+              <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy mb-3 tracking-tight">
                 Una Storia di Passione
               </h2>
               <p className="font-serif italic text-lg text-warm-grey">
@@ -127,7 +127,7 @@ export default async function HomePage() {
                   <div key={step.year} className="relative pl-12 md:pl-16 hover:translate-x-1 transition-transform duration-300">
                     {/* Dot */}
                     <div className="absolute left-2 md:left-4 top-1 w-5 h-5 rounded-full bg-gold border-4 border-smoke" />
-                    <span className="inline-block font-sc tracking-[0.15em] text-burgundy text-sm mb-1">
+                    <span className="inline-block font-sc tracking-[0.15em] text-burgundy text-base mb-1">
                       {step.year}
                     </span>
                     <h3 className="font-serif text-xl text-espresso mb-2">{step.title}</h3>
@@ -152,8 +152,8 @@ export default async function HomePage() {
       {/* Le Nostre Specialita alla Brace - bg cream-warm */}
       <section className="py-16 md:py-24 bg-cream-warm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold-dark text-sm block text-center mb-3">Dalla Nostra Brace</span>
-            <h2 className="font-serif font-light text-3xl md:text-5xl text-burgundy text-center mb-4 tracking-tight">
+            <span className="font-sc tracking-[0.18em] text-gold-dark text-base block text-center mb-3">Dalla Nostra Brace</span>
+            <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy text-center mb-4 tracking-tight">
               Le Nostre Specialit&agrave; alla Brace
             </h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
@@ -181,7 +181,7 @@ export default async function HomePage() {
                         {item.badges.map((badge) => (
                           <span
                             key={badge}
-                            className="font-sc text-xs tracking-[0.1em] bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
+                            className="font-sc text-base tracking-[0.1em] bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
                           >
                             {badge}
                           </span>
@@ -198,7 +198,7 @@ export default async function HomePage() {
                       <span className="bg-gold/10 text-burgundy font-bold text-lg px-3 py-1 rounded-full">
                         &euro;{item.price},00
                       </span>
-                      <span className="flex items-center gap-1 text-gold font-semibold text-sm">
+                      <span className="flex items-center gap-1 text-gold font-semibold text-base">
                         <Flame className="w-4 h-4" /> {item.rating}
                       </span>
                     </div>

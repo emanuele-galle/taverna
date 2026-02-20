@@ -49,7 +49,7 @@ export default function HeroSection() {
           </span>
         </div>
 
-        <p className="font-serif font-light text-2xl sm:text-3xl md:text-4xl text-cream mb-4 leading-tight tracking-tight">
+        <p className="font-serif font-normal text-2xl sm:text-3xl md:text-4xl text-cream mb-4 leading-tight tracking-tight">
           La Taverna degli Amici
         </p>
 
@@ -81,7 +81,7 @@ export default function HeroSection() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1">
-        <span className="font-sc text-[10px] tracking-[0.3em] text-cream/50">SCOPRI</span>
+        <span className="font-sc text-xs tracking-[0.3em] text-cream/50">SCOPRI</span>
         <svg className="w-5 h-5 text-cream/40 animate-bounce-subtle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
         </svg>

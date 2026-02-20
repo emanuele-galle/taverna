@@ -27,8 +27,8 @@ export default function PrivacyPage() {
       />
 
       <section className="py-16 bg-cream">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm">
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-charcoal/5 space-y-6 text-warm-grey text-sm leading-relaxed">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-base">
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-charcoal/5 space-y-6 text-warm-grey text-base leading-relaxed">
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">Titolare del Trattamento</h2>
               <p>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
               </p>
             </div>
 
-            <p className="text-xs text-warm-grey/70 pt-4 border-t border-charcoal/5">
+            <p className="text-base text-warm-grey/70 pt-4 border-t border-charcoal/5">
               Informativa ai sensi del D.Lgs. 196/2003 e del Regolamento UE 2016/679 (GDPR).
               Ultimo aggiornamento: Febbraio 2026.
             </p>
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
           <div className="text-center mt-8">
             <Link
               href="/"
-              className="inline-flex items-center px-6 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-charcoal/90 transition-colors duration-200 text-sm"
+              className="inline-flex items-center px-6 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-charcoal/90 transition-colors duration-200 text-base"
             >
               Torna alla Home
             </Link>

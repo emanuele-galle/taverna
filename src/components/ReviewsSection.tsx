@@ -34,8 +34,8 @@ export default function ReviewsSection() {
   return (
     <section className="py-16 md:py-24 bg-charcoal bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="font-sc tracking-[0.18em] text-gold/80 text-sm block text-center mb-3">Testimonianze</span>
-        <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
+        <span className="font-sc tracking-[0.18em] text-gold/80 text-base block text-center mb-3">Testimonianze</span>
+        <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
           Cosa Dicono i Nostri Clienti
         </h2>
         <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
@@ -60,11 +60,11 @@ export default function ReviewsSection() {
               <div className="border-t border-white/10 pt-4">
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center ring-2 ring-gold/30`}>
-                    <span className="text-cream font-semibold text-sm">{review.initial}</span>
+                    <span className="text-cream font-semibold text-base">{review.initial}</span>
                   </div>
                   <div>
                     <p className="font-semibold text-cream">{review.name}</p>
-                    <p className="text-cream/50 text-sm">
+                    <p className="text-cream/50 text-base">
                       {review.city} &bull; {review.date}
                     </p>
                   </div>

@@ -24,7 +24,7 @@ export default function WhatsAppButton() {
     >
       {/* Tooltip */}
       {(hovered || showTooltip) && (
-        <span className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-charcoal text-cream text-xs rounded-lg whitespace-nowrap shadow-lg">
+        <span className="absolute bottom-full right-0 mb-2 px-3 py-1.5 bg-charcoal text-cream text-sm rounded-lg whitespace-nowrap shadow-lg">
           Scrivici su WhatsApp
         </span>
       )}

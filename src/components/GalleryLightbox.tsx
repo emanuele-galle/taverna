@@ -79,7 +79,7 @@ export default function GalleryLightbox({
       </button>
 
       {/* Counter */}
-      <div className="absolute top-4 left-4 text-white/70 text-sm z-10">
+      <div className="absolute top-4 left-4 text-white/70 text-base z-10">
         {currentIndex + 1} / {images.length}
       </div>
 
@@ -105,7 +105,7 @@ export default function GalleryLightbox({
       </div>
 
       {/* Caption */}
-      <p className="text-white/70 text-sm mt-4 text-center px-4 max-w-2xl">
+      <p className="text-white/70 text-base mt-4 text-center px-4 max-w-2xl">
         {current.alt}
       </p>
 

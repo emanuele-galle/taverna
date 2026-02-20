@@ -129,7 +129,7 @@ export default function BookingForm() {
             min={new Date().toISOString().split('T')[0]}
             className={inputClass}
           />
-          {errors.date && <p className="text-red-400 text-sm mt-1">{errors.date}</p>}
+          {errors.date && <p className="text-red-400 text-base mt-1">{errors.date}</p>}
         </div>
 
         {/* Time */}
@@ -149,7 +149,7 @@ export default function BookingForm() {
               </option>
             ))}
           </select>
-          {errors.time && <p className="text-red-400 text-sm mt-1">{errors.time}</p>}
+          {errors.time && <p className="text-red-400 text-base mt-1">{errors.time}</p>}
         </div>
 
         {/* Guests */}
@@ -168,7 +168,7 @@ export default function BookingForm() {
               </option>
             ))}
           </select>
-          {errors.guests && <p className="text-red-400 text-sm mt-1">{errors.guests}</p>}
+          {errors.guests && <p className="text-red-400 text-base mt-1">{errors.guests}</p>}
         </div>
       </div>
 
@@ -184,7 +184,7 @@ export default function BookingForm() {
           placeholder="Mario Rossi"
           className={`${inputClass} placeholder:text-warm-grey/50`}
         />
-        {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+        {errors.name && <p className="text-red-400 text-base mt-1">{errors.name}</p>}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -200,7 +200,7 @@ export default function BookingForm() {
             placeholder="mario@esempio.it"
             className={`${inputClass} placeholder:text-warm-grey/50`}
           />
-          {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+          {errors.email && <p className="text-red-400 text-base mt-1">{errors.email}</p>}
         </div>
 
         {/* Phone */}
@@ -215,7 +215,7 @@ export default function BookingForm() {
             placeholder="+39 333 1234567"
             className={`${inputClass} placeholder:text-warm-grey/50`}
           />
-          {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
+          {errors.phone && <p className="text-red-400 text-base mt-1">{errors.phone}</p>}
         </div>
       </div>
 
@@ -237,7 +237,7 @@ export default function BookingForm() {
 
       {/* Error Message */}
       {status === 'error' && (
-        <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm">
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-base">
           {errorMessage}
         </div>
       )}

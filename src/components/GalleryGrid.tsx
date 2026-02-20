@@ -37,7 +37,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-5 pb-2 font-sc text-sm tracking-[0.15em] transition-all duration-200 ${
+            className={`px-5 pb-2 font-sc text-base tracking-[0.15em] transition-all duration-200 ${
               activeCategory === cat
                 ? 'text-burgundy border-b-2 border-gold'
                 : 'text-warm-grey hover:text-burgundy border-b-2 border-transparent'
@@ -66,7 +66,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
               loading={index < 8 ? 'eager' : 'lazy'}
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-              <span className="text-cream font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-wider uppercase">{image.category}</span>
+              <span className="text-cream font-medium text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-wider uppercase">{image.category}</span>
             </div>
           </button>
         ))}

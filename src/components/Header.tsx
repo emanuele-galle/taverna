@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b text-[16px]"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b"
       style={{
         backgroundColor: `rgba(26, 26, 26, ${scrollProgress * 0.95})`,
         backdropFilter: `blur(${scrollProgress * 12}px)`,
@@ -55,7 +55,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative font-sc text-[13px] tracking-[0.2em] transition-colors duration-300 ${
+                className={`relative font-sc text-base tracking-[0.2em] transition-colors duration-300 ${
                   pathname === link.href
                     ? 'text-gold nav-link-active'
                     : 'text-white hover:text-gold underline-grow'
@@ -69,7 +69,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/prenota"
-              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-sc text-[11px] tracking-[0.2em] rounded-full shadow-[0_4px_15px_rgba(196,163,90,0.2)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-sc text-sm tracking-[0.2em] rounded-full shadow-[0_4px_15px_rgba(196,163,90,0.2)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
               Prenota
             </Link>

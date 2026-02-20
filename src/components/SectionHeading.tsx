@@ -18,11 +18,11 @@ export default function SectionHeading({
   return (
     <div className={`flex flex-col ${alignClass} mb-16`}>
       {label && (
-        <span className="font-sc tracking-[0.18em] text-sm text-gold mb-4 block">
+        <span className="font-sc tracking-[0.18em] text-base text-gold mb-4 block">
           {label}
         </span>
       )}
-      <h2 className="font-serif font-light tracking-tight text-[length:var(--font-size-heading)]">
+      <h2 className="font-serif font-normal tracking-tight text-[length:var(--font-size-heading)]">
         {title}
       </h2>
       {variant === 'dark' ? (
