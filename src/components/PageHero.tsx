@@ -51,7 +51,7 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
             </nav>
           </>
         )}
-        <h1 className="font-serif font-light text-[2.8rem] md:text-[3.5rem] text-cream tracking-tight mb-3 drop-shadow-sm">{title}</h1>
+        <h1 className="font-serif font-light text-4xl md:text-6xl text-cream tracking-tight mb-3 drop-shadow-sm">{title}</h1>
         {subtitle && (
           <p className="text-xl font-serif italic text-cream/80 max-w-2xl mx-auto mb-2">{subtitle}</p>
         )}

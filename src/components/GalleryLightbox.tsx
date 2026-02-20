@@ -105,7 +105,7 @@ export default function GalleryLightbox({
       </div>
 
       {/* Caption */}
-      <p className="text-white/70 text-sm mt-4 text-center px-4 max-w-2xl">
+      <p className="text-white/70 text-base mt-4 text-center px-4 max-w-2xl">
         {current.alt}
       </p>
 

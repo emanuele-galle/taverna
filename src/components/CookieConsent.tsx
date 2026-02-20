@@ -40,7 +40,7 @@ export default function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 text-[16px] transition-transform duration-500 ease-out"
+      className="fixed bottom-0 left-0 right-0 z-50 transition-transform duration-500 ease-out"
       style={{ transform: visible ? 'translateY(0)' : 'translateY(100%)' }}
     >
       <div className="bg-[#2C2C2C]/95 backdrop-blur-md border-t border-[#C8A97E]/20 px-4 py-5 sm:px-6 lg:px-8">

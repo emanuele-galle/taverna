@@ -59,21 +59,21 @@ export default function HeroSection() {
           Carni alla Brace di Alta Qualit&agrave;
         </h1>
 
-        <p className="text-base sm:text-lg font-serif italic text-cream/70 mb-10 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl font-serif italic text-cream/70 mb-10 max-w-2xl mx-auto">
           Qualit&agrave;, esperienza e cultura dell&apos;ospitalit&agrave;
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/prenota"
-            className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-semibold rounded-full shadow-[0_4px_20px_rgba(196,163,90,0.25)] hover:shadow-[0_4px_30px_rgba(196,163,90,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-base"
+            className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-semibold rounded-full shadow-[0_4px_20px_rgba(196,163,90,0.25)] hover:shadow-[0_4px_30px_rgba(196,163,90,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-lg"
           >
             Prenota il Tuo Tavolo
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </Link>
           <Link
             href="/menu"
-            className="inline-flex items-center px-8 py-3.5 border border-gold/60 text-gold font-semibold rounded-full bg-gold/5 hover:bg-gold/15 active:scale-[0.98] transition-all duration-300 text-base"
+            className="inline-flex items-center px-8 py-3.5 border border-gold/60 text-gold font-semibold rounded-full bg-gold/5 hover:bg-gold/15 active:scale-[0.98] transition-all duration-300 text-lg"
           >
             Esplora il Menu
           </Link>

@@ -34,7 +34,7 @@ export default function ReviewsSection() {
   return (
     <section className="py-16 md:py-24 bg-charcoal bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="font-sc tracking-[0.18em] text-gold/80 text-sm block text-center mb-3">Testimonianze</span>
+        <span className="font-sc tracking-[0.18em] text-gold/80 text-base block text-center mb-3">Testimonianze</span>
         <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
           Cosa Dicono i Nostri Clienti
         </h2>
@@ -54,7 +54,7 @@ export default function ReviewsSection() {
                   <span key={i} className="text-gold text-xl">&#9733;</span>
                 ))}
               </div>
-              <p className="text-cream/80 text-base leading-relaxed italic mb-4">
+              <p className="text-cream/80 text-lg leading-relaxed italic mb-4">
                 &ldquo;{review.text}&rdquo;
               </p>
               <div className="border-t border-white/10 pt-4">

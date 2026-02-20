@@ -40,9 +40,9 @@ export default function PrenotaPage() {
               <div className="bg-white rounded-xl p-6 card-specialty hover-lift">
                 <div className="flex items-center gap-3 mb-3">
                   <Clock className="w-5 h-5 text-gold" />
-                  <h3 className="font-serif text-lg text-espresso">Orari</h3>
+                  <h3 className="font-serif text-xl text-espresso">Orari</h3>
                 </div>
-                <div className="text-base text-warm-grey space-y-1.5">
+                <div className="text-lg text-warm-grey space-y-1.5">
                   <p><span className="font-medium text-espresso">Lun - Sab</span></p>
                   <p>Pranzo: 12:00 - 15:00</p>
                   <p>Cena: 19:30 - 02:00</p>
@@ -52,18 +52,18 @@ export default function PrenotaPage() {
               <div className="bg-white rounded-xl p-6 card-specialty hover-lift">
                 <div className="flex items-center gap-3 mb-3">
                   <Phone className="w-5 h-5 text-gold" />
-                  <h3 className="font-serif text-lg text-espresso">Telefono</h3>
+                  <h3 className="font-serif text-xl text-espresso">Telefono</h3>
                 </div>
-                <a href="tel:+390255194005" className="text-base text-burgundy hover:text-gold transition-colors font-medium">
+                <a href="tel:+390255194005" className="text-lg text-burgundy hover:text-gold transition-colors font-medium">
                   02 5519 4005
                 </a>
               </div>
               <div className="bg-white rounded-xl p-6 card-specialty hover-lift">
                 <div className="flex items-center gap-3 mb-3">
                   <MapPin className="w-5 h-5 text-gold" />
-                  <h3 className="font-serif text-lg text-espresso">Indirizzo</h3>
+                  <h3 className="font-serif text-xl text-espresso">Indirizzo</h3>
                 </div>
-                <p className="text-base text-warm-grey">Via Spartaco, 4, 20135 Milano MI</p>
+                <p className="text-lg text-warm-grey">Via Spartaco, 4, 20135 Milano MI</p>
               </div>
             </div>
           </div>

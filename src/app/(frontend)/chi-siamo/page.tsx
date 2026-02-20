@@ -52,10 +52,10 @@ export default function ChiSiamoPage() {
       {/* Intro */}
       <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-cream">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-block font-sc tracking-[0.18em] px-5 py-2 bg-gold/10 text-gold-dark text-sm rounded-full mb-6 border border-gold/20">
+            <span className="inline-block font-sc tracking-[0.18em] px-5 py-2 bg-gold/10 text-gold-dark text-base rounded-full mb-6 border border-gold/20">
               Dal 1997
             </span>
-            <p className="text-warm-grey text-base md:text-lg leading-relaxed">
+            <p className="text-warm-grey text-lg md:text-xl leading-relaxed">
               <strong className="text-espresso">La Taverna degli Amici</strong> &egrave; molto pi&ugrave; di un
               semplice ristorante: &egrave; un luogo dove la passione per le carni di alta qualit&agrave; incontra la
               cultura dell&rsquo;ospitalit&agrave;, un&rsquo;oasi di sapori autentici nel cuore di Milano,
@@ -67,24 +67,24 @@ export default function ChiSiamoPage() {
       {/* Timeline con immagini alternate */}
       <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold/60 text-sm block text-center mb-3">Il Nostro Percorso</span>
+            <span className="font-sc tracking-[0.18em] text-gold/60 text-base block text-center mb-3">Il Nostro Percorso</span>
             <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">La Nostra Storia</h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-16" />
 
             {/* 1997 - L'Inizio di un Sogno */}
             <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
               <div className="md:w-1/2 order-2 md:order-1">
-                <span className="font-sc tracking-[0.15em] text-sm text-gold">1997</span>
+                <span className="font-sc tracking-[0.15em] text-base text-gold">1997</span>
                 <h3 className="font-serif font-light text-2xl text-cream mt-1 mb-4">
                   L&rsquo;Inizio di un Sogno
                 </h3>
-                <p className="text-cream/80 text-base leading-relaxed mb-4">
+                <p className="text-cream/80 text-lg leading-relaxed mb-4">
                   Ernesto Notaro, ristoratore di origini calabresi da Tiriolo, insieme alla moglie Rita
                   fonda La Taverna degli Amici. Il successo &egrave; immediato: la cucina si basa sulla
                   selezione di carni pregiate, tutte cotte visibilmente sulla brace a legna. La scelta
                   &egrave; chiara fin dal primo giorno &mdash; solo il meglio.
                 </p>
-                <p className="text-cream/80 text-base leading-relaxed">
+                <p className="text-cream/80 text-lg leading-relaxed">
                   Accanto alle carni, antipasti di eccellenza dalla tradizione regionale, oltre 50 tipi
                   di formaggi italiani ed esteri, e una cantina che cresce fino a superare le 500
                   etichette di vini selezionati.
@@ -116,13 +116,13 @@ export default function ChiSiamoPage() {
               </div>
               <div className="md:w-1/2">
                 <h3 className="font-serif font-light text-2xl text-cream mb-4">L&rsquo;Ambiente</h3>
-                <p className="text-cream/80 text-base leading-relaxed mb-4">
+                <p className="text-cream/80 text-lg leading-relaxed mb-4">
                   Un ambiente vivace e conviviale, dove tavoloni di legno e affreschi a trompe
                   l&rsquo;oeil creano un&rsquo;atmosfera calda e accogliente. Tre piani con diverse
                   salette, ognuna con il suo carattere, per ospitare cene intime e grandi tavolate.
                 </p>
                 <blockquote className="border-l-2 border-gold pl-5 mt-6 bg-white/5 rounded-r-lg py-3 pr-4">
-                  <p className="text-cream/75 font-serif italic text-base">
+                  <p className="text-cream/75 font-serif italic text-lg">
                     &ldquo;Le cinque sale allestite da Ernesto sono un capolavoro di ospitalit&agrave;, dove
                     ogni dettaglio &egrave; pensato per far sentire l&rsquo;ospite a casa.&rdquo;
                   </p>
@@ -137,13 +137,13 @@ export default function ChiSiamoPage() {
                   Un Locale Caldo e Amichevole
                 </h3>
                 <blockquote className="border-l-2 border-gold pl-5 mb-4 bg-white/5 rounded-r-lg py-3 pr-4">
-                  <p className="text-cream/80 font-serif italic text-base">
+                  <p className="text-cream/80 font-serif italic text-lg">
                     &ldquo;Se l&rsquo;accoglienza conta, e conta, la Taverna degli Amici parte
                     decisamente in pole position.&rdquo;
                   </p>
-                  <cite className="text-gold text-xs not-italic mt-1 block">&mdash; Locuste</cite>
+                  <cite className="text-gold text-sm not-italic mt-1 block">&mdash; Locuste</cite>
                 </blockquote>
-                <p className="text-cream/80 text-base leading-relaxed">
+                <p className="text-cream/80 text-lg leading-relaxed">
                   Ottime carni e buone bottiglie, in un locale dove Ernesto e Rita si alternano alla
                   guida con la stessa passione del primo giorno. L&rsquo;accoglienza non &egrave; un
                   dettaglio: &egrave; la firma della Taverna.
@@ -166,7 +166,7 @@ export default function ChiSiamoPage() {
       {/* Il Fondatore */}
       <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-smoke">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold-dark text-sm block text-center mb-3">Il Cuore della Taverna</span>
+            <span className="font-sc tracking-[0.18em] text-gold-dark text-base block text-center mb-3">Il Cuore della Taverna</span>
             <h2 className="font-serif font-light text-3xl md:text-5xl text-espresso text-center mb-4 tracking-tight">Il Fondatore</h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12" />
 
@@ -184,10 +184,10 @@ export default function ChiSiamoPage() {
 
               <div className="md:w-2/3">
                 <h3 className="font-serif font-light text-2xl text-espresso mb-1">Ernesto Notaro</h3>
-                <p className="font-sc tracking-[0.15em] text-gold-dark text-sm mb-4">
+                <p className="font-sc tracking-[0.15em] text-gold-dark text-base mb-4">
                   Fondatore e Anima della Taverna | Da Tiriolo (Calabria)
                 </p>
-                <p className="text-warm-grey text-base leading-relaxed mb-4">
+                <p className="text-warm-grey text-lg leading-relaxed mb-4">
                   Ristoratore di origini calabresi trasferitosi a Milano, insieme a Rita ha dato vita
                   nel 1997 a quello che &egrave; diventato un punto di riferimento per gli amanti della carne
                   di qualit&agrave;. Oltre 28 anni di esperienza, con la qualit&agrave; e l&rsquo;ospitalit&agrave; come
@@ -200,17 +200,17 @@ export default function ChiSiamoPage() {
                       key={quote.source}
                       className="flex-1 p-4 rounded-xl bg-parchment border border-gold/10 hover-lift"
                     >
-                      <p className="font-serif text-espresso italic text-base">
+                      <p className="font-serif text-espresso italic text-lg">
                         &ldquo;{quote.text}&rdquo;
                       </p>
-                      <cite className="text-gold-dark text-xs not-italic mt-1 block">
+                      <cite className="text-gold-dark text-sm not-italic mt-1 block">
                         &mdash; {quote.source}
                       </cite>
                     </blockquote>
                   ))}
                 </div>
 
-                <p className="text-warm-grey text-base leading-relaxed mb-6">
+                <p className="text-warm-grey text-lg leading-relaxed mb-6">
                   Le cinque sale allestite da Ernesto sono un capolavoro di ospitalit&agrave;, dove ogni
                   dettaglio &mdash; dai tavoloni in legno agli affreschi a trompe l&rsquo;oeil &mdash;
                   &egrave; pensato per far sentire ogni ospite parte della famiglia.
@@ -222,7 +222,7 @@ export default function ChiSiamoPage() {
                   </h4>
                   <ul className="space-y-2">
                     {fioriAllOcchiello.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-base text-warm-grey">
+                      <li key={item} className="flex items-start gap-2 text-lg text-warm-grey">
                         <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 shrink-0" />
                         {item}
                       </li>
@@ -249,7 +249,7 @@ export default function ChiSiamoPage() {
                     <item.icon className="w-6 h-6 text-gold" />
                   </div>
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
-                  <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
+                  <p className="text-cream/80 text-lg leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -262,7 +262,7 @@ export default function ChiSiamoPage() {
           <blockquote className="font-serif font-light text-2xl md:text-3xl text-espresso/90 italic leading-[1.6]">
             &ldquo;La vera ospitalit&agrave; nasce dal cuore: ogni cliente che entra dalla nostra porta non &egrave; un estraneo, ma un amico che ancora non conosce il sapore della nostra brace.&rdquo;
           </blockquote>
-          <cite className="block mt-4 font-sc tracking-[0.15em] text-gold-dark text-sm not-italic">
+          <cite className="block mt-4 font-sc tracking-[0.15em] text-gold-dark text-base not-italic">
             &mdash; Ernesto Notaro, Fondatore
           </cite>
         </div>
