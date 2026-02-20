@@ -86,7 +86,7 @@ export default function ContattiPage() {
               <a href={`tel:${restaurant.phone}`} className="text-lg text-burgundy hover:text-gold transition-colors font-medium">
                 {restaurant.phoneDisplay}
               </a>
-              <p className="text-base text-warm-grey mt-2">Lun-Sab 12:00-15:00, 19:00-23:00</p>
+              <p className="text-sm text-warm-grey mt-2">Lun-Sab 12:00-15:00, 19:00-23:00</p>
             </div>
 
             <div className="bg-white rounded-xl p-8 border-l-4 border-gold text-left">
@@ -97,7 +97,7 @@ export default function ContattiPage() {
               <a href={`mailto:${restaurant.email}`} className="text-base text-burgundy hover:text-gold transition-colors font-medium">
                 {restaurant.email}
               </a>
-              <p className="text-base text-warm-grey mt-2">Risposta entro 24h</p>
+              <p className="text-sm text-warm-grey mt-2">Risposta entro 24h</p>
             </div>
 
             <div className="bg-white rounded-xl p-8 border-l-4 border-green-500 text-left">

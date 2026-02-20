@@ -28,7 +28,7 @@ export default function PrivacyPage() {
 
       <section className="py-16 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm">
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-charcoal/5 space-y-6 text-warm-grey text-base leading-relaxed">
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-charcoal/5 space-y-6 text-warm-grey text-sm leading-relaxed">
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">Titolare del Trattamento</h2>
               <p>

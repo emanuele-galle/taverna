@@ -72,7 +72,7 @@ export default function FixedMenus() {
                 {menu.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-2 font-serif text-cream/80 text-lg"
+                    className="flex items-center gap-2 font-serif text-cream/80 text-base"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
                     {item}

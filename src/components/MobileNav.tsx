@@ -47,7 +47,7 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
         id="mobile-nav-panel"
         role="dialog"
         aria-modal="true"
-        className={`fixed inset-0 z-50 bg-gradient-to-b from-charcoal via-charcoal-light to-charcoal backdrop-blur-lg transition-all duration-500 ease-out ${
+        className={`fixed inset-0 z-50 text-[16px] bg-gradient-to-b from-charcoal via-charcoal-light to-charcoal backdrop-blur-lg transition-all duration-500 ease-out ${
           isOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
@@ -110,8 +110,8 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
           </nav>
 
           <div className="p-6 text-center space-y-2 border-t border-white/10">
-            <a href="tel:+390255194005" className="block text-base text-cream/60 hover:text-gold transition-colors">02 5519 4005</a>
-            <p className="text-sm text-cream/40">Via Spartaco, 4 - Milano</p>
+            <a href="tel:+390255194005" className="block text-sm text-cream/60 hover:text-gold transition-colors">02 5519 4005</a>
+            <p className="text-xs text-cream/40">Via Spartaco, 4 - Milano</p>
           </div>
         </div>
       </div>

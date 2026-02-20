@@ -31,7 +31,7 @@ export default function TerminiPage() {
           <div className="bg-white rounded-xl p-8 shadow-sm border border-charcoal/5 space-y-6">
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">1. Titolare del sito</h2>
-              <p className="text-base text-warm-grey leading-relaxed">
+              <p className="text-sm text-warm-grey leading-relaxed">
                 Il presente sito web &egrave; di propriet&agrave; di La Taverna degli Amici, con sede in Via Spartaco 4, 20154 Milano (MI).
                 Per qualsiasi comunicazione: info@latavernadegliamici.it | Tel. 02 5519 4005.
               </p>
@@ -39,7 +39,7 @@ export default function TerminiPage() {
 
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">2. Accettazione dei termini</h2>
-              <p className="text-base text-warm-grey leading-relaxed">
+              <p className="text-sm text-warm-grey leading-relaxed">
                 L&apos;accesso e l&apos;utilizzo di questo sito web implicano l&apos;accettazione integrale dei presenti Termini e Condizioni.
                 Se non si accettano tali condizioni, si prega di non utilizzare il sito.
               </p>
@@ -47,7 +47,7 @@ export default function TerminiPage() {
 
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">3. Propriet&agrave; intellettuale</h2>
-              <p className="text-base text-warm-grey leading-relaxed">
+              <p className="text-sm text-warm-grey leading-relaxed">
                 Tutti i contenuti presenti su questo sito (testi, immagini, loghi, grafica, video) sono protetti dal diritto d&apos;autore
                 e sono di propriet&agrave; esclusiva de La Taverna degli Amici, salvo diversa indicazione. &Egrave; vietata la riproduzione,
                 distribuzione o utilizzo non autorizzato dei contenuti.
@@ -56,7 +56,7 @@ export default function TerminiPage() {
 
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">4. Prenotazioni</h2>
-              <p className="text-base text-warm-grey leading-relaxed">
+              <p className="text-sm text-warm-grey leading-relaxed">
                 Le prenotazioni effettuate tramite il sito web sono soggette a conferma da parte del ristorante.
                 La Taverna degli Amici si riserva il diritto di modificare o cancellare prenotazioni in caso di
                 circostanze eccezionali, dandone tempestiva comunicazione al cliente.
@@ -65,7 +65,7 @@ export default function TerminiPage() {
 
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">5. Limitazione di responsabilit&agrave;</h2>
-              <p className="text-base text-warm-grey leading-relaxed">
+              <p className="text-sm text-warm-grey leading-relaxed">
                 La Taverna degli Amici si impegna a mantenere le informazioni del sito accurate e aggiornate,
                 ma non garantisce la completezza o l&apos;assenza di errori. Il ristorante non sar&agrave; responsabile
                 per eventuali danni derivanti dall&apos;utilizzo delle informazioni presenti sul sito.
@@ -74,7 +74,7 @@ export default function TerminiPage() {
 
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">6. Modifiche ai termini</h2>
-              <p className="text-base text-warm-grey leading-relaxed">
+              <p className="text-sm text-warm-grey leading-relaxed">
                 La Taverna degli Amici si riserva il diritto di modificare i presenti Termini e Condizioni in qualsiasi momento.
                 Le modifiche saranno effettive dal momento della pubblicazione sul sito.
               </p>
@@ -82,7 +82,7 @@ export default function TerminiPage() {
 
             <div>
               <h2 className="font-serif text-xl text-charcoal mb-3">7. Legge applicabile</h2>
-              <p className="text-base text-warm-grey leading-relaxed">
+              <p className="text-sm text-warm-grey leading-relaxed">
                 I presenti Termini e Condizioni sono regolati dalla legge italiana. Per qualsiasi controversia
                 sar&agrave; competente il Foro di Milano.
               </p>
