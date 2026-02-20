@@ -1,11 +1,19 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, DM_Sans } from 'next/font/google'
+import { Cormorant_Garamond, Cormorant_SC, DM_Sans } from 'next/font/google'
 import CookieConsent from '@/components/CookieConsent'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-serif',
+  display: 'swap',
+})
+
+const cormorantSC = Cormorant_SC({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-sc',
   display: 'swap',
 })
 
@@ -51,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className={`${playfair.variable} ${dmSans.variable}`}>
+    <html lang="it" className={`${cormorant.variable} ${cormorantSC.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         {children}
         <CookieConsent />

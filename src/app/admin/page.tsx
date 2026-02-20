@@ -137,12 +137,12 @@ export default async function AdminDashboardPage() {
         {/* Recent Activity */}
         <div className="bg-white rounded-xl shadow-sm border border-charcoal/5 overflow-hidden">
           <div className="px-6 py-4 border-b border-charcoal/5">
-            <h2 className="font-serif text-lg text-charcoal">Attivita Recente</h2>
+            <h2 className="font-serif text-lg text-charcoal">Attività Recente</h2>
           </div>
           <div className="divide-y divide-charcoal/5">
             {recentActivity.length === 0 ? (
               <div className="px-6 py-8 text-center text-warm-grey text-sm">
-                Nessuna attivita registrata
+                Nessuna attività registrata
               </div>
             ) : (
               recentActivity.map((log) => (

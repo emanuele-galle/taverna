@@ -24,14 +24,14 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
   return (
     <div>
       {/* Category Tabs */}
-      <div className="flex justify-center gap-2 mb-8">
+      <div className="flex justify-center gap-3 mb-10">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-5 pb-2 text-sm font-medium transition-all duration-200 ${
+            className={`px-5 pb-2 font-sc text-sm tracking-[0.15em] transition-all duration-200 ${
               activeCategory === cat
-                ? 'text-burgundy border-b-2 border-gold font-semibold'
+                ? 'text-burgundy border-b-2 border-gold'
                 : 'text-warm-grey hover:text-burgundy border-b-2 border-transparent'
             }`}
           >

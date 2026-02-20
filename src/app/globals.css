@@ -2,15 +2,22 @@
 
 @theme {
   --color-charcoal: #2C2C2C;
+  --color-charcoal-deep: #1A1A1A;
   --color-burgundy: #800020;
   --color-gold: #C4A35A;
+  --color-gold-dark: #A88B3D;
+  --color-gold-muted: #B8A068;
   --color-cream: #FAF9F6;
+  --color-cream-warm: #F5F0E8;
   --color-cream-dark: #F0EDE8;
   --color-warm-grey: #6B7280;
   --color-terracotta: #E07A5F;
   --color-wine: #722F37;
   --color-charcoal-light: #3D3D3D;
   --color-gold-light: #D4B06A;
+  --color-espresso: #3E2723;
+  --color-smoke: #F7F5F0;
+  --color-parchment: #EDE8DC;
 }
 
 html {
@@ -19,13 +26,22 @@ html {
 
 body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-  color: #1a1a1a;
+  color: #3E2723;
   background: #FAF9F6;
 }
 
 .font-serif {
   font-family: var(--font-serif), Georgia, 'Times New Roman', serif;
 }
+
+.font-sc {
+  font-family: var(--font-sc), var(--font-serif), serif;
+}
+
+/* ===== Typography Utilities ===== */
+
+.tracking-elegant { letter-spacing: 0.08em; }
+.tracking-display { letter-spacing: -0.02em; }
 
 /* ===== Animations ===== */
 
@@ -63,6 +79,27 @@ body {
   50% { transform: scaleY(1); transform-origin: top; }
   50.01% { transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05) translate(-1%, -1%); }
+  100% { transform: scale(1); }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-in-out infinite;
+}
+
+/* ===== Line Reveal ===== */
+
+.line-reveal {
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s;
+}
+.line-reveal.visible {
+  transform: scaleX(1);
 }
 
 /* ===== Background Patterns ===== */
@@ -113,19 +150,35 @@ body {
 /* ===== Card Effects ===== */
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(196,163,90,0.12);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+.card-specialty {
+  position: relative;
+  overflow: hidden;
+}
+.card-specialty::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #C4A35A, transparent);
 }
 
 /* ===== Hover Utilities ===== */
 
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  border-color: rgba(196,163,90,0.3);
 }
 
 .hover-glow-gold {
@@ -164,6 +217,14 @@ body {
   width: 100%;
   height: 1px;
   background: #C4A35A;
+}
+
+/* ===== Focus Ring Gold ===== */
+
+.focus-gold:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.15);
+  outline: none;
 }
 
 /* ===== Scrollbar ===== */

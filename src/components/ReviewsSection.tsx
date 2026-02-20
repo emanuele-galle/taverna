@@ -32,20 +32,21 @@ const reviews = [
 
 export default function ReviewsSection() {
   return (
-    <section className="py-24 bg-charcoal bg-pattern-dark">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-charcoal bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-3xl md:text-4xl text-cream text-center mb-4">
+        <span className="font-sc tracking-[0.25em] text-gold/80 text-sm block text-center mb-3">Testimonianze</span>
+        <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
           Cosa Dicono i Nostri Clienti
         </h2>
-        <div className="w-16 h-1 bg-gold mx-auto mb-6" />
-        <p className="text-cream/60 text-center mb-12 max-w-2xl mx-auto">
+        <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
+        <p className="font-serif italic text-lg text-cream/80 text-center mb-12 max-w-2xl mx-auto">
           Recensioni autentiche da chi ha assaporato le nostre carni alla brace
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((review) => (
             <div
               key={review.name}
-              className="glass-card rounded-xl p-8 hover-lift hover-glow-gold"
+              className="glass-card card-specialty rounded-xl p-8 hover-lift"
             >
               <span className="font-serif text-5xl text-gold/15 leading-none block -mb-2">&ldquo;</span>
               <div className="flex items-center gap-1 mb-3">
@@ -53,7 +54,7 @@ export default function ReviewsSection() {
                   <span key={i} className="text-gold text-xl">&#9733;</span>
                 ))}
               </div>
-              <p className="text-cream/80 text-sm italic leading-relaxed mb-4">
+              <p className="text-cream/80 text-base leading-[1.8] italic mb-4">
                 &ldquo;{review.text}&rdquo;
               </p>
               <div className="border-t border-white/10 pt-4">

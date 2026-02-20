@@ -10,23 +10,23 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-center">
             <div>
-              <span className="font-serif text-2xl text-gold">28+</span>
-              <p className="text-xs text-white/50 mt-1">Anni di Esperienza</p>
+              <span className="font-serif font-light text-3xl text-gold">28+</span>
+              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Anni di Esperienza</p>
             </div>
             <div className="w-px h-8 bg-white/10 hidden md:block" />
             <div>
-              <span className="font-serif text-2xl text-gold">500+</span>
-              <p className="text-xs text-white/50 mt-1">Etichette di Vini</p>
+              <span className="font-serif font-light text-3xl text-gold">500+</span>
+              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Etichette di Vini</p>
             </div>
             <div className="w-px h-8 bg-white/10 hidden md:block" />
             <div>
-              <span className="font-serif text-2xl text-gold">5</span>
-              <p className="text-xs text-white/50 mt-1">Sale Riservate</p>
+              <span className="font-serif font-light text-3xl text-gold">5</span>
+              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Sale Riservate</p>
             </div>
             <div className="w-px h-8 bg-white/10 hidden md:block" />
             <div>
-              <span className="font-serif text-2xl text-gold">Milano</span>
-              <p className="text-xs text-white/50 mt-1">Via Spartaco, 4</p>
+              <span className="font-serif font-light text-3xl text-gold">Milano</span>
+              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Via Spartaco, 4</p>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
                 className="h-[70px] w-auto"
               />
             </Link>
-            <p className="text-sm text-white/60 mb-4">
+            <p className="text-sm text-white/70 leading-relaxed mb-4">
               Dal 1997 portiamo a Milano la tradizione della vera carne alla brace con passione e qualit&agrave;.
             </p>
             {/* Social Icons */}
@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Col 2: Menu Veloce */}
           <div>
-            <h3 className="font-serif text-gold text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
               Menu Veloce
             </h3>
             <ul className="space-y-3">
@@ -103,7 +103,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/60 hover:text-gold transition-colors duration-200"
+                    className="text-sm text-white/70 hover:text-gold transition-colors duration-200"
                   >
                     &rarr; {link.label}
                   </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
 
           {/* Col 3: Orari di Apertura */}
           <div>
-            <h3 className="font-serif text-gold text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
               Orari di Apertura
             </h3>
             <div className="space-y-3">
@@ -122,15 +122,15 @@ export default function Footer() {
                 <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-white/80 font-medium">Lunedi - Sabato</p>
-                  <p className="text-xs text-white/50">Pranzo: 12:00 - 15:00</p>
-                  <p className="text-xs text-white/50">Cena: 19:30 - 02:00</p>
+                  <p className="text-sm text-white/60">Pranzo: 12:00 - 15:00</p>
+                  <p className="text-sm text-white/60">Cena: 19:30 - 02:00</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-white/80 font-medium">Domenica</p>
-                  <p className="text-xs text-white/50">Chiuso</p>
+                  <p className="text-sm text-white/60">Chiuso</p>
                 </div>
               </div>
             </div>
@@ -138,13 +138,13 @@ export default function Footer() {
 
           {/* Col 4: Contatti */}
           <div>
-            <h3 className="font-serif text-gold text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
               Contatti
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-white/60">
+                <span className="text-sm text-white/70">
                   Via Spartaco, 4, 20135 Milano MI
                 </span>
               </li>
@@ -152,7 +152,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="tel:+390255194005"
-                  className="text-sm text-white/60 hover:text-gold transition-colors"
+                  className="text-sm text-white/70 hover:text-gold transition-colors"
                 >
                   02 5519 4005
                 </a>
@@ -161,7 +161,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-gold flex-shrink-0" />
                 <a
                   href="mailto:info@latavernadegliamici.it"
-                  className="text-sm text-white/60 hover:text-gold transition-colors"
+                  className="text-sm text-white/70 hover:text-gold transition-colors"
                 >
                   info@latavernadegliamici.it
                 </a>
@@ -177,30 +177,30 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-white/10 flex flex-col items-center gap-4 text-center">
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} La Taverna degli Amici. Tutti i diritti riservati.
           </p>
-          <p className="text-sm text-gold/80 font-medium">Dal 1997 con passione | Milano</p>
+          <p className="font-serif italic text-sm text-gold/80">Dal 1997 con passione | Milano</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link href="/privacy" className="text-xs text-white/40 hover:text-gold transition-colors">
+            <Link href="/privacy" className="text-xs text-white/50 hover:text-gold transition-colors">
               Privacy Policy
             </Link>
             <span className="text-white/20">&bull;</span>
-            <Link href="/cookie" className="text-xs text-white/40 hover:text-gold transition-colors">
+            <Link href="/cookie" className="text-xs text-white/50 hover:text-gold transition-colors">
               Cookie Policy
             </Link>
             <span className="text-white/20">&bull;</span>
-            <Link href="/termini" className="text-xs text-white/40 hover:text-gold transition-colors">
+            <Link href="/termini" className="text-xs text-white/50 hover:text-gold transition-colors">
               Termini e Condizioni
             </Link>
           </div>
-          <p className="text-xs text-white/30">
+          <p className="text-xs text-white/40">
             Sito sviluppato da{' '}
             <a
               href="https://fodisrl.it/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/50 hover:text-gold transition-colors"
+              className="text-white/55 hover:text-gold transition-colors"
             >
               Fodi S.r.l.
             </a>

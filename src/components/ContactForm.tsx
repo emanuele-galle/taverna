@@ -87,11 +87,13 @@ export default function ContactForm() {
     )
   }
 
+  const inputClass = "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-cream text-base focus-gold transition-colors"
+
   return (
     <form onSubmit={handleSubmit} className="bg-charcoal-light rounded-2xl p-6 md:p-8 space-y-5">
       {/* Name */}
       <div>
-        <label htmlFor="contact-name" className="block text-sm text-cream mb-1.5">Nome *</label>
+        <label htmlFor="contact-name" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Nome *</label>
         <input
           type="text"
           id="contact-name"
@@ -99,7 +101,7 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder="Mario Rossi"
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+          className={`${inputClass} placeholder:text-warm-grey/50`}
         />
         {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
       </div>
@@ -107,7 +109,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Email */}
         <div>
-          <label htmlFor="contact-email" className="block text-sm text-cream mb-1.5">Email *</label>
+          <label htmlFor="contact-email" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Email *</label>
           <input
             type="email"
             id="contact-email"
@@ -115,14 +117,14 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="mario@esempio.it"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+            className={`${inputClass} placeholder:text-warm-grey/50`}
           />
           {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="contact-phone" className="block text-sm text-cream mb-1.5">Telefono</label>
+          <label htmlFor="contact-phone" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Telefono</label>
           <input
             type="tel"
             id="contact-phone"
@@ -130,20 +132,20 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+39 333 1234567"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+            className={`${inputClass} placeholder:text-warm-grey/50`}
           />
         </div>
       </div>
 
       {/* Subject */}
       <div>
-        <label htmlFor="contact-subject" className="block text-sm text-cream mb-1.5">Oggetto</label>
+        <label htmlFor="contact-subject" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Oggetto</label>
         <select
           id="contact-subject"
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm focus:outline-none focus:border-gold transition-colors"
+          className={inputClass}
         >
           <option value="" className="bg-charcoal">Seleziona un oggetto</option>
           <option value="Richiesta Informazioni" className="bg-charcoal">Richiesta Informazioni</option>
@@ -156,7 +158,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="contact-message" className="block text-sm text-cream mb-1.5">Messaggio *</label>
+        <label htmlFor="contact-message" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Messaggio *</label>
         <textarea
           id="contact-message"
           name="message"
@@ -164,7 +166,7 @@ export default function ContactForm() {
           onChange={handleChange}
           rows={5}
           placeholder="Scrivi il tuo messaggio..."
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors resize-none"
+          className={`${inputClass} placeholder:text-warm-grey/50 resize-none`}
         />
         {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
       </div>
@@ -198,7 +200,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full py-3 bg-gold text-charcoal font-semibold rounded-full hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-3 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-semibold rounded-full shadow-[0_4px_15px_rgba(196,163,90,0.2)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Invio in corso...' : 'Invia Messaggio'}
       </button>

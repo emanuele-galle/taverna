@@ -38,51 +38,54 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
         <Menu className="w-6 h-6" />
       </button>
 
-      {isOpen && (
-        <div
-          id="mobile-nav-panel"
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-50 bg-gradient-to-b from-charcoal via-charcoal-light to-charcoal backdrop-blur-lg"
-        >
-          <div className="flex flex-col h-full">
-            <div className="flex items-center justify-end p-4">
-              <button
-                ref={closeButtonRef}
-                onClick={handleClose}
-                className="p-2 text-cream hover:text-gold transition-colors"
-                aria-label="Chiudi menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <nav className="flex flex-col items-center justify-center flex-1 gap-6">
-              {links.map((link, index) => (
-                <div key={link.href} className="flex flex-col items-center gap-6">
-                  <Link
-                    href={link.href}
-                    onClick={handleClose}
-                    className="text-2xl font-serif text-cream hover:text-gold transition-colors duration-200 uppercase tracking-[0.1em]"
-                  >
-                    {link.label}
-                  </Link>
-                  {index < links.length - 1 && (
-                    <div className="w-8 h-px bg-gold/20" />
-                  )}
-                </div>
-              ))}
-              <Link
-                href="/prenota"
-                onClick={handleClose}
-                className="mt-4 inline-flex items-center px-8 py-3 bg-gradient-to-r from-gold to-gold-light text-charcoal font-semibold rounded-full hover:shadow-[0_0_20px_rgba(196,163,90,0.3)] transition-all duration-300"
-              >
-                Prenota Ora
-              </Link>
-            </nav>
+      <div
+        id="mobile-nav-panel"
+        role="dialog"
+        aria-modal="true"
+        className={`fixed inset-0 z-50 bg-gradient-to-b from-charcoal via-charcoal-light to-charcoal backdrop-blur-lg transition-all duration-500 ease-out ${
+          isOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-end p-4">
+            <button
+              ref={closeButtonRef}
+              onClick={handleClose}
+              className="p-2 text-cream hover:text-gold transition-colors"
+              aria-label="Chiudi menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
           </div>
+
+          <nav className="flex flex-col items-center justify-center flex-1 gap-6">
+            {links.map((link, index) => (
+              <div
+                key={link.href}
+                className="flex flex-col items-center gap-6"
+                style={{
+                  transform: isOpen ? 'translateY(0)' : 'translateY(20px)',
+                  opacity: isOpen ? 1 : 0,
+                  transition: `all 0.4s ease-out ${index * 0.06}s`,
+                }}
+              >
+                <Link
+                  href={link.href}
+                  onClick={handleClose}
+                  className="text-2xl font-serif font-light text-cream hover:text-gold transition-colors duration-200 tracking-[0.1em]"
+                >
+                  {link.label}
+                </Link>
+                {index < links.length - 1 && (
+                  <div className="w-8 h-px bg-gold/20" />
+                )}
+              </div>
+            ))}
+          </nav>
         </div>
-      )}
+      </div>
     </div>
   )
 }

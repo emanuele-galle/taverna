@@ -1,18 +1,54 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 interface PageHeroProps {
   title: string
   subtitle?: string
+  image?: string
+  overlay?: 'dark' | 'burgundy' | 'warm'
+  breadcrumb?: string
   children?: React.ReactNode
 }
 
-export default function PageHero({ title, subtitle, children }: PageHeroProps) {
+const overlayClasses = {
+  dark: 'from-charcoal-deep/90 via-charcoal/60 to-charcoal-deep/80',
+  burgundy: 'from-burgundy/80 via-charcoal/50 to-charcoal-deep/80',
+  warm: 'from-charcoal-deep/85 via-espresso/40 to-charcoal-deep/80',
+}
+
+export default function PageHero({ title, subtitle, image, overlay = 'dark', breadcrumb, children }: PageHeroProps) {
   return (
-    <section className="relative min-h-[280px] flex items-center justify-center bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal bg-pattern-dark pt-20 overflow-hidden">
-      <div className="text-center relative z-10">
-        <h1 className="font-serif text-4xl md:text-5xl text-cream mb-3 drop-shadow-sm">{title}</h1>
-        {subtitle && (
-          <p className="text-cream/60 max-w-lg mx-auto mb-2 uppercase tracking-wider text-sm">{subtitle}</p>
+    <section className="relative min-h-[360px] md:min-h-[420px] flex items-center justify-center overflow-hidden pt-20">
+      {image ? (
+        <>
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className={`absolute inset-0 bg-gradient-to-b ${overlayClasses[overlay]}`} />
+        </>
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal bg-pattern-dark" />
+      )}
+
+      <div className="text-center relative z-10 px-4">
+        {breadcrumb && (
+          <nav className="mb-4" aria-label="Breadcrumb">
+            <span className="font-sc tracking-[0.25em] text-gold/70 text-sm">
+              <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+              <span className="mx-2 text-gold/40">/</span>
+              <span className="text-gold">{breadcrumb}</span>
+            </span>
+          </nav>
         )}
-        <div className="w-16 h-1 bg-gold mx-auto mt-4" />
+        <h1 className="font-serif font-light text-5xl md:text-6xl text-cream tracking-tight mb-3 drop-shadow-sm">{title}</h1>
+        {subtitle && (
+          <p className="text-lg font-serif italic text-cream/80 max-w-lg mx-auto mb-2">{subtitle}</p>
+        )}
+        <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4" />
         {children}
       </div>
     </section>

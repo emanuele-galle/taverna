@@ -38,8 +38,11 @@ export default async function GalleriaPage() {
       <PageHero
         title="La Nostra Galleria"
         subtitle="Immagini dal nostro ristorante, dalla cucina e dai nostri piatti"
+        image="/images/gallery/piatti/arrosticini.jpg"
+        overlay="dark"
+        breadcrumb="Galleria"
       />
-      <section className="py-16 bg-cream">
+      <section className="py-12 sm:py-16 md:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <GalleryGrid images={images} />
         </div>

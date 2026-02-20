@@ -112,12 +112,14 @@ export default function BookingForm() {
     )
   }
 
+  const inputClass = "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-cream text-base focus-gold transition-colors"
+
   return (
     <form onSubmit={handleSubmit} className="bg-charcoal-light rounded-2xl p-6 md:p-8 space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* Date */}
         <div>
-          <label htmlFor="date" className="block text-sm text-cream mb-1.5">Data *</label>
+          <label htmlFor="date" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Data *</label>
           <input
             type="date"
             id="date"
@@ -125,20 +127,20 @@ export default function BookingForm() {
             value={formData.date}
             onChange={handleChange}
             min={new Date().toISOString().split('T')[0]}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm focus:outline-none focus:border-gold transition-colors"
+            className={inputClass}
           />
           {errors.date && <p className="text-red-400 text-xs mt-1">{errors.date}</p>}
         </div>
 
         {/* Time */}
         <div>
-          <label htmlFor="time" className="block text-sm text-cream mb-1.5">Orario *</label>
+          <label htmlFor="time" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Orario *</label>
           <select
             id="time"
             name="time"
             value={formData.time}
             onChange={handleChange}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm focus:outline-none focus:border-gold transition-colors"
+            className={inputClass}
           >
             <option value="">Seleziona...</option>
             {allTimeSlots.map((slot) => (
@@ -152,13 +154,13 @@ export default function BookingForm() {
 
         {/* Guests */}
         <div>
-          <label htmlFor="guests" className="block text-sm text-cream mb-1.5">Ospiti *</label>
+          <label htmlFor="guests" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Ospiti *</label>
           <select
             id="guests"
             name="guests"
             value={formData.guests}
             onChange={handleChange}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm focus:outline-none focus:border-gold transition-colors"
+            className={inputClass}
           >
             {Array.from({ length: restaurant.maxGuestsPerBooking }, (_, i) => i + 1).map((n) => (
               <option key={n} value={n}>
@@ -172,7 +174,7 @@ export default function BookingForm() {
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block text-sm text-cream mb-1.5">Nome completo *</label>
+        <label htmlFor="name" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Nome completo *</label>
         <input
           type="text"
           id="name"
@@ -180,7 +182,7 @@ export default function BookingForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder="Mario Rossi"
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+          className={`${inputClass} placeholder:text-warm-grey/50`}
         />
         {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
       </div>
@@ -188,7 +190,7 @@ export default function BookingForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm text-cream mb-1.5">Email *</label>
+          <label htmlFor="email" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Email *</label>
           <input
             type="email"
             id="email"
@@ -196,14 +198,14 @@ export default function BookingForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="mario@esempio.it"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+            className={`${inputClass} placeholder:text-warm-grey/50`}
           />
           {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-sm text-cream mb-1.5">Telefono *</label>
+          <label htmlFor="phone" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Telefono *</label>
           <input
             type="tel"
             id="phone"
@@ -211,7 +213,7 @@ export default function BookingForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+39 333 1234567"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors"
+            className={`${inputClass} placeholder:text-warm-grey/50`}
           />
           {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
         </div>
@@ -219,7 +221,7 @@ export default function BookingForm() {
 
       {/* Special Requests */}
       <div>
-        <label htmlFor="specialRequests" className="block text-sm text-cream mb-1.5">
+        <label htmlFor="specialRequests" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">
           Richieste speciali
         </label>
         <textarea
@@ -229,7 +231,7 @@ export default function BookingForm() {
           onChange={handleChange}
           rows={3}
           placeholder="Allergie, intolleranze, occasioni speciali..."
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-cream text-sm placeholder:text-warm-grey/50 focus:outline-none focus:border-gold transition-colors resize-none"
+          className={`${inputClass} placeholder:text-warm-grey/50 resize-none`}
         />
       </div>
 
@@ -244,7 +246,7 @@ export default function BookingForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full py-3 bg-gold text-charcoal font-semibold rounded-full hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-3 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-semibold rounded-full shadow-[0_4px_15px_rgba(196,163,90,0.2)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Prenotazione in corso...' : 'Conferma Prenotazione'}
       </button>

@@ -33,9 +33,12 @@ export default async function MenuPage() {
       <PageHero
         title="Il Nostro Menu"
         subtitle="Carni alla brace, primi tradizionali e dolci fatti in casa"
+        image="/images/gallery/piatti/bistecca-alla-griglia.jpg"
+        overlay="dark"
+        breadcrumb="Menu"
       />
       <FixedMenus />
-      <section className="py-16 bg-cream">
+      <section className="py-12 sm:py-16 md:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MenuGrid items={JSON.parse(JSON.stringify(items))} />
         </div>

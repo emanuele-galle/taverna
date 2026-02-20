@@ -49,7 +49,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-xs font-medium uppercase tracking-wider transition-colors duration-300 ${
+                className={`relative font-sc text-sm tracking-[0.2em] transition-colors duration-300 ${
                   pathname === link.href
                     ? 'text-gold nav-link-active'
                     : 'text-white hover:text-gold underline-grow'
@@ -63,7 +63,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/prenota"
-              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-gold to-gold-light text-charcoal text-xs font-semibold uppercase tracking-wider rounded-full hover:shadow-[0_0_20px_rgba(196,163,90,0.3)] transition-all duration-300"
+              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-sc text-xs tracking-[0.2em] rounded-full shadow-[0_4px_15px_rgba(196,163,90,0.2)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
               Prenota
             </Link>
