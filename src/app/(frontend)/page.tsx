@@ -11,7 +11,7 @@ const featuredSpecialties = [
     name: 'Costata di Scottona',
     image: '/images/gallery/piatti/bistecca-alla-griglia.jpg',
     badges: ['Scottona Bavarese', '300g'],
-    description: 'Tenera costata di scottona bavarese da 300g, cotta alla perfezione sulla brace. Carne di altissima qualita, succulenta e saporita.',
+    description: 'Tenera costata di scottona bavarese da 300g, cotta alla perfezione sulla brace. Carne di altissima qualità, succulenta e saporita.',
     price: 20,
     rating: 4.9,
   },
@@ -37,7 +37,7 @@ const timelineSteps = [
   {
     year: '1997',
     title: "L'Inizio di un Sogno",
-    text: 'Ernesto Notaro e sua moglie Rita aprono La Taverna degli Amici con un sogno: portare a Milano la passione per le carni di qualita cotte sulla brace. Immediatamente il locale ottiene un grande successo per l\'eccellente selezione di carni.',
+    text: 'Ernesto Notaro e sua moglie Rita aprono La Taverna degli Amici con un sogno: portare a Milano la passione per le carni di qualità cotte sulla brace. Immediatamente il locale ottiene un grande successo per l\'eccellente selezione di carni.',
   },
   {
     year: 'Anni 2000',
@@ -47,12 +47,12 @@ const timelineSteps = [
   {
     year: 'Anni 2010',
     title: "L'Eccellenza delle Carni",
-    text: 'La selezione si raffina ulteriormente: scottona bavarese, controfiletti argentini e uruguaiani, fiorentine da oltre 1kg. Tutte le carni vengono cotte a vista sulla brace, permettendo ai clienti di apprezzare la maestria e la qualita della materia prima.',
+    text: 'La selezione si raffina ulteriormente: scottona bavarese, controfiletti argentini e uruguaiani, fiorentine da oltre 1kg. Tutte le carni vengono cotte a vista sulla brace, permettendo ai clienti di apprezzare la maestria e la qualità della materia prima.',
   },
   {
     year: 'Oggi',
-    title: 'Tradizione e Qualita',
-    text: 'Quasi 30 anni di storia, migliaia di clienti soddisfatti, e la stessa passione del primo giorno. La Taverna degli Amici e oggi un punto di riferimento per chi cerca carni di altissima qualita in un ambiente caldo e accogliente, con il motto: "qualita, esperienza e cultura dell\'ospitalita".',
+    title: 'Tradizione e Qualità',
+    text: 'Quasi 30 anni di storia, migliaia di clienti soddisfatti, e la stessa passione del primo giorno. La Taverna degli Amici è oggi un punto di riferimento per chi cerca carni di altissima qualità in un ambiente caldo e accogliente, con il motto: "qualità, esperienza e cultura dell\'ospitalità".',
   },
 ]
 
@@ -60,7 +60,7 @@ const whyChoose = [
   {
     counter: '1kg+',
     icon: Flame,
-    title: 'Carni di Alta Qualita',
+    title: 'Carni di Alta Qualità',
     desc: 'Selezioniamo le migliori carni: scottona bavarese, controfiletto argentino e uruguaiano, fiorentine da oltre 1kg. Tutte cotte a vista sulla brace.',
   },
   {
@@ -82,10 +82,10 @@ export default async function HomePage() {
     <>
       <HeroSection />
 
-      {/* Perche Scegliere - gradient charcoal→burgundy→charcoal */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
+      {/* Perché Scegliere - gradient charcoal→burgundy→charcoal */}
+      <section className="py-16 md:py-24 bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.25em] text-gold/80 text-sm block text-center mb-3">I Nostri Punti di Forza</span>
+            <span className="font-sc tracking-[0.18em] text-gold/80 text-sm block text-center mb-3">I Nostri Punti di Forza</span>
             <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
               Perch&eacute; Scegliere La Taverna degli Amici
             </h2>
@@ -94,24 +94,22 @@ export default async function HomePage() {
               {whyChoose.map((item) => (
                 <div
                   key={item.title}
-                  className="text-center p-8 rounded-2xl glass-card card-specialty hover-lift"
+                  className="text-center p-8 rounded-2xl glass-card hover-lift"
                 >
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-3">
                     <item.icon className="w-6 h-6 text-gold" />
                   </div>
                   <span className="font-serif font-light text-4xl text-gradient-gold block mb-2">{item.counter}</span>
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
-                  <p className="text-cream/70 text-base leading-[1.8]">{item.desc}</p>
+                  <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
       </section>
 
-      <SectionDivider variant="subtle" />
-
       {/* Una Storia di Passione - bg smoke, timeline a sinistra */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-smoke">
+      <section className="py-16 md:py-24 bg-smoke">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="border-l-2 border-gold/30 pl-6 mb-12 max-w-2xl">
               <h2 className="font-serif font-light text-3xl md:text-5xl text-burgundy mb-3 tracking-tight">
@@ -133,7 +131,7 @@ export default async function HomePage() {
                       {step.year}
                     </span>
                     <h3 className="font-serif text-xl text-espresso mb-2">{step.title}</h3>
-                    <p className="text-warm-grey text-base leading-[1.8]">{step.text}</p>
+                    <p className="text-warm-grey text-base leading-relaxed">{step.text}</p>
                   </div>
                 ))}
               </div>
@@ -152,9 +150,9 @@ export default async function HomePage() {
       <SectionDivider />
 
       {/* Le Nostre Specialita alla Brace - bg cream-warm */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-cream-warm">
+      <section className="py-16 md:py-24 bg-cream-warm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.25em] text-gold-dark text-sm block text-center mb-3">Dalla Nostra Brace</span>
+            <span className="font-sc tracking-[0.18em] text-gold-dark text-sm block text-center mb-3">Dalla Nostra Brace</span>
             <h2 className="font-serif font-light text-3xl md:text-5xl text-burgundy text-center mb-4 tracking-tight">
               Le Nostre Specialit&agrave; alla Brace
             </h2>
@@ -166,7 +164,7 @@ export default async function HomePage() {
               {featuredSpecialties.map((item) => (
                 <div
                   key={item.name}
-                  className="group bg-white rounded-xl overflow-hidden card-specialty hover-lift border border-charcoal/5"
+                  className="group bg-white rounded-xl overflow-hidden hover-lift border border-charcoal/5"
                 >
                   {/* Image with overlay title */}
                   <div className="relative h-56 overflow-hidden">
@@ -192,8 +190,8 @@ export default async function HomePage() {
                     </div>
                   </div>
                   {/* Content */}
-                  <div className="p-5">
-                    <p className="text-warm-grey text-base leading-[1.8] mb-3">
+                  <div className="p-5 border-l-2 border-gold">
+                    <p className="text-warm-grey text-base leading-relaxed mb-3">
                       {item.description}
                     </p>
                     <div className="flex items-center justify-between">
@@ -219,14 +217,12 @@ export default async function HomePage() {
           </div>
       </section>
 
-      <SectionDivider variant="subtle" />
-
       <ReviewsSection />
 
       {/* CTA Prenota */}
       <CTASection
         title="Pronto a Gustare le Nostre Carni alla Brace?"
-        subtitle="Prenota ora il tuo tavolo e scopri la qualita delle nostre carni selezionate, cotte a vista sulla brace. Ti aspettiamo in Via Spartaco, 4 Milano."
+        subtitle="Prenota ora il tuo tavolo e scopri la qualità delle nostre carni selezionate, cotte a vista sulla brace. Ti aspettiamo in Via Spartaco, 4 Milano."
         primaryLabel="Prenota Ora"
         primaryHref="/prenota"
         secondaryLabel="Chiamaci"

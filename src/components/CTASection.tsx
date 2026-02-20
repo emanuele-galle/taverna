@@ -11,7 +11,7 @@ interface CTASectionProps {
 
 export default function CTASection({
   title = 'Prenota il Tuo Tavolo',
-  subtitle = 'Prenota ora e scopri la qualita delle nostre carni selezionate, cotte a vista sulla brace.',
+  subtitle = 'Prenota ora e scopri la qualità delle nostre carni selezionate, cotte a vista sulla brace.',
   primaryLabel = 'Prenota Ora',
   primaryHref = '/prenota',
   secondaryLabel = 'Vedi il Menu',

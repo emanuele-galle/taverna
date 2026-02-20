@@ -4,35 +4,9 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
-      {/* Stats Ribbon */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-center">
-            <div>
-              <span className="font-serif font-light text-3xl text-gold">28+</span>
-              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Anni di Esperienza</p>
-            </div>
-            <div className="w-px h-8 bg-white/10 hidden md:block" />
-            <div>
-              <span className="font-serif font-light text-3xl text-gold">500+</span>
-              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Etichette di Vini</p>
-            </div>
-            <div className="w-px h-8 bg-white/10 hidden md:block" />
-            <div>
-              <span className="font-serif font-light text-3xl text-gold">5</span>
-              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Sale Riservate</p>
-            </div>
-            <div className="w-px h-8 bg-white/10 hidden md:block" />
-            <div>
-              <span className="font-serif font-light text-3xl text-gold">Milano</span>
-              <p className="font-sc tracking-[0.15em] text-sm text-white/60 mt-1">Via Spartaco, 4</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <footer className="bg-charcoal-deep text-white bg-pattern-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Col 1: Logo & Desc & Social */}
           <div>
             <Link href="/" className="inline-block mb-4">
@@ -86,7 +60,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Menu Veloce */}
+          {/* Col 2: Menu Veloce + Legal */}
           <div>
             <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
               Menu Veloce
@@ -110,33 +84,22 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Col 3: Orari di Apertura */}
-          <div>
-            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
-              Orari di Apertura
-            </h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-white/80 font-medium">Lunedi - Sabato</p>
-                  <p className="text-sm text-white/60">Pranzo: 12:00 - 15:00</p>
-                  <p className="text-sm text-white/60">Cena: 19:30 - 02:00</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm text-white/80 font-medium">Domenica</p>
-                  <p className="text-sm text-white/60">Chiuso</p>
-                </div>
-              </div>
+            <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap gap-3">
+              <Link href="/privacy" className="text-xs text-white/50 hover:text-gold transition-colors">
+                Privacy Policy
+              </Link>
+              <span className="text-white/20">&bull;</span>
+              <Link href="/cookie" className="text-xs text-white/50 hover:text-gold transition-colors">
+                Cookie Policy
+              </Link>
+              <span className="text-white/20">&bull;</span>
+              <Link href="/termini" className="text-xs text-white/50 hover:text-gold transition-colors">
+                Termini e Condizioni
+              </Link>
             </div>
           </div>
 
-          {/* Col 4: Contatti */}
+          {/* Col 3: Contatti + Orari */}
           <div>
             <h3 className="font-sc text-gold text-sm tracking-[0.25em] mb-4">
               Contatti
@@ -167,33 +130,35 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-        </div>
 
-        {/* Diamante separatore */}
-        <div className="mt-12 text-center">
-          <div className="text-gold/40 text-lg mb-6">&#9670;</div>
+            <h3 className="font-sc text-gold text-sm tracking-[0.25em] mt-6 mb-4">
+              Orari di Apertura
+            </h3>
+            <div className="space-y-3">
+              <div className="flex items-start gap-2">
+                <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-white/80 font-medium">Lunedì - Sabato</p>
+                  <p className="text-sm text-white/60">Pranzo: 12:00 - 15:00</p>
+                  <p className="text-sm text-white/60">Cena: 19:30 - 02:00</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm text-white/80 font-medium">Domenica</p>
+                  <p className="text-sm text-white/60">Chiuso</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-white/10 flex flex-col items-center gap-4 text-center">
+        <div className="mt-12 pt-6 border-t border-white/10 flex items-center justify-between">
           <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} La Taverna degli Amici. Tutti i diritti riservati.
           </p>
-          <p className="font-serif italic text-sm text-gold/80">Dal 1997 con passione | Milano</p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link href="/privacy" className="text-xs text-white/50 hover:text-gold transition-colors">
-              Privacy Policy
-            </Link>
-            <span className="text-white/20">&bull;</span>
-            <Link href="/cookie" className="text-xs text-white/50 hover:text-gold transition-colors">
-              Cookie Policy
-            </Link>
-            <span className="text-white/20">&bull;</span>
-            <Link href="/termini" className="text-xs text-white/50 hover:text-gold transition-colors">
-              Termini e Condizioni
-            </Link>
-          </div>
           <p className="text-xs text-white/40">
             Sito sviluppato da{' '}
             <a

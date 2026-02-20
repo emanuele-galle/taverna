@@ -1,12 +1,13 @@
 import { restaurant } from '@/data/restaurant'
 
 export default function RestaurantSchema() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://taverna.fodivps2.cloud'
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Restaurant',
     name: restaurant.name,
     description: restaurant.tagline,
-    url: 'https://taverna.fodivps2.cloud',
+    url: siteUrl,
     telephone: restaurant.phone,
     email: restaurant.email,
     address: {
@@ -24,10 +25,10 @@ export default function RestaurantSchema() {
     },
     servesCuisine: ['Italiana', 'Carni alla Brace', 'Grill'],
     priceRange: '\u20AC\u20AC-\u20AC\u20AC\u20AC',
-    image: 'https://taverna.fodivps2.cloud/images/Logo.png',
+    image: `${siteUrl}/images/Logo.png`,
     sameAs: [restaurant.instagramUrl, restaurant.facebookUrl],
     acceptsReservations: true,
-    hasMenu: 'https://taverna.fodivps2.cloud/menu',
+    hasMenu: `${siteUrl}/menu`,
     founder: {
       '@type': 'Person',
       name: 'Ernesto Notaro',
@@ -54,6 +55,24 @@ export default function RestaurantSchema() {
         closes: '02:00',
       },
     ],
+    paymentAccepted: 'Cash, Credit Card, Debit Card',
+    currenciesAccepted: 'EUR',
+    amenityFeature: [
+      { '@type': 'LocationFeatureSpecification', name: 'Private dining rooms', value: true },
+      { '@type': 'LocationFeatureSpecification', name: 'Air conditioning', value: true },
+    ],
+    potentialAction: {
+      '@type': 'ReserveAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${siteUrl}/prenota`,
+        actionPlatform: ['http://schema.org/DesktopWebPlatform', 'http://schema.org/MobileWebPlatform'],
+      },
+      result: {
+        '@type': 'Reservation',
+        name: 'Prenotazione tavolo',
+      },
+    },
   }
 
   return (

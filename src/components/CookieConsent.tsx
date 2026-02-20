@@ -49,7 +49,7 @@ export default function CookieConsent() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <p className="text-[#F5F0EB] text-sm flex-1">
                 Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito.
-                Per saperne di piu, consulta la nostra{' '}
+                Per saperne di più, consulta la nostra{' '}
                 <Link href="/cookie" className="text-[#C8A97E] underline hover:text-[#C8A97E]/80 transition-colors">
                   Cookie Policy
                 </Link>.

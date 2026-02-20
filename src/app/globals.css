@@ -4,13 +4,15 @@
   --color-charcoal: #2C2C2C;
   --color-charcoal-deep: #1A1A1A;
   --color-burgundy: #800020;
-  --color-gold: #C4A35A;
+  --color-burgundy-dark: #600018;
+  --color-gold: #C9A44E;
+  --color-gold-deep: #B8923A;
   --color-gold-dark: #A88B3D;
   --color-gold-muted: #B8A068;
   --color-cream: #FAF9F6;
   --color-cream-warm: #F5F0E8;
   --color-cream-dark: #F0EDE8;
-  --color-warm-grey: #6B7280;
+  --color-warm-grey: #7A7168;
   --color-terracotta: #E07A5F;
   --color-wine: #722F37;
   --color-charcoal-light: #3D3D3D;
@@ -18,6 +20,9 @@
   --color-espresso: #3E2723;
   --color-smoke: #F7F5F0;
   --color-parchment: #EDE8DC;
+  --font-size-display: clamp(2.5rem, 5vw, 5rem);
+  --font-size-heading: clamp(1.75rem, 3vw, 3rem);
+  --font-size-body: clamp(0.9375rem, 1vw, 1.0625rem);
 }
 
 html {
@@ -61,17 +66,6 @@ body {
 
 .animate-bounce-subtle {
   animation: bounce-subtle 2s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.shimmer-border {
-  background: linear-gradient(90deg, transparent 0%, rgba(196,163,90,0.4) 50%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
 }
 
 @keyframes scroll-line {
@@ -141,7 +135,7 @@ body {
 /* ===== Text Utilities ===== */
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #C4A35A 0%, #D4B06A 40%, #E8CC7A 60%, #C4A35A 100%);
+  background: linear-gradient(135deg, #C9A44E 0%, #D4B06A 40%, #E8CC7A 60%, #C9A44E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -167,17 +161,18 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #C4A35A, transparent);
+  background: linear-gradient(90deg, transparent, #C9A44E, transparent);
 }
 
 /* ===== Hover Utilities ===== */
 
 .hover-lift {
   transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
 }
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   border-color: rgba(196,163,90,0.3);
 }
 
@@ -200,7 +195,7 @@ body {
   left: 50%;
   width: 0;
   height: 1px;
-  background: #C4A35A;
+  background: #C9A44E;
   transition: width 0.3s ease, left 0.3s ease;
 }
 .underline-grow:hover::after {
@@ -216,7 +211,19 @@ body {
   left: 0;
   width: 100%;
   height: 1px;
-  background: #C4A35A;
+  background: #C9A44E;
+}
+
+.nav-link-active::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #C9A44E;
 }
 
 /* ===== Focus Ring Gold ===== */

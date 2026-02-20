@@ -15,24 +15,30 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrollY, setScrollY] = useState(0)
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => setScrollY(window.scrollY)
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const scrollProgress = Math.min(scrollY / 100, 1)
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-charcoal/95 backdrop-blur-md shadow-lg border-b border-gold/20' : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b"
+      style={{
+        backgroundColor: `rgba(26, 26, 26, ${scrollProgress * 0.95})`,
+        backdropFilter: `blur(${scrollProgress * 12}px)`,
+        borderBottomColor: `rgba(201, 164, 78, ${scrollProgress * 0.2})`,
+        boxShadow: scrollProgress > 0.5 ? `0 4px 6px rgba(0,0,0,${scrollProgress * 0.1})` : 'none',
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-[72px]">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/Logo.png"

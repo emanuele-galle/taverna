@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Galleria | La Taverna degli Amici',
     description: 'Galleria fotografica de La Taverna degli Amici: le nostre carni alla brace, i piatti della tradizione, l\'ambiente caldo e accogliente del nostro ristorante a Milano.',
-    url: 'https://taverna.fodivps2.cloud/galleria',
+    url: '/galleria',
     images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
   },
   twitter: {
@@ -49,7 +49,7 @@ export default async function GalleriaPage() {
       </section>
       <CTASection
         title="Ti Abbiamo Fatto Venire Fame?"
-        subtitle="Prenota il tuo tavolo e vieni a gustare dal vivo le nostre specialita alla brace."
+        subtitle="Prenota il tuo tavolo e vieni a gustare dal vivo le nostre specialità alla brace."
       />
     </>
   )

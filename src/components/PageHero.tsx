@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 
 interface PageHeroProps {
   title: string
@@ -36,13 +37,19 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
 
       <div className="text-center relative z-10 px-4">
         {breadcrumb && (
-          <nav className="mb-4" aria-label="Breadcrumb">
-            <span className="font-sc tracking-[0.25em] text-gold/70 text-sm">
-              <Link href="/" className="hover:text-gold transition-colors">Home</Link>
-              <span className="mx-2 text-gold/40">/</span>
-              <span className="text-gold">{breadcrumb}</span>
-            </span>
-          </nav>
+          <>
+            <BreadcrumbSchema items={[
+              { name: 'Home', url: '/' },
+              { name: breadcrumb },
+            ]} />
+            <nav className="mb-4" aria-label="Breadcrumb">
+              <span className="font-sc tracking-[0.25em] text-gold/70 text-sm">
+                <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+                <span className="mx-2 text-gold/40">/</span>
+                <span className="text-gold">{breadcrumb}</span>
+              </span>
+            </nav>
+          </>
         )}
         <h1 className="font-serif font-light text-5xl md:text-6xl text-cream tracking-tight mb-3 drop-shadow-sm">{title}</h1>
         {subtitle && (

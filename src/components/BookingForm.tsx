@@ -94,13 +94,13 @@ export default function BookingForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-charcoal-light rounded-2xl p-8 text-center">
+      <div className="bg-white rounded-2xl shadow-sm border border-charcoal/5 p-8 text-center">
         <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-serif text-2xl text-cream mb-2">Prenotazione Confermata!</h3>
+        <h3 className="font-serif text-2xl text-espresso mb-2">Prenotazione Confermata!</h3>
         <p className="text-warm-grey mb-4">Il tuo codice di conferma:</p>
         <p className="text-3xl font-mono font-bold text-gold tracking-widest mb-4">
           {confirmationCode}
@@ -112,14 +112,14 @@ export default function BookingForm() {
     )
   }
 
-  const inputClass = "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-cream text-base focus-gold transition-colors"
+  const inputClass = "w-full bg-white border border-charcoal/10 rounded-lg px-4 py-3 text-espresso text-base focus:border-gold focus:ring-2 focus:ring-gold/15 focus:outline-none transition-colors"
 
   return (
-    <form onSubmit={handleSubmit} className="bg-charcoal-light rounded-2xl p-6 md:p-8 space-y-5">
+    <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-sm border border-charcoal/5 p-6 md:p-8 space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* Date */}
         <div>
-          <label htmlFor="date" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Data *</label>
+          <label htmlFor="date" className="block font-sc tracking-[0.15em] text-sm text-espresso mb-1.5">Data *</label>
           <input
             type="date"
             id="date"
@@ -134,7 +134,7 @@ export default function BookingForm() {
 
         {/* Time */}
         <div>
-          <label htmlFor="time" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Orario *</label>
+          <label htmlFor="time" className="block font-sc tracking-[0.15em] text-sm text-espresso mb-1.5">Orario *</label>
           <select
             id="time"
             name="time"
@@ -154,7 +154,7 @@ export default function BookingForm() {
 
         {/* Guests */}
         <div>
-          <label htmlFor="guests" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Ospiti *</label>
+          <label htmlFor="guests" className="block font-sc tracking-[0.15em] text-sm text-espresso mb-1.5">Ospiti *</label>
           <select
             id="guests"
             name="guests"
@@ -174,7 +174,7 @@ export default function BookingForm() {
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Nome completo *</label>
+        <label htmlFor="name" className="block font-sc tracking-[0.15em] text-sm text-espresso mb-1.5">Nome completo *</label>
         <input
           type="text"
           id="name"
@@ -190,7 +190,7 @@ export default function BookingForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Email *</label>
+          <label htmlFor="email" className="block font-sc tracking-[0.15em] text-sm text-espresso mb-1.5">Email *</label>
           <input
             type="email"
             id="email"
@@ -205,7 +205,7 @@ export default function BookingForm() {
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Telefono *</label>
+          <label htmlFor="phone" className="block font-sc tracking-[0.15em] text-sm text-espresso mb-1.5">Telefono *</label>
           <input
             type="tel"
             id="phone"
@@ -221,7 +221,7 @@ export default function BookingForm() {
 
       {/* Special Requests */}
       <div>
-        <label htmlFor="specialRequests" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">
+        <label htmlFor="specialRequests" className="block font-sc tracking-[0.15em] text-sm text-espresso mb-1.5">
           Richieste speciali
         </label>
         <textarea
@@ -250,6 +250,13 @@ export default function BookingForm() {
       >
         {status === 'loading' ? 'Prenotazione in corso...' : 'Conferma Prenotazione'}
       </button>
+
+      <p className="text-center mt-4 text-sm text-warm-grey">
+        Oppure{' '}
+        <a href="https://wa.me/390255194005" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-medium">
+          prenota via WhatsApp
+        </a>
+      </p>
     </form>
   )
 }

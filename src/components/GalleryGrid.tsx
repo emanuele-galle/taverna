@@ -21,6 +21,14 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
 
   const categories = ['Tutti', 'Piatti', 'Dolci', 'Ambiente']
 
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { Tutti: images.length }
+    for (const img of images) {
+      counts[img.category] = (counts[img.category] || 0) + 1
+    }
+    return counts
+  }, [images])
+
   return (
     <div>
       {/* Category Tabs */}
@@ -35,25 +43,27 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
                 : 'text-warm-grey hover:text-burgundy border-b-2 border-transparent'
             }`}
           >
-            {cat}
+            {cat} ({categoryCounts[cat] || 0})
           </button>
         ))}
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+      {/* Masonry Grid */}
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4 space-y-3 md:space-y-4">
         {filteredImages.map((image, index) => (
           <button
             key={image.src}
             onClick={() => setLightboxIndex(index)}
-            className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer"
+            className="relative w-full rounded-lg overflow-hidden group cursor-pointer break-inside-avoid"
           >
             <Image
               src={image.src}
               alt={image.alt}
-              fill
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+              loading={index < 8 ? 'eager' : 'lazy'}
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
               <span className="text-cream font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-wider uppercase">{image.category}</span>

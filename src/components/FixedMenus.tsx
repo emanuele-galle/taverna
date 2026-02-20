@@ -18,7 +18,7 @@ const menus = [
   {
     name: 'Menu Grigliata',
     price: '37',
-    badge: 'PIU\u0300 RICHIESTO',
+    badge: 'PIÙ RICHIESTO',
     items: [
       'Antipasto misto',
       'Primo a scelta',

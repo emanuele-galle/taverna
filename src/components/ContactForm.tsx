@@ -73,27 +73,27 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-charcoal-light rounded-2xl p-8 text-center">
+      <div className="bg-white rounded-2xl shadow-sm border border-charcoal/5 p-8 text-center">
         <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-serif text-2xl text-cream mb-2">Messaggio Inviato!</h3>
-        <p className="text-warm-grey">
+        <h3 className="font-serif text-3xl text-espresso mb-2">Messaggio Inviato!</h3>
+        <p className="text-warm-grey text-lg">
           Ti risponderemo il prima possibile. Grazie per averci contattato.
         </p>
       </div>
     )
   }
 
-  const inputClass = "w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-cream text-base focus-gold transition-colors"
+  const inputClass = "w-full bg-white border border-charcoal/10 rounded-lg px-4 py-3.5 text-espresso text-lg focus:border-gold focus:ring-2 focus:ring-gold/15 focus:outline-none transition-colors"
 
   return (
-    <form onSubmit={handleSubmit} className="bg-charcoal-light rounded-2xl p-6 md:p-8 space-y-5">
+    <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-sm border border-charcoal/5 p-6 md:p-8 space-y-5">
       {/* Name */}
       <div>
-        <label htmlFor="contact-name" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Nome *</label>
+        <label htmlFor="contact-name" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Nome *</label>
         <input
           type="text"
           id="contact-name"
@@ -103,13 +103,13 @@ export default function ContactForm() {
           placeholder="Mario Rossi"
           className={`${inputClass} placeholder:text-warm-grey/50`}
         />
-        {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+        {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Email */}
         <div>
-          <label htmlFor="contact-email" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Email *</label>
+          <label htmlFor="contact-email" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Email *</label>
           <input
             type="email"
             id="contact-email"
@@ -119,12 +119,12 @@ export default function ContactForm() {
             placeholder="mario@esempio.it"
             className={`${inputClass} placeholder:text-warm-grey/50`}
           />
-          {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+          {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="contact-phone" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Telefono</label>
+          <label htmlFor="contact-phone" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Telefono</label>
           <input
             type="tel"
             id="contact-phone"
@@ -139,7 +139,7 @@ export default function ContactForm() {
 
       {/* Subject */}
       <div>
-        <label htmlFor="contact-subject" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Oggetto</label>
+        <label htmlFor="contact-subject" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Oggetto</label>
         <select
           id="contact-subject"
           name="subject"
@@ -158,7 +158,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="contact-message" className="block font-sc tracking-[0.15em] text-sm text-cream mb-1.5">Messaggio *</label>
+        <label htmlFor="contact-message" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Messaggio *</label>
         <textarea
           id="contact-message"
           name="message"
@@ -168,7 +168,7 @@ export default function ContactForm() {
           placeholder="Scrivi il tuo messaggio..."
           className={`${inputClass} placeholder:text-warm-grey/50 resize-none`}
         />
-        {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
+        {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
       </div>
 
       {/* Privacy Checkbox */}
@@ -181,12 +181,12 @@ export default function ContactForm() {
             onChange={handleChange}
             className="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 text-gold focus:ring-gold/50 focus:ring-offset-0"
           />
-          <span className="text-xs text-warm-grey leading-relaxed">
+          <span className="text-sm text-warm-grey leading-relaxed">
             Accetto il trattamento dei dati personali secondo la{' '}
             <a href="/privacy" className="text-gold hover:text-gold-light underline">privacy policy</a> *
           </span>
         </label>
-        {errors.privacy && <p className="text-red-400 text-xs mt-1">{errors.privacy}</p>}
+        {errors.privacy && <p className="text-red-400 text-sm mt-1">{errors.privacy}</p>}
       </div>
 
       {/* Error */}
@@ -200,7 +200,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full py-3 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-semibold rounded-full shadow-[0_4px_15px_rgba(196,163,90,0.2)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-4 text-lg bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-semibold rounded-full shadow-[0_4px_15px_rgba(196,163,90,0.2)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Invio in corso...' : 'Invia Messaggio'}
       </button>

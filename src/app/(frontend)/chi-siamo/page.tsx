@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Flame, Heart } from 'lucide-react'
 import PageHero from '@/components/PageHero'
-import SectionDivider from '@/components/SectionDivider'
 import CTASection from '@/components/CTASection'
 
 export const metadata: Metadata = { title: 'Chi Siamo' }
@@ -11,18 +10,18 @@ export const metadata: Metadata = { title: 'Chi Siamo' }
 const philosophy = [
   {
     icon: Flame,
-    title: 'Qualita',
+    title: 'Qualità',
     desc: 'Solo le migliori carni certificate: scottona bavarese, controfiletto argentino e uruguaiano. Ogni taglio viene selezionato personalmente con cura maniacale.',
   },
   {
     icon: Flame,
     title: 'Esperienza',
-    desc: "Oltre 25 anni di passione per la carne alla brace. La cottura a legna a vista e un'arte che richiede maestria, attenzione e dedizione assoluta.",
+    desc: "Oltre 25 anni di passione per la carne alla brace. La cottura a legna a vista è un'arte che richiede maestria, attenzione e dedizione assoluta.",
   },
   {
     icon: Heart,
-    title: 'Ospitalita',
-    desc: "Ogni cliente e un amico. L'atmosfera familiare e accogliente fa si che chi entra da noi si senta subito a casa, accolto come parte della famiglia.",
+    title: 'Ospitalità',
+    desc: "Ogni cliente è un amico. L'atmosfera familiare e accogliente fa sì che chi entra da noi si senta subito a casa, accolto come parte della famiglia.",
   },
 ]
 
@@ -51,12 +50,12 @@ export default function ChiSiamoPage() {
       />
 
       {/* Intro */}
-      <section className="py-12 sm:py-16 md:py-20 bg-cream">
+      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-cream">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-block font-sc tracking-[0.25em] px-5 py-2 bg-gold/10 text-gold-dark text-sm rounded-full mb-6 border border-gold/20">
+            <span className="inline-block font-sc tracking-[0.18em] px-5 py-2 bg-gold/10 text-gold-dark text-sm rounded-full mb-6 border border-gold/20">
               Dal 1997
             </span>
-            <p className="text-warm-grey text-base md:text-lg leading-[1.8]">
+            <p className="text-warm-grey text-base md:text-lg leading-relaxed">
               <strong className="text-espresso">La Taverna degli Amici</strong> &egrave; molto pi&ugrave; di un
               semplice ristorante: &egrave; un luogo dove la passione per le carni di alta qualit&agrave; incontra la
               cultura dell&rsquo;ospitalit&agrave;, un&rsquo;oasi di sapori autentici nel cuore di Milano,
@@ -65,12 +64,10 @@ export default function ChiSiamoPage() {
           </div>
       </section>
 
-      <SectionDivider variant="subtle" />
-
       {/* Timeline con immagini alternate */}
-      <section className="py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
+      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.25em] text-gold/60 text-sm block text-center mb-3">Il Nostro Percorso</span>
+            <span className="font-sc tracking-[0.18em] text-gold/60 text-sm block text-center mb-3">Il Nostro Percorso</span>
             <h2 className="font-serif font-light text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">La Nostra Storia</h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-16" />
 
@@ -81,13 +78,13 @@ export default function ChiSiamoPage() {
                 <h3 className="font-serif font-light text-2xl text-cream mt-1 mb-4">
                   L&rsquo;Inizio di un Sogno
                 </h3>
-                <p className="text-cream/70 text-base leading-[1.8] mb-4">
+                <p className="text-cream/80 text-base leading-relaxed mb-4">
                   Ernesto Notaro, ristoratore di origini calabresi da Tiriolo, insieme alla moglie Rita
                   fonda La Taverna degli Amici. Il successo &egrave; immediato: la cucina si basa sulla
                   selezione di carni pregiate, tutte cotte visibilmente sulla brace a legna. La scelta
                   &egrave; chiara fin dal primo giorno &mdash; solo il meglio.
                 </p>
-                <p className="text-cream/70 text-base leading-[1.8]">
+                <p className="text-cream/80 text-base leading-relaxed">
                   Accanto alle carni, antipasti di eccellenza dalla tradizione regionale, oltre 50 tipi
                   di formaggi italiani ed esteri, e una cantina che cresce fino a superare le 500
                   etichette di vini selezionati.
@@ -119,7 +116,7 @@ export default function ChiSiamoPage() {
               </div>
               <div className="md:w-1/2">
                 <h3 className="font-serif font-light text-2xl text-cream mb-4">L&rsquo;Ambiente</h3>
-                <p className="text-cream/70 text-base leading-[1.8] mb-4">
+                <p className="text-cream/80 text-base leading-relaxed mb-4">
                   Un ambiente vivace e conviviale, dove tavoloni di legno e affreschi a trompe
                   l&rsquo;oeil creano un&rsquo;atmosfera calda e accogliente. Tre piani con diverse
                   salette, ognuna con il suo carattere, per ospitare cene intime e grandi tavolate.
@@ -146,7 +143,7 @@ export default function ChiSiamoPage() {
                   </p>
                   <cite className="text-gold text-xs not-italic mt-1 block">&mdash; Locuste</cite>
                 </blockquote>
-                <p className="text-cream/70 text-base leading-[1.8]">
+                <p className="text-cream/80 text-base leading-relaxed">
                   Ottime carni e buone bottiglie, in un locale dove Ernesto e Rita si alternano alla
                   guida con la stessa passione del primo giorno. L&rsquo;accoglienza non &egrave; un
                   dettaglio: &egrave; la firma della Taverna.
@@ -166,12 +163,10 @@ export default function ChiSiamoPage() {
           </div>
       </section>
 
-      <SectionDivider variant="subtle" />
-
       {/* Il Fondatore */}
-      <section className="py-12 sm:py-16 md:py-20 bg-smoke">
+      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-smoke">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.25em] text-gold-dark text-sm block text-center mb-3">Il Cuore della Taverna</span>
+            <span className="font-sc tracking-[0.18em] text-gold-dark text-sm block text-center mb-3">Il Cuore della Taverna</span>
             <h2 className="font-serif font-light text-3xl md:text-5xl text-espresso text-center mb-4 tracking-tight">Il Fondatore</h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12" />
 
@@ -192,7 +187,7 @@ export default function ChiSiamoPage() {
                 <p className="font-sc tracking-[0.15em] text-gold-dark text-sm mb-4">
                   Fondatore e Anima della Taverna | Da Tiriolo (Calabria)
                 </p>
-                <p className="text-warm-grey text-base leading-[1.8] mb-4">
+                <p className="text-warm-grey text-base leading-relaxed mb-4">
                   Ristoratore di origini calabresi trasferitosi a Milano, insieme a Rita ha dato vita
                   nel 1997 a quello che &egrave; diventato un punto di riferimento per gli amanti della carne
                   di qualit&agrave;. Oltre 28 anni di esperienza, con la qualit&agrave; e l&rsquo;ospitalit&agrave; come
@@ -215,7 +210,7 @@ export default function ChiSiamoPage() {
                   ))}
                 </div>
 
-                <p className="text-warm-grey text-base leading-[1.8] mb-6">
+                <p className="text-warm-grey text-base leading-relaxed mb-6">
                   Le cinque sale allestite da Ernesto sono un capolavoro di ospitalit&agrave;, dove ogni
                   dettaglio &mdash; dai tavoloni in legno agli affreschi a trompe l&rsquo;oeil &mdash;
                   &egrave; pensato per far sentire ogni ospite parte della famiglia.
@@ -239,12 +234,10 @@ export default function ChiSiamoPage() {
           </div>
       </section>
 
-      <SectionDivider />
-
       {/* Philosophy */}
-      <section className="py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
+      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl md:text-3xl font-semibold uppercase tracking-widest text-cream text-center mb-4">La Nostra Filosofia</h2>
+            <h2 className="font-serif font-light text-3xl md:text-5xl tracking-tight text-cream text-center mb-4">La Nostra Filosofia</h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12" />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {philosophy.map((item) => (
@@ -256,7 +249,7 @@ export default function ChiSiamoPage() {
                     <item.icon className="w-6 h-6 text-gold" />
                   </div>
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
-                  <p className="text-cream/70 text-base leading-[1.8]">{item.desc}</p>
+                  <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -278,7 +271,7 @@ export default function ChiSiamoPage() {
       {/* CTA */}
       <CTASection
         title="Vieni a Trovarci"
-        subtitle="Prenota il tuo tavolo e scopri perche dal 1997 siamo un punto di riferimento per gli amanti della carne a Milano."
+        subtitle="Prenota il tuo tavolo e scopri perché dal 1997 siamo un punto di riferimento per gli amanti della carne a Milano."
         primaryLabel="Prenota Ora"
         primaryHref="/prenota"
         secondaryLabel="Scopri il Menu"

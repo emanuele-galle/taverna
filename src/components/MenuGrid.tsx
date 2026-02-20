@@ -26,6 +26,14 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
     return cats
   }, [items])
 
+  const counts = useMemo(() => {
+    const c: Record<string, number> = {}
+    for (const item of items) {
+      c[item.category] = (c[item.category] || 0) + 1
+    }
+    return c
+  }, [items])
+
   const filteredItems = useMemo(() => {
     if (activeCategory === 'Tutti') return items
     return items.filter((item) => item.category === activeCategory)
@@ -46,6 +54,7 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
         categories={categories}
         activeCategory={activeCategory}
         onFilter={setActiveCategory}
+        counts={counts}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">

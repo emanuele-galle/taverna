@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Menu | La Taverna degli Amici',
     description: 'Scopri il menu completo de La Taverna degli Amici: carni alla brace, antipasti della tradizione, primi piatti, dolci artigianali e oltre 500 etichette di vini selezionati.',
-    url: 'https://taverna.fodivps2.cloud/menu',
+    url: '/menu',
     images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
   },
   twitter: {

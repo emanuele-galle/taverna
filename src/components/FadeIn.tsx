@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 
-export default function FadeIn({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export default function FadeIn({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -28,6 +28,7 @@ export default function FadeIn({ children, className = '' }: { children: React.R
       className={`transition-all duration-700 ease-out ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       } ${className}`}
+      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}
     </div>

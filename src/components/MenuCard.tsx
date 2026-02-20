@@ -28,12 +28,12 @@ export default function MenuCard({ item }: { item: MenuItem }) {
           />
         </div>
       )}
-      <div className="p-5">
+      <div className={`p-5${!item.image ? ' bg-cream-warm' : ''}`}>
         <div className="flex items-start justify-between gap-3 mb-2">
           <h3 className="font-serif font-semibold text-espresso text-xl leading-tight">
             {item.name}
           </h3>
-          <span className="bg-gold/10 px-3 py-1 rounded-full font-bold text-gold-dark whitespace-nowrap text-base">
+          <span className="font-serif text-lg text-gold-dark font-semibold whitespace-nowrap">
             {formatPrice(item.price)}
           </span>
         </div>

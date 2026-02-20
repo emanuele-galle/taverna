@@ -6,17 +6,17 @@ import { Clock, Phone, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Prenota un Tavolo',
-  description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedi al sabato, pranzo e cena.',
+  description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedì al sabato, pranzo e cena.',
   openGraph: {
     title: 'Prenota un Tavolo | La Taverna degli Amici',
-    description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedi al sabato, pranzo e cena.',
-    url: 'https://taverna.fodivps2.cloud/prenota',
+    description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedì al sabato, pranzo e cena.',
+    url: '/prenota',
     images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Prenota un Tavolo | La Taverna degli Amici',
-    description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedi al sabato, pranzo e cena.',
+    description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedì al sabato, pranzo e cena.',
   },
 }
 
@@ -71,7 +71,7 @@ export default function PrenotaPage() {
 
       <CTASection
         title="Preferisci Chiamare?"
-        subtitle="Il nostro staff e a disposizione per confermare la tua prenotazione e rispondere a ogni domanda."
+        subtitle="Il nostro staff è a disposizione per confermare la tua prenotazione e rispondere a ogni domanda."
         primaryLabel="Chiamaci Ora"
         primaryHref="tel:+390255194005"
         secondaryLabel="Vedi il Menu"
