@@ -1,5 +1,7 @@
 'use client'
 
+import FadeIn from '@/components/FadeIn'
+
 const reviews = [
   {
     name: 'Marco Valentini',
@@ -13,7 +15,7 @@ const reviews = [
   {
     name: 'Giulia Ferretti',
     initial: 'G',
-    color: 'bg-gold',
+    color: 'bg-gold-dark',
     city: 'Roma',
     date: 'Ottobre 2024',
     stars: 5,
@@ -22,55 +24,103 @@ const reviews = [
   {
     name: 'Alessandro Conti',
     initial: 'A',
-    color: 'bg-charcoal',
+    color: 'bg-charcoal-light',
     city: 'Milano',
     date: 'Novembre 2024',
     stars: 5,
     text: 'Da quasi 30 anni un punto di riferimento per le carni alla brace. Gli arrosticini sono i migliori che abbia mai assaggiato fuori dall\'Abruzzo. Porzioni generose, prezzi onesti, servizio familiare.',
   },
+  {
+    name: 'Francesca Rizzo',
+    initial: 'F',
+    color: 'bg-wine',
+    city: 'Torino',
+    date: 'Dicembre 2024',
+    stars: 5,
+    text: 'Una delle migliori esperienze culinarie di Milano. La costata alla brace si scioglie in bocca. La cantina con 500 etichette è un sogno per gli amanti del vino. Ambiente unico, torneremo presto.',
+  },
+  {
+    name: 'Roberto De Luca',
+    initial: 'R',
+    color: 'bg-espresso',
+    city: 'Napoli',
+    date: 'Gennaio 2025',
+    stars: 5,
+    text: 'Siamo venuti da Napoli su consiglio di amici e non siamo rimasti delusi. La tagliata di argentino è sublime, il servizio impeccabile. Ernesto è un padrone di casa straordinario.',
+  },
+  {
+    name: 'Laura Bianchi',
+    initial: 'L',
+    color: 'bg-terracotta',
+    city: 'Milano',
+    date: 'Febbraio 2025',
+    stars: 5,
+    text: 'Festeggiato il compleanno qui con 15 amici. Tutto perfetto: dalla grigliata mista ai dolci fatti in casa. Le sale con gli affreschi a trompe l\'oeil creano un\'atmosfera magica. Consigliatissimo!',
+  },
 ]
 
-export default function ReviewsSection() {
+function ReviewCard({ review }: { review: typeof reviews[0] }) {
   return (
-    <section className="py-16 md:py-24 bg-charcoal bg-pattern-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="font-sc tracking-[0.18em] text-gold/80 text-base block text-center mb-3">Testimonianze</span>
-        <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
-          Cosa Dicono i Nostri Clienti
-        </h2>
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
-        <p className="font-serif italic text-lg text-cream/80 text-center mb-12 max-w-2xl mx-auto">
-          Recensioni autentiche da chi ha assaporato le nostre carni alla brace
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((review) => (
-            <div
-              key={review.name}
-              className="bg-white/5 border border-white/8 rounded-xl p-8 hover:border-gold/20 transition-colors duration-300"
-            >
-              <span className="font-serif text-5xl text-gold/15 leading-none block -mb-2">&ldquo;</span>
-              <div className="flex items-center gap-1 mb-3">
-                {Array.from({ length: review.stars }).map((_, i) => (
-                  <span key={i} className="text-gold text-xl">&#9733;</span>
-                ))}
-              </div>
-              <p className="text-cream/80 text-base leading-relaxed italic mb-4">
-                &ldquo;{review.text}&rdquo;
-              </p>
-              <div className="border-t border-white/10 pt-4">
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center ring-2 ring-gold/30`}>
-                    <span className="text-cream font-semibold text-base">{review.initial}</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-cream">{review.name}</p>
-                    <p className="text-cream/50 text-base">
-                      {review.city} &bull; {review.date}
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <div className="w-[380px] flex-shrink-0 bg-white/[0.04] border border-white/[0.06] rounded-2xl p-7 hover:border-gold/20 transition-all duration-500 group">
+      {/* Stars */}
+      <div className="flex items-center gap-0.5 mb-4">
+        {Array.from({ length: review.stars }).map((_, i) => (
+          <span key={i} className="text-gold text-lg">&#9733;</span>
+        ))}
+      </div>
+
+      {/* Quote */}
+      <p className="text-cream/75 text-[15px] leading-[1.75] mb-6 line-clamp-4">
+        &ldquo;{review.text}&rdquo;
+      </p>
+
+      {/* Author */}
+      <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+        <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center ring-1 ring-gold/20`}>
+          <span className="text-cream font-semibold text-sm">{review.initial}</span>
+        </div>
+        <div>
+          <p className="font-medium text-cream text-sm">{review.name}</p>
+          <p className="text-cream/40 text-xs">
+            {review.city} &middot; {review.date}
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function ReviewsSection() {
+  // Duplicate reviews for infinite scroll effect
+  const allReviews = [...reviews, ...reviews]
+
+  return (
+    <section className="py-20 md:py-28 bg-charcoal-deep overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <FadeIn>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <span className="font-sc tracking-[0.25em] text-gold/60 text-[13px] block mb-3">Testimonianze</span>
+              <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream tracking-tight">
+                Cosa Dicono i Nostri Clienti
+              </h2>
             </div>
+            <p className="font-serif italic text-base text-cream/50 max-w-sm">
+              Recensioni autentiche da chi ha assaporato le nostre carni alla brace
+            </p>
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Marquee */}
+      <div className="relative">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-charcoal-deep to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-charcoal-deep to-transparent z-10 pointer-events-none" />
+
+        <div className="flex gap-6 animate-marquee" style={{ '--marquee-duration': '50s' } as React.CSSProperties}>
+          {allReviews.map((review, i) => (
+            <ReviewCard key={`${review.name}-${i}`} review={review} />
           ))}
         </div>
       </div>

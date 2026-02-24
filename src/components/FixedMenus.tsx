@@ -1,5 +1,7 @@
 'use client'
 
+import FadeIn from './FadeIn'
+
 const menus = [
   {
     name: 'Menu Base',
@@ -26,7 +28,7 @@ const menus = [
       'Contorno',
       'Dolce',
       'Acqua',
-      'Caffe\u0300',
+      'Caffè',
     ],
     note: 'Minimo 2 persone',
   },
@@ -34,60 +36,67 @@ const menus = [
 
 export default function FixedMenus() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="font-sc tracking-[0.25em] text-gold/80 text-base block text-center mb-3">La Nostra Offerta</span>
-        <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
-          I Nostri Menu
-        </h2>
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
-        <p className="font-serif italic text-lg text-cream/70 text-center mb-12 max-w-2xl mx-auto">
-          Scegli il menu perfetto per la tua serata
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {menus.map((menu) => (
-            <div
-              key={menu.name}
-              className={`relative bg-charcoal-light rounded-xl p-6 border hover-lift card-specialty ${
-                menu.badge
-                  ? 'border-gold shadow-xl shadow-gold/20 scale-[1.03]'
-                  : 'border-gold/20'
-              }`}
-            >
-              {menu.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#B8923A] via-gold to-gold-light text-charcoal font-sc text-base tracking-[0.15em] px-4 py-1 rounded-full whitespace-nowrap">
-                  {menu.badge}
-                </span>
-              )}
-              <h3 className="font-serif text-xl text-cream text-center mb-2">
-                {menu.name}
-              </h3>
-              <p className="text-center mb-5">
-                <span className="font-serif font-normal text-6xl text-gradient-gold">
-                  &euro;{menu.price}
-                </span>
-                <span className="text-cream/60 text-base">/persona</span>
-              </p>
-              <ul className="space-y-2 mb-4">
-                {menu.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-center gap-2 font-serif text-cream/80 text-base"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              {menu.note && (
-                <p className="text-cream/60 text-base text-center font-serif italic">
-                  {menu.note}
+    <section className="py-20 md:py-24 bg-charcoal-deep relative overflow-hidden">
+      <div className="absolute inset-0 bg-pattern-dark" />
+      <div className="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-[100px]" />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <FadeIn>
+          <span className="font-sc tracking-[0.3em] text-gold/50 text-[12px] block text-center mb-4 uppercase">La Nostra Offerta</span>
+          <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-5 tracking-tight">
+            I Nostri Menu
+          </h2>
+          <div className="ornament-line mb-6">
+            <div className="w-1.5 h-1.5 rotate-45 bg-gold/40" />
+          </div>
+          <p className="font-serif italic text-base text-cream/50 text-center mb-14 max-w-md mx-auto">
+            Scegli il menu perfetto per la tua serata
+          </p>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {menus.map((menu, i) => (
+            <FadeIn key={menu.name} delay={i * 120} animation="scaleUp">
+              <div
+                className={`relative rounded-2xl p-7 transition-all duration-500 group ${
+                  menu.badge
+                    ? 'bg-charcoal-light border-2 border-gold/40 shadow-[0_0_40px_rgba(196,163,90,0.08)] scale-[1.02]'
+                    : 'bg-charcoal-light/60 border border-white/[0.06] hover:border-gold/20'
+                }`}
+              >
+                {menu.badge && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-sc text-[10px] tracking-[0.18em] px-4 py-1 rounded-full whitespace-nowrap shadow-md">
+                    {menu.badge}
+                  </span>
+                )}
+
+                <h3 className="font-serif text-lg text-cream text-center mb-4">{menu.name}</h3>
+
+                <p className="text-center mb-6">
+                  <span className="font-serif font-normal text-5xl text-gradient-gold">&euro;{menu.price}</span>
+                  <span className="text-cream/40 text-sm ml-1">/persona</span>
                 </p>
-              )}
-            </div>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mb-5" />
+
+                <ul className="space-y-2.5 mb-5">
+                  {menu.items.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-cream/70 text-[14px]">
+                      <span className="w-1 h-1 rounded-full bg-gold/50 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                {menu.note && (
+                  <p className="text-cream/40 text-[13px] text-center font-serif italic">{menu.note}</p>
+                )}
+              </div>
+            </FadeIn>
           ))}
         </div>
-        <p className="text-cream/60 text-base text-center mt-8">
+
+        <p className="text-cream/35 text-[13px] text-center mt-10">
           Coperto: &euro;2,00 &middot; Comunicare eventuali intolleranze alimentari
         </p>
       </div>

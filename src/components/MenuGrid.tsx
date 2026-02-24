@@ -22,8 +22,7 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
   const [activeCategory, setActiveCategory] = useState('Tutti')
 
   const categories = useMemo(() => {
-    const cats = Array.from(new Set(items.map((item) => item.category)))
-    return cats
+    return Array.from(new Set(items.map((item) => item.category)))
   }, [items])
 
   const counts = useMemo(() => {
@@ -57,13 +56,19 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
         counts={counts}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
         {Object.entries(groupedItems).map(([category, categoryItems]) => (
           <section key={category}>
-            <h2 className="font-serif font-normal text-3xl md:text-4xl text-espresso mb-8 border-b border-gold/30 pb-4">
-              {category}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="font-serif font-normal text-2xl md:text-3xl text-espresso whitespace-nowrap">
+                {category}
+              </h2>
+              <div className="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent" />
+              <span className="text-warm-grey/50 text-sm font-sc tracking-wider">
+                {categoryItems.length}
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {categoryItems.map((item) => (
                 <MenuCard key={item.name} item={item} />
               ))}

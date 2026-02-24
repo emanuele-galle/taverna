@@ -1,11 +1,15 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Flame, Heart } from 'lucide-react'
+import { Flame, Heart, Sparkles } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import CTASection from '@/components/CTASection'
+import FadeIn from '@/components/FadeIn'
 
-export const metadata: Metadata = { title: 'Chi Siamo' }
+export const metadata: Metadata = {
+  title: 'Chi Siamo',
+  alternates: { canonical: '/chi-siamo' },
+}
 
 const philosophy = [
   {
@@ -14,7 +18,7 @@ const philosophy = [
     desc: 'Solo le migliori carni certificate: scottona bavarese, controfiletto argentino e uruguaiano. Ogni taglio viene selezionato personalmente con cura maniacale.',
   },
   {
-    icon: Flame,
+    icon: Sparkles,
     title: 'Esperienza',
     desc: "Oltre 25 anni di passione per la carne alla brace. La cottura a legna a vista è un'arte che richiede maestria, attenzione e dedizione assoluta.",
   },
@@ -50,129 +54,145 @@ export default function ChiSiamoPage() {
       />
 
       {/* Intro */}
-      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-cream">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span className="inline-block font-sc tracking-[0.18em] px-5 py-2 bg-gold/10 text-gold-dark text-base rounded-full mb-6 border border-gold/20">
+      <section className="py-16 md:py-24 bg-cream">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <FadeIn>
+            <span className="inline-block font-sc tracking-[0.25em] px-5 py-2 bg-gold/8 text-gold-dark text-[12px] rounded-full mb-7 border border-gold/15">
               Dal 1997
             </span>
-            <p className="text-warm-grey text-base md:text-lg leading-relaxed">
+            <p className="text-warm-grey text-base md:text-lg leading-[1.85]">
               <strong className="text-espresso">La Taverna degli Amici</strong> &egrave; molto pi&ugrave; di un
               semplice ristorante: &egrave; un luogo dove la passione per le carni di alta qualit&agrave; incontra la
               cultura dell&rsquo;ospitalit&agrave;, un&rsquo;oasi di sapori autentici nel cuore di Milano,
               dove ogni cliente diventa un amico.
             </p>
-          </div>
+          </FadeIn>
+        </div>
       </section>
 
       {/* Timeline con immagini alternate */}
-      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold/60 text-base block text-center mb-3">Il Nostro Percorso</span>
-            <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">La Nostra Storia</h2>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-16" />
+      <section className="py-16 md:py-24 bg-charcoal-deep relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dark" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn>
+            <span className="font-sc tracking-[0.3em] text-gold/40 text-[12px] block text-center mb-4 uppercase">Il Nostro Percorso</span>
+            <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-5 tracking-tight">La Nostra Storia</h2>
+            <div className="ornament-line mb-16">
+              <div className="w-1.5 h-1.5 rotate-45 bg-gold/40" />
+            </div>
+          </FadeIn>
 
-            {/* 1997 - L'Inizio di un Sogno */}
-            <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
+          {/* 1997 */}
+          <FadeIn>
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-20">
               <div className="md:w-1/2 order-2 md:order-1">
-                <span className="font-sc tracking-[0.15em] text-base text-gold">1997</span>
+                <span className="font-sc tracking-[0.2em] text-[13px] text-gold/70">1997</span>
                 <h3 className="font-serif font-normal text-2xl text-cream mt-1 mb-4">
                   L&rsquo;Inizio di un Sogno
                 </h3>
-                <p className="text-cream/80 text-base leading-relaxed mb-4">
+                <p className="text-cream/65 text-[15px] leading-[1.8] mb-4">
                   Ernesto Notaro, ristoratore di origini calabresi da Tiriolo, insieme alla moglie Rita
                   fonda La Taverna degli Amici. Il successo &egrave; immediato: la cucina si basa sulla
-                  selezione di carni pregiate, tutte cotte visibilmente sulla brace a legna. La scelta
-                  &egrave; chiara fin dal primo giorno &mdash; solo il meglio.
+                  selezione di carni pregiate, tutte cotte visibilmente sulla brace a legna.
                 </p>
-                <p className="text-cream/80 text-base leading-relaxed">
+                <p className="text-cream/65 text-[15px] leading-[1.8]">
                   Accanto alle carni, antipasti di eccellenza dalla tradizione regionale, oltre 50 tipi
                   di formaggi italiani ed esteri, e una cantina che cresce fino a superare le 500
                   etichette di vini selezionati.
                 </p>
               </div>
               <div className="md:w-1/2 order-1 md:order-2">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden img-zoom shadow-2xl">
                   <Image
                     src="/images/gallery/ambiente/insegna-storica-dal-1948.jpg"
                     alt="La Taverna degli Amici - Le origini"
                     fill
-                    className="object-cover animate-ken-burns"
+                    className="object-cover"
                   />
                 </div>
               </div>
             </div>
+          </FadeIn>
 
-            {/* L'Ambiente - layout invertito */}
-            <div className="flex flex-col md:flex-row items-center gap-10 mb-20">
+          {/* L'Ambiente */}
+          <FadeIn delay={100}>
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-20">
               <div className="md:w-1/2">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden img-zoom shadow-2xl">
                   <Image
                     src="/images/gallery/ambiente/sala-principale.jpg"
                     alt="Sala principale della Taverna"
                     fill
-                    className="object-cover animate-ken-burns"
+                    className="object-cover"
                   />
                 </div>
               </div>
               <div className="md:w-1/2">
                 <h3 className="font-serif font-normal text-2xl text-cream mb-4">L&rsquo;Ambiente</h3>
-                <p className="text-cream/80 text-base leading-relaxed mb-4">
+                <p className="text-cream/65 text-[15px] leading-[1.8] mb-5">
                   Un ambiente vivace e conviviale, dove tavoloni di legno e affreschi a trompe
                   l&rsquo;oeil creano un&rsquo;atmosfera calda e accogliente. Tre piani con diverse
-                  salette, ognuna con il suo carattere, per ospitare cene intime e grandi tavolate.
+                  salette, ognuna con il suo carattere.
                 </p>
-                <blockquote className="border-l-2 border-gold pl-5 mt-6 bg-white/5 rounded-r-lg py-3 pr-4">
-                  <p className="text-cream/75 font-serif italic text-base">
+                <blockquote className="border-l-2 border-gold/30 pl-5 bg-white/[0.03] rounded-r-xl py-3 pr-4">
+                  <p className="text-cream/60 font-serif italic text-[15px]">
                     &ldquo;Le cinque sale allestite da Ernesto sono un capolavoro di ospitalit&agrave;, dove
                     ogni dettaglio &egrave; pensato per far sentire l&rsquo;ospite a casa.&rdquo;
                   </p>
                 </blockquote>
               </div>
             </div>
+          </FadeIn>
 
-            {/* Un Locale Caldo e Amichevole */}
-            <div className="flex flex-col md:flex-row items-center gap-10">
+          {/* Un Locale Caldo */}
+          <FadeIn delay={200}>
+            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
               <div className="md:w-1/2 order-2 md:order-1">
                 <h3 className="font-serif font-normal text-2xl text-cream mb-4">
                   Un Locale Caldo e Amichevole
                 </h3>
-                <blockquote className="border-l-2 border-gold pl-5 mb-4 bg-white/5 rounded-r-lg py-3 pr-4">
-                  <p className="text-cream/80 font-serif italic text-base">
+                <blockquote className="border-l-2 border-gold/30 pl-5 mb-5 bg-white/[0.03] rounded-r-xl py-3 pr-4">
+                  <p className="text-cream/65 font-serif italic text-[15px]">
                     &ldquo;Se l&rsquo;accoglienza conta, e conta, la Taverna degli Amici parte
                     decisamente in pole position.&rdquo;
                   </p>
-                  <cite className="text-gold text-base not-italic mt-1 block">&mdash; Locuste</cite>
+                  <cite className="text-gold/70 text-[13px] not-italic mt-1 block">&mdash; Locuste</cite>
                 </blockquote>
-                <p className="text-cream/80 text-base leading-relaxed">
+                <p className="text-cream/65 text-[15px] leading-[1.8]">
                   Ottime carni e buone bottiglie, in un locale dove Ernesto e Rita si alternano alla
-                  guida con la stessa passione del primo giorno. L&rsquo;accoglienza non &egrave; un
-                  dettaglio: &egrave; la firma della Taverna.
+                  guida con la stessa passione del primo giorno.
                 </p>
               </div>
               <div className="md:w-1/2 order-1 md:order-2">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden img-zoom shadow-2xl">
                   <Image
                     src="/images/gallery/ambiente/sala-due-ambienti.jpg"
                     alt="Atmosfera calda della Taverna"
                     fill
-                    className="object-cover animate-ken-burns"
+                    className="object-cover"
                   />
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
+        </div>
       </section>
 
       {/* Il Fondatore */}
-      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-smoke">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold-dark text-base block text-center mb-3">Il Cuore della Taverna</span>
-            <h2 className="font-serif font-normal text-3xl md:text-5xl text-espresso text-center mb-4 tracking-tight">Il Fondatore</h2>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12" />
+      <section className="py-16 md:py-24 bg-smoke">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <span className="font-sc tracking-[0.3em] text-gold-dark/50 text-[12px] block text-center mb-4 uppercase">Il Cuore della Taverna</span>
+            <h2 className="font-serif font-normal text-3xl md:text-5xl text-espresso text-center mb-5 tracking-tight">Il Fondatore</h2>
+            <div className="ornament-line mb-14">
+              <div className="w-1.5 h-1.5 rotate-45 bg-gold-dark/30" />
+            </div>
+          </FadeIn>
 
-            <div className="flex flex-col md:flex-row items-start gap-10">
+          <FadeIn>
+            <div className="flex flex-col md:flex-row items-start gap-10 md:gap-14">
               <div className="md:w-1/3">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden ring-2 ring-gold/20 ring-offset-4 ring-offset-smoke">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden ring-1 ring-gold/15 ring-offset-4 ring-offset-smoke shadow-xl">
                   <Image
                     src="/images/gallery/ambiente/ernesto-proprietario-fondatore.jpg"
                     alt="Ernesto Notaro, fondatore della Taverna degli Amici"
@@ -184,46 +204,39 @@ export default function ChiSiamoPage() {
 
               <div className="md:w-2/3">
                 <h3 className="font-serif font-normal text-2xl text-espresso mb-1">Ernesto Notaro</h3>
-                <p className="font-sc tracking-[0.15em] text-gold-dark text-base mb-4">
-                  Fondatore e Anima della Taverna | Da Tiriolo (Calabria)
+                <p className="font-sc tracking-[0.2em] text-gold-dark/70 text-[12px] mb-5">
+                  Fondatore e Anima della Taverna &middot; Da Tiriolo (Calabria)
                 </p>
-                <p className="text-warm-grey text-base leading-relaxed mb-4">
+                <p className="text-warm-grey text-[15px] leading-[1.8] mb-5">
                   Ristoratore di origini calabresi trasferitosi a Milano, insieme a Rita ha dato vita
                   nel 1997 a quello che &egrave; diventato un punto di riferimento per gli amanti della carne
-                  di qualit&agrave;. Oltre 28 anni di esperienza, con la qualit&agrave; e l&rsquo;ospitalit&agrave; come
-                  missione quotidiana.
+                  di qualit&agrave;.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   {pressQuotes.map((quote) => (
                     <blockquote
                       key={quote.source}
-                      className="flex-1 p-4 rounded-xl bg-parchment border border-gold/10 hover-lift"
+                      className="flex-1 p-4 rounded-xl bg-parchment border border-gold/8 hover-lift"
                     >
-                      <p className="font-serif text-espresso italic text-base">
+                      <p className="font-serif text-espresso italic text-[15px]">
                         &ldquo;{quote.text}&rdquo;
                       </p>
-                      <cite className="text-gold-dark text-base not-italic mt-1 block">
+                      <cite className="text-gold-dark/70 text-[13px] not-italic mt-1.5 block">
                         &mdash; {quote.source}
                       </cite>
                     </blockquote>
                   ))}
                 </div>
 
-                <p className="text-warm-grey text-base leading-relaxed mb-6">
-                  Le cinque sale allestite da Ernesto sono un capolavoro di ospitalit&agrave;, dove ogni
-                  dettaglio &mdash; dai tavoloni in legno agli affreschi a trompe l&rsquo;oeil &mdash;
-                  &egrave; pensato per far sentire ogni ospite parte della famiglia.
-                </p>
-
-                <div className="p-6 rounded-2xl bg-parchment border border-gold-muted/20">
+                <div className="p-6 rounded-2xl bg-parchment border border-gold-muted/15">
                   <h4 className="font-serif text-lg text-espresso mb-3">
-                    I Fiori all&rsquo;Occhiello della Taverna
+                    I Fiori all&rsquo;Occhiello
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2.5">
                     {fioriAllOcchiello.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-base text-warm-grey">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold mt-2.5 shrink-0" />
+                      <li key={item} className="flex items-start gap-2.5 text-[15px] text-warm-grey">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold/50 mt-2 shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -231,44 +244,52 @@ export default function ChiSiamoPage() {
                 </div>
               </div>
             </div>
-          </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="scroll-mt-24 py-12 sm:py-16 md:py-20 bg-charcoal bg-pattern-dark">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif font-normal text-3xl md:text-5xl tracking-tight text-cream text-center mb-4">La Nostra Filosofia</h2>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {philosophy.map((item) => (
-                <div
-                  key={item.title}
-                  className="text-center p-8 rounded-2xl glass-card card-specialty hover-lift"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-6 h-6 text-gold" />
-                  </div>
-                  <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
-                  <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-      </section>
-
-      {/* Quote */}
-      <section className="py-12 sm:py-16 bg-parchment">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <blockquote className="font-serif font-normal text-2xl md:text-3xl text-espresso/90 italic leading-[1.6]">
-            &ldquo;La vera ospitalit&agrave; nasce dal cuore: ogni cliente che entra dalla nostra porta non &egrave; un estraneo, ma un amico che ancora non conosce il sapore della nostra brace.&rdquo;
-          </blockquote>
-          <cite className="block mt-4 font-sc tracking-[0.15em] text-gold-dark text-base not-italic">
-            &mdash; Ernesto Notaro, Fondatore
-          </cite>
+          </FadeIn>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Philosophy */}
+      <section className="py-16 md:py-24 bg-charcoal-deep relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dark" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn>
+            <h2 className="font-serif font-normal text-3xl md:text-5xl tracking-tight text-cream text-center mb-5">La Nostra Filosofia</h2>
+            <div className="ornament-line mb-14">
+              <div className="w-1.5 h-1.5 rotate-45 bg-gold/40" />
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {philosophy.map((item, i) => (
+              <FadeIn key={item.title} delay={i * 120} animation="scaleUp">
+                <div className="text-center p-8 rounded-2xl glass-card-strong hover-lift border-animated group">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
+                    <item.icon className="w-6 h-6 text-gold" />
+                  </div>
+                  <h3 className="font-serif text-lg text-gold/90 mb-3">{item.title}</h3>
+                  <p className="text-cream/60 text-[15px] leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote */}
+      <section className="py-16 md:py-20 bg-parchment relative">
+        <div className="absolute inset-0 bg-grain pointer-events-none" />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <FadeIn>
+            <div className="font-serif text-5xl text-gold/15 mb-4">&ldquo;</div>
+            <blockquote className="font-serif font-normal text-xl md:text-2xl text-espresso/85 italic leading-[1.7]">
+              La vera ospitalit&agrave; nasce dal cuore: ogni cliente che entra dalla nostra porta non &egrave; un estraneo, ma un amico che ancora non conosce il sapore della nostra brace.
+            </blockquote>
+            <cite className="block mt-6 font-sc tracking-[0.2em] text-gold-dark/60 text-[12px] not-italic uppercase">
+              &mdash; Ernesto Notaro, Fondatore
+            </cite>
+          </FadeIn>
+        </div>
+      </section>
+
       <CTASection
         title="Vieni a Trovarci"
         subtitle="Prenota il tuo tavolo e scopri perché dal 1997 siamo un punto di riferimento per gli amanti della carne a Milano."

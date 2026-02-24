@@ -3,10 +3,12 @@ import prisma from '@/lib/prisma'
 import GalleryGrid from '@/components/GalleryGrid'
 import PageHero from '@/components/PageHero'
 import CTASection from '@/components/CTASection'
+import FadeIn from '@/components/FadeIn'
 
 export const metadata: Metadata = {
   title: 'Galleria',
   description: 'Galleria fotografica de La Taverna degli Amici: le nostre carni alla brace, i piatti della tradizione, l\'ambiente caldo e accogliente del nostro ristorante a Milano.',
+  alternates: { canonical: '/galleria' },
   openGraph: {
     title: 'Galleria | La Taverna degli Amici',
     description: 'Galleria fotografica de La Taverna degli Amici: le nostre carni alla brace, i piatti della tradizione, l\'ambiente caldo e accogliente del nostro ristorante a Milano.',
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
   },
 }
 export const dynamic = 'force-dynamic'
+export const revalidate = 300
 
 export default async function GalleriaPage() {
   const dbImages = await prisma.galleryImage.findMany({
@@ -42,9 +45,11 @@ export default async function GalleriaPage() {
         overlay="dark"
         breadcrumb="Galleria"
       />
-      <section className="py-12 sm:py-16 md:py-20 bg-cream">
+      <section className="py-14 md:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <GalleryGrid images={images} />
+          <FadeIn>
+            <GalleryGrid images={images} />
+          </FadeIn>
         </div>
       </section>
       <CTASection

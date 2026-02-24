@@ -2,11 +2,13 @@ import type { Metadata } from 'next'
 import BookingForm from '@/components/BookingForm'
 import PageHero from '@/components/PageHero'
 import CTASection from '@/components/CTASection'
-import { Clock, Phone, MapPin } from 'lucide-react'
+import FadeIn from '@/components/FadeIn'
+import { Clock, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Prenota un Tavolo',
   description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedì al sabato, pranzo e cena.',
+  alternates: { canonical: '/prenota' },
   openGraph: {
     title: 'Prenota un Tavolo | La Taverna degli Amici',
     description: 'Prenota il tuo tavolo alla Taverna degli Amici. Ristorante di carni alla brace a Milano, Via Spartaco 4. Aperto dal lunedì al sabato, pranzo e cena.',
@@ -30,42 +32,73 @@ export default function PrenotaPage() {
         breadcrumb="Prenota"
       />
 
-      <section className="py-12 sm:py-16 md:py-20 bg-cream">
+      <section className="py-14 md:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
+            <FadeIn className="lg:col-span-2">
               <BookingForm />
-            </div>
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 card-specialty hover-lift">
-                <div className="flex items-center gap-3 mb-3">
-                  <Clock className="w-5 h-5 text-gold" />
+            </FadeIn>
+
+            <FadeIn delay={150} className="space-y-5">
+              {/* Orari */}
+              <div className="bg-white rounded-xl p-6 hover-lift border border-charcoal/[0.04]">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-gold" />
+                  </div>
                   <h3 className="font-serif text-lg text-espresso">Orari</h3>
                 </div>
-                <div className="text-base text-warm-grey space-y-1.5">
+                <div className="text-[14px] text-warm-grey space-y-1.5">
                   <p><span className="font-medium text-espresso">Lun - Sab</span></p>
                   <p>Pranzo: 12:00 - 15:00</p>
                   <p>Cena: 19:30 - 02:00</p>
                   <p className="mt-3"><span className="font-medium text-espresso">Domenica:</span> Chiuso</p>
                 </div>
               </div>
-              <div className="bg-white rounded-xl p-6 card-specialty hover-lift">
-                <div className="flex items-center gap-3 mb-3">
-                  <Phone className="w-5 h-5 text-gold" />
+
+              {/* Telefono */}
+              <div className="bg-white rounded-xl p-6 hover-lift border border-charcoal/[0.04]">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-gold" />
+                  </div>
                   <h3 className="font-serif text-lg text-espresso">Telefono</h3>
                 </div>
-                <a href="tel:+390255194005" className="text-base text-burgundy hover:text-gold transition-colors font-medium">
+                <a href="tel:+390255194005" className="text-[15px] text-burgundy hover:text-gold transition-colors font-medium">
                   02 5519 4005
                 </a>
               </div>
-              <div className="bg-white rounded-xl p-6 card-specialty hover-lift">
-                <div className="flex items-center gap-3 mb-3">
-                  <MapPin className="w-5 h-5 text-gold" />
+
+              {/* Indirizzo */}
+              <div className="bg-white rounded-xl p-6 hover-lift border border-charcoal/[0.04]">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-gold" />
+                  </div>
                   <h3 className="font-serif text-lg text-espresso">Indirizzo</h3>
                 </div>
-                <p className="text-base text-warm-grey">Via Spartaco, 4, 20135 Milano MI</p>
+                <p className="text-[15px] text-warm-grey">Via Spartaco, 4, 20135 Milano MI</p>
               </div>
-            </div>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/390255194005?text=Ciao!%20Vorrei%20prenotare%20un%20tavolo%20alla%20Taverna%20degli%20Amici."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-green-50 rounded-xl p-6 hover-lift border border-green-200/50 group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-base text-espresso">Prenota via WhatsApp</h3>
+                    <p className="text-[13px] text-warm-grey">Rispondiamo in pochi minuti</p>
+                  </div>
+                  <svg className="w-4 h-4 text-green-600 ml-auto transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </div>
+              </a>
+            </FadeIn>
           </div>
         </div>
       </section>

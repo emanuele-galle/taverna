@@ -1,79 +1,85 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Flame, Wine, Award } from 'lucide-react'
 import HeroSection from '@/components/HeroSection'
 import ReviewsSection from '@/components/ReviewsSection'
-import SectionDivider from '@/components/SectionDivider'
 import CTASection from '@/components/CTASection'
+import FadeIn from '@/components/FadeIn'
+import CounterAnimation from '@/components/CounterAnimation'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 const featuredSpecialties = [
   {
     name: 'Costata di Scottona',
     image: '/images/gallery/piatti/bistecca-alla-griglia.jpg',
     badges: ['Scottona Bavarese', '300g'],
-    description: 'Tenera costata di scottona bavarese da 300g, cotta alla perfezione sulla brace. Carne di altissima qualità, succulenta e saporita.',
+    description: 'Tenera costata di scottona bavarese da 300g, cotta alla perfezione sulla brace.',
     price: 20,
-    rating: 4.9,
   },
   {
     name: 'Tagliata Argentino',
     image: '/images/gallery/piatti/carne-tagliata.jpg',
     badges: ['Controfiletto', 'Premium'],
-    description: 'Tagliata di controfiletto argentino servita con rucola e grana. Carne morbidissima e dal sapore intenso, perfetta per gli amanti delle carni pregiate.',
+    description: 'Tagliata di controfiletto argentino servita con rucola e grana.',
     price: 25,
-    rating: 5.0,
   },
   {
     name: 'Arrosticini',
     image: '/images/gallery/piatti/arrosticini.jpg',
     badges: ['Pecora Abruzzese', 'Tradizione'],
-    description: 'Autentici arrosticini di pecora abruzzesi cotti sulla brace ardente. Un classico della tradizione pastorale, saporiti e genuini.',
+    description: 'Autentici arrosticini di pecora abruzzesi cotti sulla brace ardente.',
     price: 18,
-    rating: 4.8,
   },
 ]
 
 const timelineSteps = [
   {
     year: '1997',
-    title: "L'Inizio di un Sogno",
-    text: 'Ernesto Notaro e sua moglie Rita aprono La Taverna degli Amici con un sogno: portare a Milano la passione per le carni di qualità cotte sulla brace. Immediatamente il locale ottiene un grande successo per l\'eccellente selezione di carni.',
+    title: "L'Inizio",
+    text: 'Ernesto e Rita aprono La Taverna degli Amici con un sogno: portare a Milano la vera carne alla brace.',
   },
   {
-    year: 'Anni 2000',
-    title: 'La Cantina si Arricchisce',
-    text: 'La taverna amplia la sua offerta con una ricca cantina che arriva a contare oltre 500 etichette selezionate. Vini italiani e internazionali scelti con cura per esaltare il sapore delle carni alla brace.',
+    year: '2000s',
+    title: 'La Cantina',
+    text: 'La taverna amplia la sua offerta con oltre 500 etichette selezionate tra vini italiani e internazionali.',
   },
   {
-    year: 'Anni 2010',
-    title: "L'Eccellenza delle Carni",
-    text: 'La selezione si raffina ulteriormente: scottona bavarese, controfiletti argentini e uruguaiani, fiorentine da oltre 1kg. Tutte le carni vengono cotte a vista sulla brace, permettendo ai clienti di apprezzare la maestria e la qualità della materia prima.',
+    year: '2010s',
+    title: "L'Eccellenza",
+    text: 'Scottona bavarese, controfiletti argentini, fiorentine da oltre 1kg. Tutte cotte a vista sulla brace.',
   },
   {
     year: 'Oggi',
-    title: 'Tradizione e Qualità',
-    text: 'Quasi 30 anni di storia, migliaia di clienti soddisfatti, e la stessa passione del primo giorno. La Taverna degli Amici è oggi un punto di riferimento per chi cerca carni di altissima qualità in un ambiente caldo e accogliente, con il motto: "qualità, esperienza e cultura dell\'ospitalità".',
+    title: 'Tradizione',
+    text: 'Quasi 30 anni di storia, migliaia di clienti soddisfatti, e la stessa passione del primo giorno.',
   },
 ]
 
 const whyChoose = [
   {
-    counter: '1kg+',
+    counterValue: 1,
+    counterSuffix: 'kg+',
     icon: Flame,
     title: 'Carni di Alta Qualità',
-    desc: 'Selezioniamo le migliori carni: scottona bavarese, controfiletto argentino e uruguaiano, fiorentine da oltre 1kg. Tutte cotte a vista sulla brace.',
+    desc: 'Scottona bavarese, controfiletto argentino e uruguaiano, fiorentine da oltre 1kg. Tutte cotte a vista sulla brace.',
   },
   {
-    counter: '500+',
+    counterValue: 500,
+    counterSuffix: '+',
     icon: Wine,
-    title: 'Oltre 500 Etichette',
-    desc: 'Una cantina ricca e curata con oltre 500 etichette di vini italiani e internazionali, selezionati per esaltare ogni taglio di carne.',
+    title: 'Etichette Selezionate',
+    desc: 'Una cantina ricca e curata con vini italiani e internazionali, selezionati per esaltare ogni taglio di carne.',
   },
   {
-    counter: '28+',
+    counterValue: 28,
+    counterSuffix: '+',
     icon: Award,
     title: 'Anni di Eccellenza',
-    desc: 'Quasi 30 anni di esperienza e passione. Migliaia di clienti soddisfatti e la stessa dedizione del primo giorno nel servire carni alla brace di eccellenza.',
+    desc: 'Quasi 30 anni di esperienza e passione. La stessa dedizione del primo giorno nel servire carni alla brace.',
   },
 ]
 
@@ -82,106 +88,151 @@ export default async function HomePage() {
     <>
       <HeroSection />
 
-      {/* Perché Scegliere - gradient charcoal→burgundy→charcoal */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-charcoal via-burgundy to-charcoal text-white bg-pattern-dark">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold/80 text-base block text-center mb-3">I Nostri Punti di Forza</span>
-            <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-4 tracking-tight">
-              Perch&eacute; Scegliere La Taverna degli Amici
+      {/* === Perché Scegliere La Taverna === */}
+      <section className="py-20 md:py-28 bg-charcoal-deep relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dark" />
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-burgundy/10 rounded-full blur-[120px]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn>
+            <span className="font-sc tracking-[0.3em] text-gold/50 text-[12px] block text-center mb-4 uppercase">I Nostri Punti di Forza</span>
+            <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-5 tracking-tight">
+              Perch&eacute; Scegliere La Taverna
             </h2>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-12" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {whyChoose.map((item) => (
-                <div
-                  key={item.title}
-                  className="text-center p-8 rounded-2xl glass-card hover-lift"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-3">
-                    <item.icon className="w-6 h-6 text-gold" />
+            <div className="ornament-line mb-14">
+              <div className="w-1.5 h-1.5 rotate-45 bg-gold/50" />
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {whyChoose.map((item, i) => (
+              <FadeIn key={item.title} delay={i * 120} animation="scaleUp">
+                <div className="text-center p-8 md:p-10 rounded-2xl glass-card-strong hover-lift border-animated group">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
+                    <item.icon className="w-7 h-7 text-gold" />
                   </div>
-                  <span className="font-serif font-normal text-4xl text-gradient-gold block mb-2">{item.counter}</span>
-                  <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
-                  <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
+                  <CounterAnimation
+                    value={item.counterValue}
+                    suffix={item.counterSuffix}
+                    className="font-serif font-normal text-5xl text-gradient-gold block mb-3"
+                  />
+                  <h3 className="font-serif text-lg text-gold/90 mb-3">{item.title}</h3>
+                  <p className="text-cream/60 text-[15px] leading-relaxed">{item.desc}</p>
                 </div>
-              ))}
-            </div>
+              </FadeIn>
+            ))}
           </div>
+        </div>
       </section>
 
-      {/* Una Storia di Passione - bg smoke, timeline a sinistra */}
-      <section className="py-16 md:py-24 bg-smoke">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="border-l-2 border-gold/30 pl-6 mb-12 max-w-2xl">
-              <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy mb-3 tracking-tight">
-                Una Storia di Passione
-              </h2>
-              <p className="font-serif italic text-lg text-warm-grey">
-                Dal 1997, un punto di riferimento per gli amanti delle carni alla brace a Milano
-              </p>
-            </div>
-            <div className="relative max-w-3xl mx-auto">
-              {/* Timeline line on left */}
-              <div className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold/10 via-gold/40 to-gold/10" />
-              <div className="space-y-12">
-                {timelineSteps.map((step) => (
-                  <div key={step.year} className="relative pl-12 md:pl-16 hover:translate-x-1 transition-transform duration-300">
-                    {/* Dot */}
-                    <div className="absolute left-2 md:left-4 top-1 w-5 h-5 rounded-full bg-gold border-4 border-smoke" />
-                    <span className="inline-block font-sc tracking-[0.15em] text-burgundy text-base mb-1">
-                      {step.year}
-                    </span>
-                    <h3 className="font-serif text-xl text-espresso mb-2">{step.title}</h3>
-                    <p className="text-warm-grey text-base leading-relaxed">{step.text}</p>
-                  </div>
-                ))}
+      {/* === Una Storia di Passione === */}
+      <section className="py-20 md:py-28 bg-smoke relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Content */}
+            <div>
+              <FadeIn animation="slideRight">
+                <span className="font-sc tracking-[0.3em] text-gold-dark/60 text-[12px] block mb-4 uppercase">La Nostra Storia</span>
+                <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy mb-6 tracking-tight">
+                  Una Storia di Passione
+                </h2>
+                <p className="font-serif italic text-lg text-warm-grey/80 mb-10">
+                  Dal 1997, un punto di riferimento per gli amanti delle carni alla brace a Milano
+                </p>
+              </FadeIn>
+
+              {/* Compact Timeline */}
+              <div className="relative">
+                <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-gold/30 via-gold/15 to-transparent" />
+                <div className="space-y-8">
+                  {timelineSteps.map((step, i) => (
+                    <FadeIn key={step.year} delay={i * 100} animation="slideRight">
+                      <div className="relative pl-8 group">
+                        <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full bg-smoke border-2 border-gold/40 group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300" />
+                        <div className="flex items-baseline gap-3 mb-1">
+                          <span className="font-sc tracking-[0.15em] text-gold-dark text-sm font-semibold">{step.year}</span>
+                          <span className="text-espresso font-serif text-lg">{step.title}</span>
+                        </div>
+                        <p className="text-warm-grey text-[15px] leading-relaxed">{step.text}</p>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
               </div>
+
+              <FadeIn delay={500}>
+                <div className="mt-10">
+                  <Link
+                    href="/chi-siamo"
+                    className="inline-flex items-center gap-2 px-7 py-3 bg-charcoal text-cream font-medium rounded-full hover:bg-charcoal/90 active:scale-[0.98] transition-all duration-200 text-sm group"
+                  >
+                    Scopri Tutta la Nostra Storia
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </Link>
+                </div>
+              </FadeIn>
             </div>
-            <div className="text-center mt-14">
-              <Link
-                href="/chi-siamo"
-                className="inline-flex items-center px-8 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-charcoal/90 active:scale-[0.98] transition-all duration-200"
-              >
-                Scopri Tutta la Nostra Storia
-              </Link>
-            </div>
+
+            {/* Right: Stacked Images */}
+            <FadeIn animation="slideLeft" delay={200}>
+              <div className="relative">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl img-zoom">
+                  <Image
+                    src="/images/gallery/ambiente/sala-principale.jpg"
+                    alt="Sala principale della Taverna degli Amici"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Floating accent card */}
+                <div className="absolute -bottom-6 -left-6 bg-charcoal text-cream p-5 rounded-xl shadow-xl border border-gold/10 max-w-[200px]">
+                  <span className="font-serif text-3xl text-gradient-gold block mb-1">1997</span>
+                  <p className="text-cream/60 text-xs leading-relaxed">Anno di fondazione nel cuore di Milano</p>
+                </div>
+              </div>
+            </FadeIn>
           </div>
+        </div>
       </section>
 
-      <SectionDivider />
+      {/* === Le Nostre Specialità === */}
+      <section className="py-20 md:py-28 bg-cream-warm relative">
+        <div className="absolute inset-0 bg-pattern-light" />
 
-      {/* Le Nostre Specialita alla Brace - bg cream-warm */}
-      <section className="py-16 md:py-24 bg-cream-warm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span className="font-sc tracking-[0.18em] text-gold-dark text-base block text-center mb-3">Dalla Nostra Brace</span>
-            <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy text-center mb-4 tracking-tight">
-              Le Nostre Specialit&agrave; alla Brace
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn>
+            <span className="font-sc tracking-[0.3em] text-gold-dark/60 text-[12px] block text-center mb-4 uppercase">Dalla Nostra Brace</span>
+            <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy text-center mb-5 tracking-tight">
+              Le Nostre Specialit&agrave;
             </h2>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
-            <p className="font-serif italic text-lg text-warm-grey text-center mb-12 max-w-2xl mx-auto">
-              Carni selezionate cotte a vista sulla brace, per un&apos;esperienza unica
+            <div className="ornament-line mb-6">
+              <div className="w-1.5 h-1.5 rotate-45 bg-gold-dark/40" />
+            </div>
+            <p className="font-serif italic text-lg text-warm-grey/80 text-center mb-14 max-w-xl mx-auto">
+              Carni selezionate cotte a vista sulla brace
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredSpecialties.map((item) => (
-                <div
-                  key={item.name}
-                  className="group bg-white rounded-xl overflow-hidden hover-lift border border-charcoal/5"
-                >
-                  {/* Image with overlay title */}
-                  <div className="relative h-56 overflow-hidden">
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {featuredSpecialties.map((item, i) => (
+              <FadeIn key={item.name} delay={i * 120} animation="scaleUp">
+                <div className="group bg-white rounded-2xl overflow-hidden hover-lift shadow-sm border border-charcoal/[0.04]">
+                  {/* Image */}
+                  <div className="relative h-60 overflow-hidden">
                     <Image
                       src={item.image}
                       alt={`${item.name} - La Taverna degli Amici`}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="font-serif text-xl text-cream mb-2">{item.name}</h3>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h3 className="font-serif text-xl text-cream mb-2.5">{item.name}</h3>
+                      <div className="flex flex-wrap gap-1.5">
                         {item.badges.map((badge) => (
                           <span
                             key={badge}
-                            className="font-sc text-base tracking-[0.1em] bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
+                            className="font-sc text-[11px] tracking-[0.12em] bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
                           >
                             {badge}
                           </span>
@@ -190,39 +241,41 @@ export default async function HomePage() {
                     </div>
                   </div>
                   {/* Content */}
-                  <div className="p-5 border-l-2 border-gold">
-                    <p className="text-warm-grey text-base leading-relaxed mb-3">
-                      {item.description}
-                    </p>
+                  <div className="p-5">
+                    <p className="text-warm-grey text-[15px] leading-relaxed mb-4">{item.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="bg-gold/10 text-burgundy font-bold text-lg px-3 py-1 rounded-full">
+                      <span className="font-serif text-xl font-semibold text-burgundy">
                         &euro;{item.price},00
                       </span>
-                      <span className="flex items-center gap-1 text-gold font-semibold text-base">
-                        <Flame className="w-4 h-4" /> {item.rating}
+                      <span className="flex items-center gap-1 text-gold text-sm font-medium">
+                        <Flame className="w-3.5 h-3.5" /> Alla Brace
                       </span>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="text-center mt-10">
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={400}>
+            <div className="text-center mt-12">
               <Link
                 href="/menu"
-                className="inline-flex items-center px-8 py-3 bg-charcoal text-cream font-semibold rounded-full hover:bg-charcoal/90 active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-charcoal text-cream font-medium rounded-full hover:bg-charcoal/90 active:scale-[0.98] transition-all duration-200 text-sm group"
               >
                 Vedi il Menu Completo
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
             </div>
-          </div>
+          </FadeIn>
+        </div>
       </section>
 
       <ReviewsSection />
 
-      {/* CTA Prenota */}
       <CTASection
-        title="Pronto a Gustare le Nostre Carni alla Brace?"
-        subtitle="Prenota ora il tuo tavolo e scopri la qualità delle nostre carni selezionate, cotte a vista sulla brace. Ti aspettiamo in Via Spartaco, 4 Milano."
+        title="Pronto a Gustare le Nostre Carni?"
+        subtitle="Prenota ora il tuo tavolo e scopri la qualità delle nostre carni selezionate. Ti aspettiamo in Via Spartaco, 4 Milano."
         primaryLabel="Prenota Ora"
         primaryHref="/prenota"
         secondaryLabel="Chiamaci"
