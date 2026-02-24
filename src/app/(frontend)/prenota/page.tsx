@@ -32,7 +32,7 @@ export default function PrenotaPage() {
         breadcrumb="Prenota"
       />
 
-      <section className="py-14 md:py-20 bg-cream">
+      <section className="py-20 md:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
             <FadeIn className="lg:col-span-2">
@@ -48,7 +48,7 @@ export default function PrenotaPage() {
                   </div>
                   <h3 className="font-serif text-lg text-espresso">Orari</h3>
                 </div>
-                <div className="text-[14px] text-warm-grey space-y-1.5">
+                <div className="text-base text-warm-grey space-y-1.5">
                   <p><span className="font-medium text-espresso">Lun - Sab</span></p>
                   <p>Pranzo: 12:00 - 15:00</p>
                   <p>Cena: 19:30 - 02:00</p>
@@ -64,7 +64,7 @@ export default function PrenotaPage() {
                   </div>
                   <h3 className="font-serif text-lg text-espresso">Telefono</h3>
                 </div>
-                <a href="tel:+390255194005" className="text-[15px] text-burgundy hover:text-gold transition-colors font-medium">
+                <a href="tel:+390255194005" className="text-base text-burgundy hover:text-gold transition-colors font-medium">
                   02 5519 4005
                 </a>
               </div>
@@ -77,7 +77,7 @@ export default function PrenotaPage() {
                   </div>
                   <h3 className="font-serif text-lg text-espresso">Indirizzo</h3>
                 </div>
-                <p className="text-[15px] text-warm-grey">Via Spartaco, 4, 20135 Milano MI</p>
+                <p className="text-base text-warm-grey">Via Spartaco, 4, 20135 Milano MI</p>
               </div>
 
               {/* WhatsApp */}
@@ -93,7 +93,7 @@ export default function PrenotaPage() {
                   </div>
                   <div>
                     <h3 className="font-serif text-base text-espresso">Prenota via WhatsApp</h3>
-                    <p className="text-[13px] text-warm-grey">Rispondiamo in pochi minuti</p>
+                    <p className="text-sm text-warm-grey">Rispondiamo in pochi minuti</p>
                   </div>
                   <svg className="w-4 h-4 text-green-600 ml-auto transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </div>

@@ -28,7 +28,7 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
   }, [])
 
   return (
-    <section className="relative min-h-[380px] md:min-h-[440px] flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[420px] md:min-h-[500px] flex items-center justify-center overflow-hidden pt-20">
       {image ? (
         <>
           <Image
@@ -63,7 +63,7 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
                 transitionDelay: '100ms',
               }}
             >
-              <span className="font-sc tracking-[0.3em] text-gold/60 text-[12px]">
+              <span className="font-sc tracking-[0.3em] text-gold/80 text-sm">
                 <Link href="/" className="hover:text-gold transition-colors">Home</Link>
                 <span className="mx-2.5 text-gold/30">/</span>
                 <span className="text-gold/90">{breadcrumb}</span>
@@ -83,7 +83,7 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
         </h1>
         {subtitle && (
           <p
-            className="text-lg md:text-xl font-serif italic text-cream/65 max-w-2xl mx-auto mb-2 transition-all duration-700"
+            className="text-lg md:text-xl font-serif italic text-cream/85 max-w-2xl mx-auto mb-2 transition-all duration-700"
             style={{
               opacity: loaded ? 1 : 0,
               transform: loaded ? 'translateY(0)' : 'translateY(15px)',

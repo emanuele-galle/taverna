@@ -36,20 +36,20 @@ const menus = [
 
 export default function FixedMenus() {
   return (
-    <section className="py-20 md:py-24 bg-charcoal-deep relative overflow-hidden">
+    <section className="py-24 md:py-28 bg-charcoal-deep relative overflow-hidden">
       <div className="absolute inset-0 bg-pattern-dark" />
       <div className="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-[100px]" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
-          <span className="font-sc tracking-[0.3em] text-gold/50 text-[12px] block text-center mb-4 uppercase">La Nostra Offerta</span>
-          <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-5 tracking-tight">
+          <span className="font-sc tracking-[0.3em] text-gold/80 text-sm block text-center mb-4 uppercase">La Nostra Offerta</span>
+          <h2 className="font-serif font-normal text-4xl md:text-6xl text-cream text-center mb-5 tracking-tight leading-[1.1]">
             I Nostri Menu
           </h2>
           <div className="ornament-line mb-6">
             <div className="w-1.5 h-1.5 rotate-45 bg-gold/40" />
           </div>
-          <p className="font-serif italic text-base text-cream/50 text-center mb-14 max-w-md mx-auto">
+          <p className="font-serif italic text-base text-cream/70 text-center mb-14 max-w-md mx-auto">
             Scegli il menu perfetto per la tua serata
           </p>
         </FadeIn>
@@ -60,12 +60,12 @@ export default function FixedMenus() {
               <div
                 className={`relative rounded-2xl p-7 transition-all duration-500 group ${
                   menu.badge
-                    ? 'bg-charcoal-light border-2 border-gold/40 shadow-[0_0_40px_rgba(196,163,90,0.08)] scale-[1.02]'
-                    : 'bg-charcoal-light/60 border border-white/[0.06] hover:border-gold/20'
+                    ? 'bg-charcoal-light border-2 border-gold/40 shadow-[0_0_40px_rgba(196,163,90,0.12)] scale-[1.02]'
+                    : 'bg-charcoal-light/60 border border-white/10 hover:border-gold/30'
                 }`}
               >
                 {menu.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-sc text-[10px] tracking-[0.18em] px-4 py-1 rounded-full whitespace-nowrap shadow-md">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-sc text-xs tracking-[0.18em] px-4 py-1 rounded-full whitespace-nowrap shadow-md">
                     {menu.badge}
                   </span>
                 )}
@@ -74,14 +74,14 @@ export default function FixedMenus() {
 
                 <p className="text-center mb-6">
                   <span className="font-serif font-normal text-5xl text-gradient-gold">&euro;{menu.price}</span>
-                  <span className="text-cream/40 text-sm ml-1">/persona</span>
+                  <span className="text-cream/70 text-sm ml-1">/persona</span>
                 </p>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mb-5" />
 
                 <ul className="space-y-2.5 mb-5">
                   {menu.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-cream/70 text-[14px]">
+                    <li key={item} className="flex items-center gap-3 text-cream/80 text-base">
                       <span className="w-1 h-1 rounded-full bg-gold/50 shrink-0" />
                       {item}
                     </li>
@@ -89,14 +89,14 @@ export default function FixedMenus() {
                 </ul>
 
                 {menu.note && (
-                  <p className="text-cream/40 text-[13px] text-center font-serif italic">{menu.note}</p>
+                  <p className="text-cream/70 text-sm text-center font-serif italic">{menu.note}</p>
                 )}
               </div>
             </FadeIn>
           ))}
         </div>
 
-        <p className="text-cream/35 text-[13px] text-center mt-10">
+        <p className="text-cream/60 text-sm text-center mt-10">
           Coperto: &euro;2,00 &middot; Comunicare eventuali intolleranze alimentari
         </p>
       </div>

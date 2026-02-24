@@ -151,7 +151,7 @@ export default function ContattiPage() {
         </div>
       </PageHero>
 
-      <section className="py-14 md:py-20 bg-cream">
+      <section className="py-20 md:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Info Cards */}
           <FadeIn>
@@ -162,12 +162,12 @@ export default function ContattiPage() {
                     <card.icon className="w-5 h-5 text-gold" />
                   </div>
                   <h3 className="font-serif text-lg text-espresso mb-1.5">{card.title}</h3>
-                  <p className="text-warm-grey text-[15px] mb-2">{card.content}</p>
-                  {card.sub && <p className="text-warm-grey/60 text-[13px] mb-2">{card.sub}</p>}
+                  <p className="text-warm-grey text-base mb-2">{card.content}</p>
+                  {card.sub && <p className="text-warm-grey/70 text-sm mb-2">{card.sub}</p>}
                   <a
                     href={card.action.href}
                     {...(card.action.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    className="text-[14px] text-burgundy hover:text-gold transition-colors font-medium inline-flex items-center gap-1"
+                    className="text-base text-burgundy hover:text-gold transition-colors font-medium inline-flex items-center gap-1"
                   >
                     {card.action.label} <span>&rarr;</span>
                   </a>
@@ -186,8 +186,8 @@ export default function ContattiPage() {
               <div className="divide-y divide-charcoal/[0.04]">
                 {restaurant.openingHours.map((h) => (
                   <div key={h.days} className="flex items-center justify-between py-3">
-                    <span className="text-[15px] font-medium text-espresso">{h.days}</span>
-                    <span className="text-[15px] text-warm-grey">
+                    <span className="text-base font-medium text-espresso">{h.days}</span>
+                    <span className="text-base text-warm-grey">
                       {h.lunch === 'Chiuso' ? 'Chiuso' : `${h.lunch} / ${h.dinner}`}
                     </span>
                   </div>

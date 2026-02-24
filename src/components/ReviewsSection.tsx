@@ -61,7 +61,7 @@ const reviews = [
 
 function ReviewCard({ review }: { review: typeof reviews[0] }) {
   return (
-    <div className="w-[380px] flex-shrink-0 bg-white/[0.04] border border-white/[0.06] rounded-2xl p-7 hover:border-gold/20 transition-all duration-500 group">
+    <div className="w-[420px] flex-shrink-0 bg-white/[0.06] border border-white/10 rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 group">
       {/* Stars */}
       <div className="flex items-center gap-0.5 mb-4">
         {Array.from({ length: review.stars }).map((_, i) => (
@@ -70,18 +70,18 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
       </div>
 
       {/* Quote */}
-      <p className="text-cream/75 text-[15px] leading-[1.75] mb-6 line-clamp-4">
+      <p className="text-cream/80 text-base leading-[1.75] mb-6 line-clamp-4">
         &ldquo;{review.text}&rdquo;
       </p>
 
       {/* Author */}
-      <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+      <div className="flex items-center gap-3 pt-4 border-t border-white/10">
         <div className={`w-10 h-10 rounded-full ${review.color} flex items-center justify-center ring-1 ring-gold/20`}>
           <span className="text-cream font-semibold text-sm">{review.initial}</span>
         </div>
         <div>
           <p className="font-medium text-cream text-sm">{review.name}</p>
-          <p className="text-cream/40 text-xs">
+          <p className="text-cream/60 text-xs">
             {review.city} &middot; {review.date}
           </p>
         </div>
@@ -95,17 +95,17 @@ export default function ReviewsSection() {
   const allReviews = [...reviews, ...reviews]
 
   return (
-    <section className="py-20 md:py-28 bg-charcoal-deep overflow-hidden">
+    <section className="py-24 md:py-32 bg-charcoal-deep overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <FadeIn>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
-              <span className="font-sc tracking-[0.25em] text-gold/60 text-[13px] block mb-3">Testimonianze</span>
-              <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream tracking-tight">
+              <span className="font-sc tracking-[0.25em] text-gold/80 text-sm block mb-3">Testimonianze</span>
+              <h2 className="font-serif font-normal text-4xl md:text-6xl text-cream tracking-tight leading-[1.1]">
                 Cosa Dicono i Nostri Clienti
               </h2>
             </div>
-            <p className="font-serif italic text-base text-cream/50 max-w-sm">
+            <p className="font-serif italic text-base text-cream/70 max-w-sm">
               Recensioni autentiche da chi ha assaporato le nostre carni alla brace
             </p>
           </div>

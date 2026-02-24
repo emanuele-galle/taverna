@@ -37,7 +37,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-5 py-2 rounded-full font-sc text-[12px] tracking-[0.18em] transition-all duration-300 ${
+            className={`px-5 py-2 rounded-full font-sc text-sm tracking-[0.18em] transition-all duration-300 ${
               activeCategory === cat
                 ? 'bg-burgundy/10 text-burgundy border border-burgundy/20'
                 : 'text-warm-grey hover:text-burgundy border border-transparent hover:border-warm-grey/20'
@@ -67,7 +67,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-4">
               <div>
-                <span className="font-sc text-[11px] tracking-[0.2em] text-gold/80 block mb-0.5">{image.category}</span>
+                <span className="font-sc text-xs tracking-[0.2em] text-gold/90 block mb-0.5">{image.category}</span>
                 <span className="text-cream text-sm font-medium">{image.alt}</span>
               </div>
             </div>

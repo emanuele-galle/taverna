@@ -19,7 +19,7 @@ export default function CTASection({
   secondaryHref = '/menu',
 }: CTASectionProps) {
   return (
-    <section className="relative py-20 sm:py-24 md:py-28 bg-gradient-to-br from-burgundy via-wine to-charcoal-deep text-white overflow-hidden">
+    <section className="relative py-24 sm:py-28 md:py-32 bg-gradient-to-br from-burgundy via-wine to-charcoal-deep text-white overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-pattern-dark opacity-50" />
 
@@ -34,8 +34,8 @@ export default function CTASection({
             <div className="w-2 h-2 rotate-45 border border-gold/50" />
           </div>
 
-          <h2 className="font-serif font-normal text-3xl md:text-5xl text-gradient-gold mb-5 tracking-tight">{title}</h2>
-          <p className="text-cream/70 text-lg leading-[1.85] mb-10 max-w-xl mx-auto">{subtitle}</p>
+          <h2 className="font-serif font-normal text-4xl md:text-6xl text-gradient-gold mb-5 tracking-tight leading-[1.1]">{title}</h2>
+          <p className="text-cream/85 text-lg leading-[1.85] mb-10 max-w-xl mx-auto">{subtitle}</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

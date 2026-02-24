@@ -64,7 +64,7 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
                 {category}
               </h2>
               <div className="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent" />
-              <span className="text-warm-grey/50 text-sm font-sc tracking-wider">
+              <span className="text-warm-grey/70 text-sm font-sc tracking-wider">
                 {categoryItems.length}
               </span>
             </div>

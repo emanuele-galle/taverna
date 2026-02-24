@@ -89,14 +89,14 @@ export default async function HomePage() {
       <HeroSection />
 
       {/* === Perché Scegliere La Taverna === */}
-      <section className="py-20 md:py-28 bg-charcoal-deep relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-charcoal-deep relative overflow-hidden">
         <div className="absolute inset-0 bg-pattern-dark" />
         <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-burgundy/10 rounded-full blur-[120px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn>
-            <span className="font-sc tracking-[0.3em] text-gold/50 text-[12px] block text-center mb-4 uppercase">I Nostri Punti di Forza</span>
-            <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream text-center mb-5 tracking-tight">
+            <span className="font-sc tracking-[0.3em] text-gold/80 text-sm block text-center mb-4 uppercase">I Nostri Punti di Forza</span>
+            <h2 className="font-serif font-normal text-4xl md:text-6xl text-cream text-center mb-5 tracking-tight leading-[1.1]">
               Perch&eacute; Scegliere La Taverna
             </h2>
             <div className="ornament-line mb-14">
@@ -117,7 +117,7 @@ export default async function HomePage() {
                     className="font-serif font-normal text-5xl text-gradient-gold block mb-3"
                   />
                   <h3 className="font-serif text-lg text-gold/90 mb-3">{item.title}</h3>
-                  <p className="text-cream/60 text-[15px] leading-relaxed">{item.desc}</p>
+                  <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -126,14 +126,14 @@ export default async function HomePage() {
       </section>
 
       {/* === Una Storia di Passione === */}
-      <section className="py-20 md:py-28 bg-smoke relative">
+      <section className="py-24 md:py-32 bg-smoke relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Content */}
             <div>
               <FadeIn animation="slideRight">
-                <span className="font-sc tracking-[0.3em] text-gold-dark/60 text-[12px] block mb-4 uppercase">La Nostra Storia</span>
-                <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy mb-6 tracking-tight">
+                <span className="font-sc tracking-[0.3em] text-gold-dark/80 text-sm block mb-4 uppercase">La Nostra Storia</span>
+                <h2 className="font-serif font-normal text-4xl md:text-6xl text-burgundy mb-6 tracking-tight leading-[1.1]">
                   Una Storia di Passione
                 </h2>
                 <p className="font-serif italic text-lg text-warm-grey/80 mb-10">
@@ -153,7 +153,7 @@ export default async function HomePage() {
                           <span className="font-sc tracking-[0.15em] text-gold-dark text-sm font-semibold">{step.year}</span>
                           <span className="text-espresso font-serif text-lg">{step.title}</span>
                         </div>
-                        <p className="text-warm-grey text-[15px] leading-relaxed">{step.text}</p>
+                        <p className="text-warm-grey text-base leading-relaxed">{step.text}</p>
                       </div>
                     </FadeIn>
                   ))}
@@ -187,7 +187,7 @@ export default async function HomePage() {
                 {/* Floating accent card */}
                 <div className="absolute -bottom-6 -left-6 bg-charcoal text-cream p-5 rounded-xl shadow-xl border border-gold/10 max-w-[200px]">
                   <span className="font-serif text-3xl text-gradient-gold block mb-1">1997</span>
-                  <p className="text-cream/60 text-xs leading-relaxed">Anno di fondazione nel cuore di Milano</p>
+                  <p className="text-cream/75 text-xs leading-relaxed">Anno di fondazione nel cuore di Milano</p>
                 </div>
               </div>
             </FadeIn>
@@ -196,13 +196,13 @@ export default async function HomePage() {
       </section>
 
       {/* === Le Nostre Specialità === */}
-      <section className="py-20 md:py-28 bg-cream-warm relative">
+      <section className="py-24 md:py-32 bg-cream-warm relative">
         <div className="absolute inset-0 bg-pattern-light" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn>
-            <span className="font-sc tracking-[0.3em] text-gold-dark/60 text-[12px] block text-center mb-4 uppercase">Dalla Nostra Brace</span>
-            <h2 className="font-serif font-normal text-3xl md:text-5xl text-burgundy text-center mb-5 tracking-tight">
+            <span className="font-sc tracking-[0.3em] text-gold-dark/80 text-sm block text-center mb-4 uppercase">Dalla Nostra Brace</span>
+            <h2 className="font-serif font-normal text-4xl md:text-6xl text-burgundy text-center mb-5 tracking-tight leading-[1.1]">
               Le Nostre Specialit&agrave;
             </h2>
             <div className="ornament-line mb-6">
@@ -232,7 +232,7 @@ export default async function HomePage() {
                         {item.badges.map((badge) => (
                           <span
                             key={badge}
-                            className="font-sc text-[11px] tracking-[0.12em] bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
+                            className="font-sc text-xs tracking-[0.12em] bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
                           >
                             {badge}
                           </span>
@@ -242,7 +242,7 @@ export default async function HomePage() {
                   </div>
                   {/* Content */}
                   <div className="p-5">
-                    <p className="text-warm-grey text-[15px] leading-relaxed mb-4">{item.description}</p>
+                    <p className="text-warm-grey text-base leading-relaxed mb-4">{item.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="font-serif text-xl font-semibold text-burgundy">
                         &euro;{item.price},00

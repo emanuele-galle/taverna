@@ -92,7 +92,7 @@ export default function HeroSection() {
             transitionDelay: '200ms',
           }}
         >
-          <span className="font-sc px-6 py-2 border border-gold/30 backdrop-blur-md bg-white/5 rounded-full text-gold text-base tracking-[0.3em]">
+          <span className="font-sc px-6 py-2 border border-gold/40 backdrop-blur-md bg-white/5 rounded-full text-gold text-base tracking-[0.3em]">
             Dal 1997 &middot; Milano
           </span>
         </div>
@@ -137,7 +137,7 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p
-          className="text-base sm:text-lg font-serif italic text-cream/60 mb-12 max-w-2xl mx-auto transition-all duration-1000"
+          className="text-lg sm:text-xl font-serif italic text-cream/85 mb-12 max-w-2xl mx-auto transition-all duration-1000"
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'translateY(0)' : 'translateY(20px)',
@@ -180,7 +180,7 @@ export default function HeroSection() {
           transitionDelay: '1500ms',
         }}
       >
-        <span className="font-sc text-[11px] tracking-[0.4em] text-cream/40 uppercase">Scopri</span>
+        <span className="font-sc text-xs tracking-[0.4em] text-cream/70 uppercase">Scopri</span>
         <div className="w-px h-8 bg-gradient-to-b from-gold/40 to-transparent animate-bounce-subtle" />
       </div>
     </section>
