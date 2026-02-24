@@ -58,10 +58,10 @@ export default function FixedMenus() {
           {menus.map((menu, i) => (
             <FadeIn key={menu.name} delay={i * 120} animation="scaleUp">
               <div
-                className={`relative rounded-2xl p-7 transition-all duration-500 group ${
+                className={`relative rounded-2xl p-8 transition-all duration-500 group ${
                   menu.badge
-                    ? 'bg-charcoal-light border-2 border-gold/40 shadow-[0_0_40px_rgba(196,163,90,0.12)] scale-[1.02]'
-                    : 'bg-charcoal-light/60 border border-white/10 hover:border-gold/30'
+                    ? 'bg-charcoal-light border-2 border-gold/50 shadow-[0_0_50px_rgba(196,163,90,0.18)] scale-[1.03]'
+                    : 'bg-charcoal-light/60 border-2 border-white/15 hover:border-gold/40 shadow-[0_8px_30px_rgba(0,0,0,0.2)]'
                 }`}
               >
                 {menu.badge && (
@@ -70,18 +70,18 @@ export default function FixedMenus() {
                   </span>
                 )}
 
-                <h3 className="font-serif text-lg text-cream text-center mb-4">{menu.name}</h3>
+                <h3 className="font-serif text-xl text-cream text-center mb-5">{menu.name}</h3>
 
-                <p className="text-center mb-6">
-                  <span className="font-serif font-normal text-5xl text-gradient-gold">&euro;{menu.price}</span>
-                  <span className="text-cream/70 text-sm ml-1">/persona</span>
+                <p className="text-center mb-7">
+                  <span className="font-serif font-normal text-6xl text-gradient-gold">&euro;{menu.price}</span>
+                  <span className="text-cream/80 text-base ml-1">/persona</span>
                 </p>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mb-5" />
 
                 <ul className="space-y-2.5 mb-5">
                   {menu.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-cream/80 text-base">
+                    <li key={item} className="flex items-center gap-3 text-cream/85 text-lg">
                       <span className="w-1 h-1 rounded-full bg-gold/50 shrink-0" />
                       {item}
                     </li>

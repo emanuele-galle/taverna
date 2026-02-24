@@ -37,7 +37,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-5 py-2 rounded-full font-sc text-sm tracking-[0.18em] transition-all duration-300 ${
+            className={`px-6 py-2.5 rounded-full font-sc text-base tracking-[0.18em] transition-all duration-300 ${
               activeCategory === cat
                 ? 'bg-burgundy/10 text-burgundy border border-burgundy/20'
                 : 'text-warm-grey hover:text-burgundy border border-transparent hover:border-warm-grey/20'
@@ -54,7 +54,7 @@ export default function GalleryGrid({ images }: { images: GalleryImage[] }) {
           <button
             key={image.src}
             onClick={() => setLightboxIndex(index)}
-            className="relative w-full rounded-xl overflow-hidden group cursor-pointer break-inside-avoid"
+            className="relative w-full rounded-2xl overflow-hidden group cursor-pointer break-inside-avoid shadow-md"
           >
             <Image
               src={image.src}

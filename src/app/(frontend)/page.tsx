@@ -107,17 +107,17 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {whyChoose.map((item, i) => (
               <FadeIn key={item.title} delay={i * 120} animation="scaleUp">
-                <div className="text-center p-8 md:p-10 rounded-2xl glass-card-strong hover-lift border-animated group">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
-                    <item.icon className="w-7 h-7 text-gold" />
+                <div className="text-center p-10 md:p-12 rounded-2xl glass-card-strong hover-lift border-animated group shadow-[0_8px_40px_rgba(0,0,0,0.25)]">
+                  <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold/30 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <item.icon className="w-8 h-8 text-gold" />
                   </div>
                   <CounterAnimation
                     value={item.counterValue}
                     suffix={item.counterSuffix}
                     className="font-serif font-normal text-5xl text-gradient-gold block mb-3"
                   />
-                  <h3 className="font-serif text-lg text-gold/90 mb-3">{item.title}</h3>
-                  <p className="text-cream/80 text-base leading-relaxed">{item.desc}</p>
+                  <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
+                  <p className="text-cream/85 text-lg leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -216,9 +216,9 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {featuredSpecialties.map((item, i) => (
               <FadeIn key={item.name} delay={i * 120} animation="scaleUp">
-                <div className="group bg-white rounded-2xl overflow-hidden hover-lift shadow-sm border border-charcoal/[0.04]">
+                <div className="group bg-white rounded-2xl overflow-hidden hover-lift shadow-lg border border-charcoal/[0.08]">
                   {/* Image */}
-                  <div className="relative h-60 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden">
                     <Image
                       src={item.image}
                       alt={`${item.name} - La Taverna degli Amici`}
@@ -227,7 +227,7 @@ export default async function HomePage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="font-serif text-xl text-cream mb-2.5">{item.name}</h3>
+                      <h3 className="font-serif text-2xl text-cream mb-2.5">{item.name}</h3>
                       <div className="flex flex-wrap gap-1.5">
                         {item.badges.map((badge) => (
                           <span
@@ -241,10 +241,10 @@ export default async function HomePage() {
                     </div>
                   </div>
                   {/* Content */}
-                  <div className="p-5">
-                    <p className="text-warm-grey text-base leading-relaxed mb-4">{item.description}</p>
+                  <div className="p-6">
+                    <p className="text-warm-grey text-lg leading-relaxed mb-4">{item.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="font-serif text-xl font-semibold text-burgundy">
+                      <span className="font-serif text-2xl font-bold text-burgundy">
                         &euro;{item.price},00
                       </span>
                       <span className="flex items-center gap-1 text-gold text-sm font-medium">

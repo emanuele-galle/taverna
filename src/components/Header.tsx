@@ -39,14 +39,14 @@ export default function Header() {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="flex items-center group">
             <Image
               src="/images/Logo.png"
               alt="Logo La Taverna degli Amici"
-              width={50}
-              height={50}
-              className="h-[50px] w-auto transition-transform duration-300 group-hover:scale-105"
+              width={60}
+              height={60}
+              className="h-[60px] w-auto transition-transform duration-300 group-hover:scale-105"
               priority
             />
           </Link>
@@ -58,10 +58,10 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative font-sc text-sm tracking-[0.22em] transition-colors duration-300 py-1 ${
+                  className={`relative font-sc text-base tracking-[0.22em] transition-colors duration-300 py-1 ${
                     isActive
                       ? 'text-gold'
-                      : 'text-white/85 hover:text-gold'
+                      : 'text-white/90 hover:text-gold'
                   }`}
                 >
                   {link.label}
@@ -81,7 +81,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/prenota"
-              className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-sc text-sm tracking-[0.22em] rounded-full shadow-[0_2px_12px_rgba(196,163,90,0.2)] hover:shadow-[0_2px_20px_rgba(196,163,90,0.35)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-sc text-base tracking-[0.22em] rounded-full shadow-[0_2px_12px_rgba(196,163,90,0.3)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.45)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
             >
               Prenota
             </Link>

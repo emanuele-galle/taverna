@@ -41,7 +41,7 @@ export default function PrenotaPage() {
 
             <FadeIn delay={150} className="space-y-5">
               {/* Orari */}
-              <div className="bg-white rounded-xl p-6 hover-lift border border-charcoal/[0.04]">
+              <div className="bg-white rounded-2xl p-7 hover-lift border border-charcoal/[0.08] shadow-md">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
                     <Clock className="w-5 h-5 text-gold" />
@@ -57,7 +57,7 @@ export default function PrenotaPage() {
               </div>
 
               {/* Telefono */}
-              <div className="bg-white rounded-xl p-6 hover-lift border border-charcoal/[0.04]">
+              <div className="bg-white rounded-2xl p-7 hover-lift border border-charcoal/[0.08] shadow-md">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
                     <Phone className="w-5 h-5 text-gold" />
@@ -70,7 +70,7 @@ export default function PrenotaPage() {
               </div>
 
               {/* Indirizzo */}
-              <div className="bg-white rounded-xl p-6 hover-lift border border-charcoal/[0.04]">
+              <div className="bg-white rounded-2xl p-7 hover-lift border border-charcoal/[0.08] shadow-md">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-gold" />

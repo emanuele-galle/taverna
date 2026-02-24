@@ -157,13 +157,13 @@ export default function ContattiPage() {
           <FadeIn>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
               {contactCards.map((card) => (
-                <div key={card.title} className={`bg-white rounded-xl p-6 border-l-3 ${card.accent} hover-lift`}>
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/15 flex items-center justify-center mb-4">
-                    <card.icon className="w-5 h-5 text-gold" />
+                <div key={card.title} className={`bg-white rounded-2xl p-7 border-l-4 ${card.accent} hover-lift shadow-md`}>
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/15 to-gold/5 border-2 border-gold/25 flex items-center justify-center mb-5">
+                    <card.icon className="w-6 h-6 text-gold" />
                   </div>
-                  <h3 className="font-serif text-lg text-espresso mb-1.5">{card.title}</h3>
-                  <p className="text-warm-grey text-base mb-2">{card.content}</p>
-                  {card.sub && <p className="text-warm-grey/70 text-sm mb-2">{card.sub}</p>}
+                  <h3 className="font-serif text-xl text-espresso mb-2">{card.title}</h3>
+                  <p className="text-warm-grey text-lg mb-2">{card.content}</p>
+                  {card.sub && <p className="text-warm-grey/80 text-base mb-2">{card.sub}</p>}
                   <a
                     href={card.action.href}
                     {...(card.action.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
@@ -178,8 +178,8 @@ export default function ContattiPage() {
 
           {/* Orari */}
           <FadeIn delay={100}>
-            <div className="bg-white rounded-xl p-7 hover-lift mb-14 max-w-lg mx-auto border border-charcoal/[0.04]">
-              <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="bg-white rounded-2xl p-8 hover-lift mb-14 max-w-lg mx-auto border border-charcoal/[0.08] shadow-md">
+              <div className="flex items-center justify-center gap-3 mb-6">
                 <Clock className="w-5 h-5 text-gold" />
                 <h3 className="font-serif text-xl text-espresso">Orari di Apertura</h3>
               </div>
@@ -210,7 +210,7 @@ export default function ContattiPage() {
           <FadeIn delay={100}>
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8">
-                <h2 className="font-serif font-normal text-2xl md:text-3xl text-espresso mb-2">Inviaci un Messaggio</h2>
+                <h2 className="font-serif font-normal text-3xl md:text-4xl text-espresso mb-3">Inviaci un Messaggio</h2>
                 <p className="font-serif italic text-base text-warm-grey/70">
                   Compila il form e ti risponderemo entro 24 ore
                 </p>

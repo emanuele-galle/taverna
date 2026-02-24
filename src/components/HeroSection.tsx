@@ -92,14 +92,14 @@ export default function HeroSection() {
             transitionDelay: '200ms',
           }}
         >
-          <span className="font-sc px-6 py-2 border border-gold/40 backdrop-blur-md bg-white/5 rounded-full text-gold text-base tracking-[0.3em]">
+          <span className="font-sc px-8 py-3 border-2 border-gold/50 backdrop-blur-md bg-white/10 rounded-full text-gold text-lg tracking-[0.3em]">
             Dal 1997 &middot; Milano
           </span>
         </div>
 
         {/* Restaurant name */}
         <p
-          className="font-serif font-normal text-2xl sm:text-3xl md:text-4xl text-cream/90 mb-3 leading-tight tracking-tight transition-all duration-1000"
+          className="font-serif font-normal text-3xl sm:text-4xl md:text-5xl text-cream mb-3 leading-tight tracking-tight transition-all duration-1000"
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'translateY(0)' : 'translateY(20px)',
@@ -137,7 +137,7 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p
-          className="text-lg sm:text-xl font-serif italic text-cream/85 mb-12 max-w-2xl mx-auto transition-all duration-1000"
+          className="text-xl sm:text-2xl font-serif italic text-cream/90 mb-14 max-w-2xl mx-auto transition-all duration-1000"
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'translateY(0)' : 'translateY(20px)',
@@ -158,14 +158,14 @@ export default function HeroSection() {
         >
           <Link
             href="/prenota"
-            className="group inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-semibold rounded-full shadow-[0_4px_20px_rgba(196,163,90,0.25)] hover:shadow-[0_4px_35px_rgba(196,163,90,0.5)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-base"
+            className="group inline-flex items-center gap-3 px-12 py-5 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-bold rounded-full shadow-[0_4px_25px_rgba(196,163,90,0.35)] hover:shadow-[0_8px_45px_rgba(196,163,90,0.55)] hover:scale-[1.04] active:scale-[0.98] transition-all duration-300 text-lg"
           >
             Prenota il Tuo Tavolo
             <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </Link>
           <Link
             href="/menu"
-            className="inline-flex items-center px-8 py-3.5 border border-gold/40 text-gold font-semibold rounded-full bg-gold/5 backdrop-blur-sm hover:bg-gold/15 hover:border-gold/60 active:scale-[0.98] transition-all duration-300 text-base"
+            className="inline-flex items-center px-10 py-5 border-2 border-gold/50 text-gold font-bold rounded-full bg-gold/5 backdrop-blur-sm hover:bg-gold/15 hover:border-gold/70 active:scale-[0.98] transition-all duration-300 text-lg"
           >
             Esplora il Menu
           </Link>

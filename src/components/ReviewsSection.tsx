@@ -61,7 +61,7 @@ const reviews = [
 
 function ReviewCard({ review }: { review: typeof reviews[0] }) {
   return (
-    <div className="w-[420px] flex-shrink-0 bg-white/[0.06] border border-white/10 rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 group">
+    <div className="w-[460px] flex-shrink-0 bg-white/[0.08] border-2 border-white/15 rounded-2xl p-9 hover:border-gold/40 transition-all duration-500 group shadow-[0_8px_40px_rgba(0,0,0,0.3)]">
       {/* Stars */}
       <div className="flex items-center gap-0.5 mb-4">
         {Array.from({ length: review.stars }).map((_, i) => (
@@ -70,7 +70,7 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
       </div>
 
       {/* Quote */}
-      <p className="text-cream/80 text-base leading-[1.75] mb-6 line-clamp-4">
+      <p className="text-cream/85 text-lg leading-[1.75] mb-6 line-clamp-4">
         &ldquo;{review.text}&rdquo;
       </p>
 
@@ -80,8 +80,8 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
           <span className="text-cream font-semibold text-sm">{review.initial}</span>
         </div>
         <div>
-          <p className="font-medium text-cream text-sm">{review.name}</p>
-          <p className="text-cream/60 text-xs">
+          <p className="font-medium text-cream text-base">{review.name}</p>
+          <p className="text-cream/70 text-sm">
             {review.city} &middot; {review.date}
           </p>
         </div>

@@ -16,9 +16,9 @@ interface MenuItem {
 
 export default function MenuCard({ item }: { item: MenuItem }) {
   return (
-    <div className="group bg-white rounded-xl overflow-hidden hover-lift hover-glow-gold border border-charcoal/[0.04]">
+    <div className="group bg-white rounded-2xl overflow-hidden hover-lift hover-glow-gold border border-charcoal/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
       {item.image && (
-        <div className="relative w-full h-[220px] overflow-hidden">
+        <div className="relative w-full h-[250px] overflow-hidden">
           <Image
             src={item.image}
             alt={item.name}
@@ -34,12 +34,12 @@ export default function MenuCard({ item }: { item: MenuItem }) {
           )}
         </div>
       )}
-      <div className={`p-6${!item.image ? ' bg-cream-warm' : ''}`}>
-        <div className="flex items-start justify-between gap-3 mb-2">
-          <h3 className="font-serif font-semibold text-espresso text-lg leading-tight">
+      <div className={`p-7${!item.image ? ' bg-cream-warm' : ''}`}>
+        <div className="flex items-start justify-between gap-3 mb-2.5">
+          <h3 className="font-serif font-semibold text-espresso text-xl leading-tight">
             {item.name}
           </h3>
-          <span className="font-serif text-lg text-gold-dark font-semibold whitespace-nowrap menu-card-price">
+          <span className="font-serif text-xl text-gold-dark font-bold whitespace-nowrap menu-card-price">
             {formatPrice(item.price)}
           </span>
         </div>
