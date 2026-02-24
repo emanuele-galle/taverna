@@ -34,13 +34,6 @@ export default function RestaurantSchema() {
       name: 'Ernesto Notaro',
     },
     foundingDate: '1997',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: '127',
-    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',

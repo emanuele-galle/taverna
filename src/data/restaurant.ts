@@ -22,7 +22,7 @@ export const restaurant = {
     { days: 'Lunedì - Sabato', lunch: '12:00 - 15:00', dinner: '19:30 - 02:00' },
     { days: 'Domenica', lunch: 'Chiuso', dinner: 'Chiuso' },
   ],
-  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.2!2d9.2075!3d45.4487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6b4c0c5f0a7%3A0x1234567890abcdef!2sVia+Spartaco%2C+4%2C+20135+Milano+MI!5e0!3m2!1sit!2sit!4v1700000000000',
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.5!2d9.20791!3d45.459454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6aec4f5c6c5%3A0x8c2b0e6e5f8a9d4b!2sLa+Taverna+degli+Amici!5e0!3m2!1sit!2sit!4v1708000000000',
   maxGuestsPerBooking: 12,
   bookingTimeSlots: {
     lunch: ['12:00', '12:30', '13:00', '13:30', '14:00', '14:30'],

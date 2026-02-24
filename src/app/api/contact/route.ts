@@ -19,6 +19,12 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
+
+    // Honeypot check - bots fill hidden fields
+    if (body.website) {
+      return NextResponse.json({ success: true })
+    }
+
     const data = contactSchema.parse(body)
 
     await prisma.contactMessage.create({

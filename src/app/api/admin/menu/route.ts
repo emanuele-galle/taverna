@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
+import { revalidatePath } from 'next/cache'
 import { verifyToken } from '@/lib/auth'
 import prisma from '@/lib/prisma'
 import { logActivity } from '@/lib/activity'
@@ -70,6 +71,8 @@ export async function POST(request: NextRequest) {
   })
 
   await logActivity('menu_item_created', 'MenuItem', item.id, session.id, `Created: ${item.name}`)
+
+  revalidatePath('/menu')
 
   return NextResponse.json(item, { status: 201 })
 }

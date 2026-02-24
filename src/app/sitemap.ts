@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://taverna.fodivps2.cloud'
-  const lastModified = new Date('2026-02-17')
+  const lastModified = new Date()
   return [
     { url: base, lastModified, changeFrequency: 'weekly', priority: 1 },
     { url: `${base}/menu`, lastModified, changeFrequency: 'weekly', priority: 0.9 },

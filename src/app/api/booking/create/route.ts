@@ -26,6 +26,12 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
+
+    // Honeypot check - bots fill hidden fields
+    if (body.website) {
+      return NextResponse.json({ success: true, confirmationCode: 'XXXXXXXX' })
+    }
+
     const data = bookingSchema.parse(body)
 
     const bookingDate = new Date(data.bookingDate + 'T00:00:00')

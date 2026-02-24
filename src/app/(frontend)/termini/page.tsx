@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero'
 export const metadata: Metadata = {
   title: 'Termini e Condizioni',
   description: 'Termini e condizioni d\'uso del sito La Taverna degli Amici e delle prenotazioni online.',
+  alternates: { canonical: '/termini' },
   openGraph: {
     title: 'Termini e Condizioni | La Taverna degli Amici',
     description: 'Termini e condizioni d\'uso del sito La Taverna degli Amici e delle prenotazioni online.',

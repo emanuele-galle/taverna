@@ -25,6 +25,7 @@ export default function BookingForm() {
     email: '',
     phone: '',
     specialRequests: '',
+    website: '',
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -75,6 +76,7 @@ export default function BookingForm() {
           customerEmail: parsed.data.email,
           customerPhone: parsed.data.phone,
           specialRequests: parsed.data.specialRequests,
+          website: formData.website,
         }),
       })
 
@@ -232,6 +234,20 @@ export default function BookingForm() {
           rows={3}
           placeholder="Allergie, intolleranze, occasioni speciali..."
           className={`${inputClass} placeholder:text-warm-grey/50 resize-none`}
+        />
+      </div>
+
+      {/* Honeypot - hidden from real users */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+        <label htmlFor="website">Website</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
         />
       </div>
 

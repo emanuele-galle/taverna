@@ -31,6 +31,12 @@ export default function CookieConsent() {
     setVisible(false)
   }
 
+  const rejectAll = () => {
+    const allRejected = { necessary: true, analytics: false, marketing: false }
+    localStorage.setItem('cookie-consent', JSON.stringify(allRejected))
+    setVisible(false)
+  }
+
   const savePreferences = () => {
     localStorage.setItem('cookie-consent', JSON.stringify(preferences))
     setVisible(false)
@@ -54,12 +60,18 @@ export default function CookieConsent() {
                   Cookie Policy
                 </Link>.
               </p>
-              <div className="flex items-center gap-3 shrink-0">
+              <div className="flex items-center gap-3 shrink-0 flex-wrap">
                 <button
                   onClick={() => setShowPreferences(true)}
                   className="px-4 py-2 text-base font-medium text-[#F5F0EB] border border-[#C8A97E]/40 rounded-lg hover:border-[#C8A97E] transition-colors"
                 >
                   Gestisci Preferenze
+                </button>
+                <button
+                  onClick={rejectAll}
+                  className="px-4 py-2 text-base font-medium text-[#F5F0EB]/70 border border-[#F5F0EB]/20 rounded-lg hover:border-[#F5F0EB]/40 transition-colors"
+                >
+                  Rifiuta Tutti
                 </button>
                 <button
                   onClick={acceptAll}

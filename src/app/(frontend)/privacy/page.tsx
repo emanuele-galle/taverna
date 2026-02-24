@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy Policy de La Taverna degli Amici. Informativa sul trattamento dei dati personali ai sensi del GDPR.',
+  alternates: { canonical: '/privacy' },
   openGraph: {
     title: 'Privacy Policy | La Taverna degli Amici',
     description: 'Privacy Policy de La Taverna degli Amici. Informativa sul trattamento dei dati personali ai sensi del GDPR.',

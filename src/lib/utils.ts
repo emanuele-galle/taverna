@@ -18,6 +18,20 @@ export function generateConfirmationCode(): string {
   return code
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function serializeMenuItems(items: any[]): any[] {
+  return items.map((item) => {
+    const serialized = { ...item }
+    for (const key in serialized) {
+      const val = serialized[key]
+      if (val !== null && typeof val === 'object' && typeof val.toNumber === 'function') {
+        serialized[key] = val.toNumber()
+      }
+    }
+    return serialized
+  })
+}
+
 export function cn(...classes: (string | boolean | undefined | null)[]): string {
   return classes.filter(Boolean).join(' ')
 }

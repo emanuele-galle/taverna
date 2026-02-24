@@ -33,6 +33,15 @@ export const metadata: Metadata = {
   },
   description,
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: 'La Taverna degli Amici - Carni alla Brace | Milano',
     description,

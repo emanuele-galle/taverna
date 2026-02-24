@@ -5,6 +5,7 @@ import PageHero from '@/components/PageHero'
 export const metadata: Metadata = {
   title: 'Cookie Policy',
   description: 'Cookie Policy de La Taverna degli Amici. Informazioni sull\'utilizzo dei cookie sul nostro sito.',
+  alternates: { canonical: '/cookie' },
   openGraph: {
     title: 'Cookie Policy | La Taverna degli Amici',
     description: 'Cookie Policy de La Taverna degli Amici. Informazioni sull\'utilizzo dei cookie sul nostro sito.',

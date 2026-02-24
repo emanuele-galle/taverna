@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
+import { revalidatePath } from 'next/cache'
 import { verifyToken } from '@/lib/auth'
 import prisma from '@/lib/prisma'
 import { logActivity } from '@/lib/activity'
@@ -53,6 +54,8 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 
   await logActivity('menu_item_updated', 'MenuItem', item.id, session.id, `Updated: ${item.name}`)
 
+  revalidatePath('/menu')
+
   return NextResponse.json(item)
 }
 
@@ -73,6 +76,8 @@ export async function DELETE(request: NextRequest, { params }: { params: Promise
   })
 
   await logActivity('menu_item_deactivated', 'MenuItem', item.id, session.id, `Deactivated: ${item.name}`)
+
+  revalidatePath('/menu')
 
   return NextResponse.json(item)
 }

@@ -20,6 +20,7 @@ export default function ContactForm() {
     subject: '',
     message: '',
     privacy: false,
+    website: '',
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -55,7 +56,7 @@ export default function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dataToSend),
+        body: JSON.stringify({ ...dataToSend, website: formData.website }),
       })
 
       const data = await res.json()
@@ -187,6 +188,20 @@ export default function ContactForm() {
           </span>
         </label>
         {errors.privacy && <p className="text-red-400 text-base mt-1">{errors.privacy}</p>}
+      </div>
+
+      {/* Honeypot - hidden from real users */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, overflow: 'hidden' }}>
+        <label htmlFor="contact-website">Website</label>
+        <input
+          type="text"
+          id="contact-website"
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       {/* Error */}
