@@ -95,7 +95,7 @@ export default async function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn>
-            <span className="font-sc tracking-[0.3em] text-gold/80 text-sm block text-center mb-4 uppercase">I Nostri Punti di Forza</span>
+            <span className="font-sc tracking-widest text-gold/80 text-sm block text-center mb-4 uppercase">I Nostri Punti di Forza</span>
             <h2 className="font-serif font-normal text-4xl md:text-6xl text-cream text-center mb-5 tracking-tight leading-[1.1]">
               Perch&eacute; Scegliere La Taverna
             </h2>
@@ -132,7 +132,7 @@ export default async function HomePage() {
             {/* Left: Content */}
             <div>
               <FadeIn animation="slideRight">
-                <span className="font-sc tracking-[0.3em] text-gold-dark/80 text-sm block mb-4 uppercase">La Nostra Storia</span>
+                <span className="font-sc tracking-widest text-gold-dark/80 text-sm block mb-4 uppercase">La Nostra Storia</span>
                 <h2 className="font-serif font-normal text-4xl md:text-6xl text-burgundy mb-6 tracking-tight leading-[1.1]">
                   Una Storia di Passione
                 </h2>
@@ -150,7 +150,7 @@ export default async function HomePage() {
                       <div className="relative pl-8 group">
                         <div className="absolute left-0 top-1.5 w-[15px] h-[15px] rounded-full bg-smoke border-2 border-gold/40 group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300" />
                         <div className="flex items-baseline gap-3 mb-1">
-                          <span className="font-sc tracking-[0.15em] text-gold-dark text-sm font-semibold">{step.year}</span>
+                          <span className="font-sc tracking-wide text-gold-dark text-sm font-semibold">{step.year}</span>
                           <span className="text-espresso font-serif text-lg">{step.title}</span>
                         </div>
                         <p className="text-warm-grey text-base leading-relaxed">{step.text}</p>
@@ -201,7 +201,7 @@ export default async function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn>
-            <span className="font-sc tracking-[0.3em] text-gold-dark/80 text-sm block text-center mb-4 uppercase">Dalla Nostra Brace</span>
+            <span className="font-sc tracking-widest text-gold-dark/80 text-sm block text-center mb-4 uppercase">Dalla Nostra Brace</span>
             <h2 className="font-serif font-normal text-4xl md:text-6xl text-burgundy text-center mb-5 tracking-tight leading-[1.1]">
               Le Nostre Specialit&agrave;
             </h2>
@@ -232,7 +232,7 @@ export default async function HomePage() {
                         {item.badges.map((badge) => (
                           <span
                             key={badge}
-                            className="font-sc text-xs tracking-[0.12em] bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
+                            className="font-sc text-xs tracking-wide bg-gold/90 text-charcoal px-2.5 py-0.5 rounded-full"
                           >
                             {badge}
                           </span>

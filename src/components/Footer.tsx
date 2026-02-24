@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Col 2: Navigation */}
           <div>
-            <h4 className="font-sc text-sm tracking-[0.3em] text-gold/80 mb-5 uppercase">Naviga</h4>
+            <h4 className="font-sc text-sm tracking-widest text-gold/80 mb-5 uppercase">Naviga</h4>
             <ul className="space-y-3">
               {[
                 { href: '/', label: 'Home' },
@@ -100,7 +100,7 @@ export default function Footer() {
 
           {/* Col 3: Contatti */}
           <div>
-            <h4 className="font-sc text-sm tracking-[0.3em] text-gold/80 mb-5 uppercase">Contatti</h4>
+            <h4 className="font-sc text-sm tracking-widest text-gold/80 mb-5 uppercase">Contatti</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold/60 mt-0.5 flex-shrink-0" />
@@ -123,7 +123,7 @@ export default function Footer() {
 
           {/* Col 4: Orari */}
           <div>
-            <h4 className="font-sc text-sm tracking-[0.3em] text-gold/80 mb-5 uppercase">Orari</h4>
+            <h4 className="font-sc text-sm tracking-widest text-gold/80 mb-5 uppercase">Orari</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-gold/60 mt-0.5 flex-shrink-0" />

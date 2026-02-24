@@ -42,7 +42,8 @@ body {
 }
 
 .font-sc {
-  font-family: var(--font-sc), var(--font-serif), serif;
+  font-family: var(--font-sc), var(--font-sans), sans-serif;
+  text-transform: uppercase;
 }
 
 /* ===== Typography Utilities ===== */

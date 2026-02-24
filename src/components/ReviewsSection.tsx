@@ -100,7 +100,7 @@ export default function ReviewsSection() {
         <FadeIn>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
-              <span className="font-sc tracking-[0.25em] text-gold/80 text-sm block mb-3">Testimonianze</span>
+              <span className="font-sc tracking-widest text-gold/80 text-sm block mb-3">Testimonianze</span>
               <h2 className="font-serif font-normal text-4xl md:text-6xl text-cream tracking-tight leading-[1.1]">
                 Cosa Dicono i Nostri Clienti
               </h2>

@@ -57,7 +57,7 @@ export default function ChiSiamoPage() {
       <section className="py-20 md:py-28 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="inline-block font-sc tracking-[0.25em] px-5 py-2 bg-gold/8 text-gold-dark text-sm rounded-full mb-7 border border-gold/25">
+            <span className="inline-block font-sc tracking-widest px-5 py-2 bg-gold/8 text-gold-dark text-sm rounded-full mb-7 border border-gold/25">
               Dal 1997
             </span>
             <p className="text-warm-grey text-lg md:text-xl leading-[1.85]">
@@ -75,7 +75,7 @@ export default function ChiSiamoPage() {
         <div className="absolute inset-0 bg-pattern-dark" />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn>
-            <span className="font-sc tracking-[0.3em] text-gold/80 text-sm block text-center mb-4 uppercase">Il Nostro Percorso</span>
+            <span className="font-sc tracking-widest text-gold/80 text-sm block text-center mb-4 uppercase">Il Nostro Percorso</span>
             <h2 className="font-serif font-normal text-4xl md:text-6xl text-cream text-center mb-5 tracking-tight leading-[1.1]">La Nostra Storia</h2>
             <div className="ornament-line mb-16">
               <div className="w-1.5 h-1.5 rotate-45 bg-gold/40" />
@@ -86,7 +86,7 @@ export default function ChiSiamoPage() {
           <FadeIn>
             <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-20">
               <div className="md:w-1/2 order-2 md:order-1">
-                <span className="font-sc tracking-[0.2em] text-sm text-gold/80">1997</span>
+                <span className="font-sc tracking-wider text-sm text-gold/80">1997</span>
                 <h3 className="font-serif font-normal text-3xl text-cream mt-1 mb-4">
                   L&rsquo;Inizio di un Sogno
                 </h3>
@@ -182,7 +182,7 @@ export default function ChiSiamoPage() {
       <section className="py-20 md:py-28 bg-smoke">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <span className="font-sc tracking-[0.3em] text-gold-dark/80 text-sm block text-center mb-4 uppercase">Il Cuore della Taverna</span>
+            <span className="font-sc tracking-widest text-gold-dark/80 text-sm block text-center mb-4 uppercase">Il Cuore della Taverna</span>
             <h2 className="font-serif font-normal text-4xl md:text-6xl text-espresso text-center mb-5 tracking-tight leading-[1.1]">Il Fondatore</h2>
             <div className="ornament-line mb-14">
               <div className="w-1.5 h-1.5 rotate-45 bg-gold-dark/30" />
@@ -204,7 +204,7 @@ export default function ChiSiamoPage() {
 
               <div className="md:w-2/3">
                 <h3 className="font-serif font-normal text-3xl text-espresso mb-2">Ernesto Notaro</h3>
-                <p className="font-sc tracking-[0.2em] text-gold-dark/80 text-sm mb-5">
+                <p className="font-sc tracking-wider text-gold-dark/80 text-sm mb-5">
                   Fondatore e Anima della Taverna &middot; Da Tiriolo (Calabria)
                 </p>
                 <p className="text-warm-grey text-lg leading-[1.8] mb-5">
@@ -283,7 +283,7 @@ export default function ChiSiamoPage() {
             <blockquote className="font-serif font-normal text-2xl md:text-3xl text-espresso/90 italic leading-[1.7]">
               La vera ospitalit&agrave; nasce dal cuore: ogni cliente che entra dalla nostra porta non &egrave; un estraneo, ma un amico che ancora non conosce il sapore della nostra brace.
             </blockquote>
-            <cite className="block mt-6 font-sc tracking-[0.2em] text-gold-dark/80 text-sm not-italic uppercase">
+            <cite className="block mt-6 font-sc tracking-wider text-gold-dark/80 text-sm not-italic uppercase">
               &mdash; Ernesto Notaro, Fondatore
             </cite>
           </FadeIn>

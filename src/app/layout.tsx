@@ -1,23 +1,23 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Cormorant_SC, Inter } from 'next/font/google'
+import { Lora, Outfit, DM_Sans } from 'next/font/google'
 import CookieConsent from '@/components/CookieConsent'
 import './globals.css'
 
-const playfair = Playfair_Display({
+const lora = Lora({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-serif',
   display: 'swap',
 })
 
-const cormorantSC = Cormorant_SC({
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '600'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sc',
   display: 'swap',
 })
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className={`${playfair.variable} ${cormorantSC.variable} ${inter.variable}`}>
+    <html lang="it" className={`${lora.variable} ${outfit.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         {children}
         <CookieConsent />

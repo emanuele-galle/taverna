@@ -9,7 +9,7 @@ export default function Error({
   return (
     <div className="min-h-screen bg-[#2C2C2C] flex items-center justify-center px-4">
       <div className="text-center max-w-lg">
-        <p className="font-sc tracking-[0.2em] text-[#C9A44E]/60 text-sm mb-4">Errore</p>
+        <p className="font-sc tracking-wider text-[#C9A44E]/60 text-sm mb-4">Errore</p>
         <h1 className="font-serif text-4xl md:text-5xl text-[#FAF9F6] mb-4">Qualcosa è andato storto</h1>
         <p className="text-[#FAF9F6]/70 text-base mb-8 leading-relaxed">
           Si è verificato un errore imprevisto. Riprova o torna alla home page.

@@ -16,36 +16,35 @@ interface MenuItem {
 
 export default function MenuCard({ item }: { item: MenuItem }) {
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden hover-lift hover-glow-gold border border-charcoal/[0.08] shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+    <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 hover:border-gold/40 hover:shadow-xl transition-all duration-400">
       {item.image && (
-        <div className="relative w-full h-[250px] overflow-hidden">
+        <div className="relative w-full h-56 md:h-64 overflow-hidden">
           <Image
             src={item.image}
             alt={item.name}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          {/* Chef special badge on image */}
           {item.isChefSpecial && (
-            <div className="absolute top-3 right-3 bg-gold/90 text-charcoal text-xs font-sc tracking-[0.15em] px-2.5 py-1 rounded-full">
+            <div className="absolute top-3 right-3 bg-charcoal-deep text-gold text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-md">
               Chef Special
             </div>
           )}
         </div>
       )}
-      <div className={`p-7${!item.image ? ' bg-cream-warm' : ''}`}>
-        <div className="flex items-start justify-between gap-3 mb-2.5">
-          <h3 className="font-serif font-semibold text-espresso text-xl leading-tight">
+      <div className={`p-5 md:p-6${!item.image ? ' bg-cream-warm' : ''}`}>
+        <div className="flex items-baseline justify-between gap-3 mb-2">
+          <h3 className="font-serif text-xl text-espresso leading-snug">
             {item.name}
           </h3>
-          <span className="font-serif text-xl text-gold-dark font-bold whitespace-nowrap menu-card-price">
+          <span className="text-lg text-gold-dark font-bold whitespace-nowrap tabular-nums menu-card-price">
             {formatPrice(item.price)}
           </span>
         </div>
 
         {item.description && (
-          <p className="text-base text-warm-grey mb-3 leading-relaxed">
+          <p className="text-[15px] text-warm-grey leading-relaxed mb-3">
             {item.description}
           </p>
         )}
@@ -53,34 +52,34 @@ export default function MenuCard({ item }: { item: MenuItem }) {
         {/* Dietary Badges */}
         <div className="flex flex-wrap gap-1.5">
           {item.isVegetarian && (
-            <span className="px-2 py-0.5 bg-green-50 text-green-700 text-xs font-medium rounded-full menu-card-badge">
+            <span className="px-2.5 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-md menu-card-badge">
               Vegetariano
             </span>
           )}
           {item.isVegan && (
-            <span className="px-2 py-0.5 bg-green-50 text-green-700 text-xs font-medium rounded-full menu-card-badge">
+            <span className="px-2.5 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-md menu-card-badge">
               Vegano
             </span>
           )}
           {item.isGlutenFree && (
-            <span className="px-2 py-0.5 bg-amber-50 text-amber-700 text-xs font-medium rounded-full menu-card-badge">
+            <span className="px-2.5 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-md menu-card-badge">
               Senza Glutine
             </span>
           )}
           {item.isSpicy && (
-            <span className="px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded-full menu-card-badge">
+            <span className="px-2.5 py-1 bg-red-50 text-red-700 text-xs font-medium rounded-md menu-card-badge">
               Piccante
             </span>
           )}
           {!item.image && item.isChefSpecial && (
-            <span className="px-2 py-0.5 bg-gold/10 text-gold-dark text-xs font-medium rounded-full menu-card-badge">
+            <span className="px-2.5 py-1 bg-gold/10 text-gold-dark text-xs font-medium rounded-md menu-card-badge">
               Chef Special
             </span>
           )}
         </div>
 
         {item.allergens && (
-          <p className="text-sm text-warm-grey/70 mt-2">
+          <p className="text-sm text-warm-grey/60 mt-2.5">
             Allergeni: {item.allergens}
           </p>
         )}

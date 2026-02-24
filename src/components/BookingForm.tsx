@@ -121,7 +121,7 @@ export default function BookingForm() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* Date */}
         <div>
-          <label htmlFor="date" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Data *</label>
+          <label htmlFor="date" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Data *</label>
           <input
             type="date"
             id="date"
@@ -136,7 +136,7 @@ export default function BookingForm() {
 
         {/* Time */}
         <div>
-          <label htmlFor="time" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Orario *</label>
+          <label htmlFor="time" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Orario *</label>
           <select
             id="time"
             name="time"
@@ -156,7 +156,7 @@ export default function BookingForm() {
 
         {/* Guests */}
         <div>
-          <label htmlFor="guests" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Ospiti *</label>
+          <label htmlFor="guests" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Ospiti *</label>
           <select
             id="guests"
             name="guests"
@@ -176,7 +176,7 @@ export default function BookingForm() {
 
       {/* Name */}
       <div>
-        <label htmlFor="name" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Nome completo *</label>
+        <label htmlFor="name" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Nome completo *</label>
         <input
           type="text"
           id="name"
@@ -192,7 +192,7 @@ export default function BookingForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Email *</label>
+          <label htmlFor="email" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Email *</label>
           <input
             type="email"
             id="email"
@@ -207,7 +207,7 @@ export default function BookingForm() {
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Telefono *</label>
+          <label htmlFor="phone" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Telefono *</label>
           <input
             type="tel"
             id="phone"
@@ -223,7 +223,7 @@ export default function BookingForm() {
 
       {/* Special Requests */}
       <div>
-        <label htmlFor="specialRequests" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">
+        <label htmlFor="specialRequests" className="block font-sc tracking-wide text-base text-espresso mb-1.5">
           Richieste speciali
         </label>
         <textarea

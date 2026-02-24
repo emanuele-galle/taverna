@@ -26,79 +26,70 @@ export default function Header() {
   }, [])
 
   const scrollProgress = Math.min(scrollY / 100, 1)
-  const isScrolled = scrollProgress > 0.5
+  const isScrolled = scrollProgress > 0.3
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        backgroundColor: `rgba(26, 26, 26, ${scrollProgress * 0.97})`,
-        backdropFilter: `blur(${scrollProgress * 16}px)`,
-        borderBottom: `1px solid rgba(201, 164, 78, ${scrollProgress * 0.15})`,
-        boxShadow: isScrolled ? `0 4px 30px rgba(0,0,0,${scrollProgress * 0.15})` : 'none',
+        backgroundColor: `rgba(26, 26, 26, ${0.4 + scrollProgress * 0.57})`,
+        backdropFilter: `blur(${8 + scrollProgress * 12}px)`,
+        borderBottom: isScrolled ? '1px solid rgba(201, 164, 78, 0.2)' : '1px solid transparent',
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
-          <Link href="/" className="flex items-center group">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="flex items-center justify-between h-20 md:h-[88px]">
+          {/* Logo + Brand */}
+          <Link href="/" className="flex items-center gap-3 group">
             <Image
               src="/images/Logo.png"
               alt="Logo La Taverna degli Amici"
-              width={60}
-              height={60}
-              className="h-[60px] w-auto transition-transform duration-300 group-hover:scale-105"
+              width={52}
+              height={52}
+              className="h-[52px] w-auto transition-transform duration-300 group-hover:scale-105"
               priority
             />
+            <span className="hidden lg:block font-serif text-cream text-lg tracking-tight">
+              La Taverna
+            </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7">
+          {/* Nav */}
+          <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative font-sc text-base tracking-[0.22em] transition-colors duration-300 py-1 ${
+                  className={`relative px-4 py-2 text-[15px] font-medium tracking-wide transition-all duration-300 ${
                     isActive
                       ? 'text-gold'
-                      : 'text-white/90 hover:text-gold'
+                      : 'text-white/80 hover:text-white'
                   }`}
                 >
                   {link.label}
-                  {/* Active indicator */}
-                  <span
-                    className="absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300"
-                    style={{
-                      width: isActive ? '100%' : '0%',
-                      opacity: isActive ? 1 : 0,
-                    }}
-                  />
+                  {isActive && (
+                    <span className="absolute bottom-0 left-4 right-4 h-[2px] bg-gold rounded-full" />
+                  )}
                 </Link>
               )
             })}
           </nav>
 
+          {/* CTA */}
           <div className="hidden md:block">
             <Link
               href="/prenota"
-              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-gold-deep via-gold to-gold-light text-charcoal font-sc text-base tracking-[0.22em] rounded-full shadow-[0_2px_12px_rgba(196,163,90,0.3)] hover:shadow-[0_4px_25px_rgba(196,163,90,0.45)] hover:scale-[1.03] active:scale-[0.97] transition-all duration-300"
+              className="inline-flex items-center px-7 py-2.5 bg-gold text-charcoal-deep text-[15px] font-semibold tracking-wide rounded-lg hover:bg-gold-light active:scale-[0.97] transition-all duration-200 shadow-lg shadow-gold/20"
             >
-              Prenota
+              Prenota un Tavolo
             </Link>
           </div>
 
           <MobileNav links={[...navLinks, { href: '/prenota', label: 'Prenota' }]} />
         </div>
       </div>
-
-      {/* Scroll progress bar */}
-      <div
-        className="absolute bottom-0 left-0 h-px bg-gradient-to-r from-gold/60 via-gold to-gold/60 transition-all duration-300"
-        style={{
-          width: isScrolled ? '100%' : '0%',
-          opacity: isScrolled ? 0.3 : 0,
-        }}
-      />
     </header>
   )
 }

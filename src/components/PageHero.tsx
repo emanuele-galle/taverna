@@ -14,12 +14,6 @@ interface PageHeroProps {
   children?: React.ReactNode
 }
 
-const overlayClasses = {
-  dark: 'from-charcoal-deep/90 via-charcoal/50 to-charcoal-deep/85',
-  burgundy: 'from-burgundy/80 via-charcoal/40 to-charcoal-deep/85',
-  warm: 'from-charcoal-deep/85 via-espresso/35 to-charcoal-deep/85',
-}
-
 export default function PageHero({ title, subtitle, image, overlay = 'dark', breadcrumb, children }: PageHeroProps) {
   const [loaded, setLoaded] = useState(false)
 
@@ -28,26 +22,23 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
   }, [])
 
   return (
-    <section className="relative min-h-[480px] md:min-h-[580px] flex items-center justify-center overflow-hidden pt-24">
+    <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-end overflow-hidden">
       {image ? (
         <>
           <Image
             src={image}
             alt=""
             fill
-            className="object-cover animate-ken-burns"
+            className="object-cover"
             priority
           />
-          <div className={`absolute inset-0 bg-gradient-to-b ${overlayClasses[overlay]}`} />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
         </>
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal-light to-charcoal bg-pattern-dark" />
+        <div className="absolute inset-0 bg-charcoal-deep" />
       )}
 
-      {/* Grain */}
-      <div className="absolute inset-0 bg-grain pointer-events-none" />
-
-      <div className="text-center relative z-10 px-4 max-w-3xl mx-auto">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pb-14 md:pb-20 pt-32">
         {breadcrumb && (
           <>
             <BreadcrumbSchema items={[
@@ -55,7 +46,7 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
               { name: breadcrumb },
             ]} />
             <nav
-              className="mb-5 transition-all duration-700"
+              className="mb-4 transition-all duration-700"
               aria-label="Breadcrumb"
               style={{
                 opacity: loaded ? 1 : 0,
@@ -63,16 +54,16 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
                 transitionDelay: '100ms',
               }}
             >
-              <span className="font-sc tracking-[0.3em] text-gold/80 text-sm">
+              <span className="flex items-center gap-2 text-white/60 text-sm font-medium tracking-wide">
                 <Link href="/" className="hover:text-gold transition-colors">Home</Link>
-                <span className="mx-2.5 text-gold/30">/</span>
-                <span className="text-gold/90">{breadcrumb}</span>
+                <span>/</span>
+                <span className="text-gold">{breadcrumb}</span>
               </span>
             </nav>
           </>
         )}
         <h1
-          className="font-serif font-normal text-[3.2rem] md:text-[4.5rem] text-cream tracking-tight mb-4 transition-all duration-700"
+          className="font-serif text-5xl md:text-7xl text-white tracking-tight mb-4 leading-[0.95] transition-all duration-700"
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? 'translateY(0)' : 'translateY(20px)',
@@ -83,7 +74,7 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
         </h1>
         {subtitle && (
           <p
-            className="text-xl md:text-2xl font-serif italic text-cream/90 max-w-2xl mx-auto mb-3 transition-all duration-700"
+            className="text-xl md:text-2xl text-white/70 max-w-xl leading-relaxed transition-all duration-700"
             style={{
               opacity: loaded ? 1 : 0,
               transform: loaded ? 'translateY(0)' : 'translateY(15px)',
@@ -93,25 +84,13 @@ export default function PageHero({ title, subtitle, image, overlay = 'dark', bre
             {subtitle}
           </p>
         )}
-        <div
-          className="flex items-center justify-center gap-3 mt-5 transition-all duration-700"
-          style={{
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? 'scaleX(1)' : 'scaleX(0)',
-            transitionDelay: '550ms',
-          }}
-        >
-          <div className="w-12 h-px bg-gradient-to-r from-transparent to-gold/50" />
-          <div className="w-1 h-1 rotate-45 bg-gold/60" />
-          <div className="w-12 h-px bg-gradient-to-l from-transparent to-gold/50" />
-        </div>
         {children && (
           <div
-            className="transition-all duration-700"
+            className="mt-6 transition-all duration-700"
             style={{
               opacity: loaded ? 1 : 0,
               transform: loaded ? 'translateY(0)' : 'translateY(10px)',
-              transitionDelay: '650ms',
+              transitionDelay: '550ms',
             }}
           >
             {children}

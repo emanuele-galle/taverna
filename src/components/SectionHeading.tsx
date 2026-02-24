@@ -18,7 +18,7 @@ export default function SectionHeading({
   return (
     <div className={`flex flex-col ${alignClass} mb-16`}>
       {label && (
-        <span className="font-sc tracking-[0.18em] text-base text-gold mb-4 block">
+        <span className="font-sc tracking-wider text-base text-gold mb-4 block">
           {label}
         </span>
       )}

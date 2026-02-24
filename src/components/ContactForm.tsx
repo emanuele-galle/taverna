@@ -94,7 +94,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-sm border border-charcoal/5 p-6 md:p-8 space-y-5">
       {/* Name */}
       <div>
-        <label htmlFor="contact-name" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Nome *</label>
+        <label htmlFor="contact-name" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Nome *</label>
         <input
           type="text"
           id="contact-name"
@@ -110,7 +110,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Email */}
         <div>
-          <label htmlFor="contact-email" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Email *</label>
+          <label htmlFor="contact-email" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Email *</label>
           <input
             type="email"
             id="contact-email"
@@ -125,7 +125,7 @@ export default function ContactForm() {
 
         {/* Phone */}
         <div>
-          <label htmlFor="contact-phone" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Telefono</label>
+          <label htmlFor="contact-phone" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Telefono</label>
           <input
             type="tel"
             id="contact-phone"
@@ -140,7 +140,7 @@ export default function ContactForm() {
 
       {/* Subject */}
       <div>
-        <label htmlFor="contact-subject" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Oggetto</label>
+        <label htmlFor="contact-subject" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Oggetto</label>
         <select
           id="contact-subject"
           name="subject"
@@ -159,7 +159,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="contact-message" className="block font-sc tracking-[0.15em] text-base text-espresso mb-1.5">Messaggio *</label>
+        <label htmlFor="contact-message" className="block font-sc tracking-wide text-base text-espresso mb-1.5">Messaggio *</label>
         <textarea
           id="contact-message"
           name="message"

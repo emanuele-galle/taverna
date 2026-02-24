@@ -80,7 +80,7 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
                 <Link
                   href={link.href}
                   onClick={handleClose}
-                  className="text-2xl font-serif font-normal text-cream hover:text-gold transition-colors duration-200 tracking-[0.1em]"
+                  className="text-2xl font-serif font-normal text-cream hover:text-gold transition-colors duration-200 tracking-wide"
                 >
                   {link.label}
                 </Link>
