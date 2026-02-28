@@ -32,10 +32,6 @@ export function serializeMenuItems(items: any[]): any[] {
   })
 }
 
-export function cn(...classes: (string | boolean | undefined | null)[]): string {
-  return classes.filter(Boolean).join(' ')
-}
-
 const rateLimitMap = new Map<string, number[]>()
 
 setInterval(() => {

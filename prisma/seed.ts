@@ -96,7 +96,7 @@ async function main() {
   ];
 
   for (const item of menuItems) {
-    const active = "active" in item ? (item as any).active : true;
+    const active = "active" in item ? (item as Record<string, unknown>).active as boolean : true;
     await prisma.menuItem.create({
       data: {
         name: item.name,

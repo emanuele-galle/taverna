@@ -62,7 +62,7 @@ export default function AdminMenuPage() {
   }, [])
 
   useEffect(() => {
-    fetchItems()
+    requestAnimationFrame(() => { fetchItems() })
   }, [fetchItems])
 
   const categories = Array.from(new Set(items.map((i) => i.category)))

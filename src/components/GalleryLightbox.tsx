@@ -53,10 +53,12 @@ export default function GalleryLightbox({
   // Crossfade transition
   useEffect(() => {
     if (currentIndex !== prevIndex.current) {
-      setFading(true)
+      requestAnimationFrame(() => setFading(true))
       const timer = setTimeout(() => {
-        setFadeKey(currentIndex)
-        setFading(false)
+        requestAnimationFrame(() => {
+          setFadeKey(currentIndex)
+          setFading(false)
+        })
       }, 200)
       prevIndex.current = currentIndex
       return () => clearTimeout(timer)

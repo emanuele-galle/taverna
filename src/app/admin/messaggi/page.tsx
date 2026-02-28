@@ -43,7 +43,8 @@ export default function AdminMessaggiPage() {
   }
 
   useEffect(() => {
-    fetchMessages()
+    void fetchMessages()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const markAsRead = async (id: number) => {

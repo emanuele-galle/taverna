@@ -13,7 +13,7 @@ export default function HeroSection() {
   useEffect(() => {
     const mql = window.matchMedia('(prefers-reduced-motion: reduce)')
     const isMobile = window.innerWidth < 768
-    setUseStaticImage(mql.matches || isMobile)
+    requestAnimationFrame(() => setUseStaticImage(mql.matches || isMobile))
 
     const handleMotion = (e: MediaQueryListEvent) => {
       setUseStaticImage(e.matches || window.innerWidth < 768)
