@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { formatPrice } from '@/lib/utils'
 
 interface MenuItem {
@@ -16,74 +15,43 @@ interface MenuItem {
 
 export default function MenuCard({ item }: { item: MenuItem }) {
   return (
-    <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 hover:border-gold/40 hover:shadow-xl transition-all duration-400">
-      {item.image && (
-        <div className="relative w-full h-56 md:h-64 overflow-hidden">
-          <Image
-            src={item.image}
-            alt={item.name}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-          {item.isChefSpecial && (
-            <div className="absolute top-3 right-3 bg-charcoal-deep text-gold text-xs font-semibold tracking-wider uppercase px-3 py-1.5 rounded-md">
-              Chef Special
-            </div>
-          )}
-        </div>
-      )}
-      <div className={`p-5 md:p-6${!item.image ? ' bg-cream-warm' : ''}`}>
-        <div className="flex items-baseline justify-between gap-3 mb-2">
-          <h3 className="font-serif text-xl text-espresso leading-snug">
-            {item.name}
-          </h3>
-          <span className="text-lg text-gold-dark font-bold whitespace-nowrap tabular-nums menu-card-price">
-            {formatPrice(item.price)}
-          </span>
-        </div>
-
-        {item.description && (
-          <p className="text-[15px] text-warm-grey leading-relaxed mb-3">
-            {item.description}
-          </p>
-        )}
-
-        {/* Dietary Badges */}
-        <div className="flex flex-wrap gap-1.5">
-          {item.isVegetarian && (
-            <span className="px-2.5 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-md menu-card-badge">
-              Vegetariano
-            </span>
-          )}
+    <div className="group py-4 border-b border-charcoal/[0.06] last:border-b-0 hover:bg-parchment/40 -mx-4 px-4 rounded-lg transition-colors duration-200">
+      <div className="flex items-baseline gap-3">
+        <h3 className="font-serif text-lg md:text-xl text-espresso leading-snug">
+          {item.name}
+        </h3>
+        {/* Dietary icons inline */}
+        <span className="flex items-center gap-1 shrink-0">
           {item.isVegan && (
-            <span className="px-2.5 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-md menu-card-badge">
-              Vegano
-            </span>
+            <span className="w-5 h-5 rounded-full bg-green-600 text-white text-[10px] font-bold flex items-center justify-center" title="Vegano">VV</span>
           )}
-          {item.isGlutenFree && (
-            <span className="px-2.5 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-md menu-card-badge">
-              Senza Glutine
-            </span>
+          {item.isVegetarian && !item.isVegan && (
+            <span className="w-5 h-5 rounded-full bg-green-500 text-white text-[10px] font-bold flex items-center justify-center" title="Vegetariano">V</span>
           )}
           {item.isSpicy && (
-            <span className="px-2.5 py-1 bg-red-50 text-red-700 text-xs font-medium rounded-md menu-card-badge">
-              Piccante
-            </span>
+            <span className="text-red-500 text-sm" title="Piccante">🌶</span>
           )}
-          {!item.image && item.isChefSpecial && (
-            <span className="px-2.5 py-1 bg-gold/10 text-gold-dark text-xs font-medium rounded-md menu-card-badge">
-              Chef Special
-            </span>
+          {item.isChefSpecial && (
+            <span className="text-gold text-sm" title="Consigliato">★</span>
           )}
-        </div>
-
-        {item.allergens && (
-          <p className="text-sm text-warm-grey/60 mt-2.5">
-            Allergeni: {item.allergens}
-          </p>
-        )}
+        </span>
+        <span className="flex-1 border-b border-dotted border-charcoal/15 min-w-[30px] mb-1" />
+        <span className="text-lg font-serif text-gold-dark font-semibold whitespace-nowrap tabular-nums">
+          {formatPrice(item.price)}
+        </span>
       </div>
+
+      {item.description && (
+        <p className="text-sm text-warm-grey/80 mt-1 italic">
+          {item.description}
+        </p>
+      )}
+
+      {item.allergens && (
+        <p className="text-xs text-warm-grey/50 mt-1">
+          Allergeni: {item.allergens}
+        </p>
+      )}
     </div>
   )
 }

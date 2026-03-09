@@ -68,10 +68,12 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
                 {categoryItems.length}
               </span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {categoryItems.map((item) => (
-                <MenuCard key={item.name} item={item} />
-              ))}
+            <div className="bg-white rounded-2xl border border-charcoal/[0.06] shadow-sm px-6 md:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12">
+                {categoryItems.map((item) => (
+                  <MenuCard key={item.name} item={item} />
+                ))}
+              </div>
             </div>
           </section>
         ))}
