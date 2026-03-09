@@ -8,7 +8,19 @@ import FadeIn from '@/components/FadeIn'
 
 export const metadata: Metadata = {
   title: 'Chi Siamo',
+  description: 'La storia de La Taverna degli Amici: dal 1997 Ernesto e Rita Notaro portano a Milano la vera carne alla brace. Qualità, esperienza e ospitalità in Via Spartaco 4.',
   alternates: { canonical: '/chi-siamo' },
+  openGraph: {
+    title: 'Chi Siamo | La Taverna degli Amici',
+    description: 'La storia de La Taverna degli Amici: dal 1997 Ernesto e Rita Notaro portano a Milano la vera carne alla brace. Qualità, esperienza e ospitalità in Via Spartaco 4.',
+    url: '/chi-siamo',
+    images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici - Chi Siamo' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chi Siamo | La Taverna degli Amici',
+    description: 'La storia de La Taverna degli Amici: dal 1997 Ernesto e Rita Notaro portano a Milano la vera carne alla brace. Qualità, esperienza e ospitalità in Via Spartaco 4.',
+  },
 }
 
 const philosophy = [

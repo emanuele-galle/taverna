@@ -25,7 +25,12 @@ export default function RestaurantSchema() {
     },
     servesCuisine: ['Italiana', 'Carni alla Brace', 'Grill'],
     priceRange: '\u20AC\u20AC-\u20AC\u20AC\u20AC',
-    image: `${siteUrl}/images/Logo.png`,
+    image: [
+      `${siteUrl}/images/hero/hero-fallback.jpg`,
+      `${siteUrl}/images/Logo.png`,
+      `${siteUrl}/images/gallery/piatti/bistecca-alla-griglia.jpg`,
+      `${siteUrl}/images/gallery/ambiente/sala-principale.jpg`,
+    ],
     sameAs: [restaurant.instagramUrl, restaurant.facebookUrl],
     acceptsReservations: true,
     hasMenu: `${siteUrl}/menu`,

@@ -9,6 +9,8 @@ import FadeIn from '@/components/FadeIn'
 import CounterAnimation from '@/components/CounterAnimation'
 
 export const metadata: Metadata = {
+  title: 'La Taverna degli Amici - Carni alla Brace | Milano',
+  description: 'Ristorante di carni alla brace a Milano dal 1997. Scottona bavarese, controfiletto argentino, fiorentina cotta a vista sulla brace. Via Spartaco 4. Prenota ora.',
   alternates: { canonical: '/' },
 }
 
