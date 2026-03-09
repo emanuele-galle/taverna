@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cookie Policy | La Taverna degli Amici',
     description: 'Cookie Policy de La Taverna degli Amici. Informazioni sull\'utilizzo dei cookie sul nostro sito.',
-    url: 'https://taverna.fodivps2.cloud/cookie',
+    url: 'https://latavernadegliamici.it/cookie',
     images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
   },
   twitter: {

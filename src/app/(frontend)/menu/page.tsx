@@ -30,7 +30,7 @@ export default async function MenuPage() {
     orderBy: [{ categoryOrder: 'asc' }, { displayOrder: 'asc' }],
   })
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://taverna.fodivps2.cloud'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://latavernadegliamici.it'
 
   const categories = items.reduce<Record<string, typeof items>>((acc, item) => {
     if (!acc[item.category]) acc[item.category] = []

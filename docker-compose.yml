@@ -16,10 +16,15 @@ services:
       retries: 3
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.taverna.rule=Host(`taverna.fodivps2.cloud`)"
+      - "traefik.http.routers.taverna.rule=Host(`latavernadegliamici.it`) || Host(`www.latavernadegliamici.it`)"
       - "traefik.http.routers.taverna.entrypoints=websecure"
       - "traefik.http.routers.taverna.tls.certresolver=letsencrypt"
       - "traefik.http.services.taverna.loadbalancer.server.port=3000"
+      # Redirect www → root
+      - "traefik.http.middlewares.taverna-www.redirectregex.regex=^https://www\\.latavernadegliamici\\.it/(.*)"
+      - "traefik.http.middlewares.taverna-www.redirectregex.replacement=https://latavernadegliamici.it/$${1}"
+      - "traefik.http.middlewares.taverna-www.redirectregex.permanent=true"
+      - "traefik.http.routers.taverna.middlewares=taverna-www"
 
 networks:
   traefik-public:

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Termini e Condizioni | La Taverna degli Amici',
     description: 'Termini e condizioni d\'uso del sito La Taverna degli Amici e delle prenotazioni online.',
-    url: 'https://taverna.fodivps2.cloud/termini',
+    url: 'https://latavernadegliamici.it/termini',
     images: [{ url: '/images/hero/hero-fallback.jpg', width: 1200, height: 630, alt: 'La Taverna degli Amici' }],
   },
   twitter: {

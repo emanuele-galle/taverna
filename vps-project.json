@@ -1,0 +1,5 @@
+{
+  "description": "Sito ristorante - Carni alla brace Milano",
+  "clientName": "La Taverna degli Amici",
+  "tags": ["nextjs", "prisma", "ristorante", "prenotazioni"]
+}

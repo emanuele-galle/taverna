@@ -1,7 +1,7 @@
 import { restaurant } from '@/data/restaurant'
 
 export default function RestaurantSchema() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://taverna.fodivps2.cloud'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://latavernadegliamici.it'
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Restaurant',
