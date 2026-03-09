@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import prisma from '@/lib/prisma'
 import MenuGrid from '@/components/MenuGrid'
-import FixedMenus from '@/components/FixedMenus'
 import PageHero from '@/components/PageHero'
 import CTASection from '@/components/CTASection'
 import { serializeMenuItems } from '@/lib/utils'
@@ -74,7 +73,6 @@ export default async function MenuPage() {
         overlay="dark"
         breadcrumb="Menu"
       />
-      <FixedMenus />
       <section className="py-12 sm:py-16 md:py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MenuGrid items={serializeMenuItems(items)} />

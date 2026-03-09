@@ -6,9 +6,10 @@ import { MapPin } from 'lucide-react'
 interface LazyGoogleMapProps {
   src: string
   title?: string
+  className?: string
 }
 
-export default function LazyGoogleMap({ src, title = 'Mappa' }: LazyGoogleMapProps) {
+export default function LazyGoogleMap({ src, title = 'Mappa', className }: LazyGoogleMapProps) {
   const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -31,12 +32,12 @@ export default function LazyGoogleMap({ src, title = 'Mappa' }: LazyGoogleMapPro
   }, [])
 
   return (
-    <div ref={containerRef} className="rounded-xl overflow-hidden shadow-sm border border-gold/10 mb-12">
+    <div ref={containerRef} className={className || "rounded-xl overflow-hidden shadow-sm border border-gold/10 mb-12"}>
       {isVisible ? (
         <iframe
           src={src}
           width="100%"
-          className="w-full h-64 md:h-96"
+          className={className ? "w-full h-full" : "w-full h-64 md:h-96"}
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
@@ -44,7 +45,7 @@ export default function LazyGoogleMap({ src, title = 'Mappa' }: LazyGoogleMapPro
           title={title}
         />
       ) : (
-        <div className="w-full h-64 md:h-96 bg-cream flex flex-col items-center justify-center gap-3 text-warm-grey">
+        <div className={`${className ? "w-full h-full" : "w-full h-64 md:h-96"} bg-cream flex flex-col items-center justify-center gap-3 text-warm-grey`}>
           <MapPin className="w-10 h-10 text-gold/50" />
           <span className="text-base font-serif italic">Caricamento mappa...</span>
         </div>

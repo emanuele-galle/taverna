@@ -260,13 +260,13 @@ export default function ChiSiamoPage() {
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {philosophy.map((item, i) => (
-              <FadeIn key={item.title} delay={i * 120} animation="scaleUp">
-                <div className="text-center p-10 rounded-2xl glass-card-strong hover-lift border-animated group shadow-[0_8px_40px_rgba(0,0,0,0.25)]">
+              <FadeIn key={item.title} delay={i * 120} animation="scaleUp" className="h-full">
+                <div className="h-full flex flex-col text-center p-10 rounded-2xl glass-card-strong hover-lift border-animated group shadow-[0_8px_40px_rgba(0,0,0,0.25)]">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/15 to-gold/5 border border-gold/20 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500">
                     <item.icon className="w-6 h-6 text-gold" />
                   </div>
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
-                  <p className="text-cream/85 text-lg leading-relaxed">{item.desc}</p>
+                  <p className="text-cream/85 text-lg leading-relaxed flex-1">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}

@@ -40,7 +40,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-20 md:h-[88px]">
           {/* Logo + Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center group">
             <Image
               src="/images/Logo.png"
               alt="Logo La Taverna degli Amici"
@@ -49,9 +49,6 @@ export default function Header() {
               className="h-[52px] w-auto transition-transform duration-300 group-hover:scale-105"
               priority
             />
-            <span className="hidden lg:block font-serif text-cream text-lg tracking-tight">
-              La Taverna
-            </span>
           </Link>
 
           {/* Nav */}

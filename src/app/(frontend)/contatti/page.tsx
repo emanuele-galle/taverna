@@ -80,39 +80,6 @@ function FAQSchema() {
   )
 }
 
-const contactCards = [
-  {
-    icon: MapPin,
-    accent: 'border-burgundy',
-    title: 'Dove Siamo',
-    content: restaurant.address,
-    action: { label: 'Ottieni indicazioni', href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.address)}`, external: true },
-  },
-  {
-    icon: Phone,
-    accent: 'border-gold',
-    title: 'Telefono',
-    content: restaurant.phoneDisplay,
-    action: { label: 'Chiama ora', href: `tel:${restaurant.phone}`, external: false },
-    sub: 'Lun-Sab 12:00-15:00, 19:00-23:00',
-  },
-  {
-    icon: Mail,
-    accent: 'border-warm-grey',
-    title: 'Email',
-    content: restaurant.email,
-    action: { label: 'Scrivici', href: `mailto:${restaurant.email}`, external: false },
-    sub: 'Risposta entro 24h',
-  },
-  {
-    icon: MessageCircle,
-    accent: 'border-green-500',
-    title: 'WhatsApp',
-    content: 'Contattaci rapidamente',
-    action: { label: 'Apri Chat', href: restaurant.whatsappUrl, external: true },
-  },
-]
-
 export default function ContattiPage() {
   return (
     <>
@@ -151,72 +118,135 @@ export default function ContattiPage() {
         </div>
       </PageHero>
 
+      {/* Info + Mappa */}
       <section className="py-20 md:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Info Cards */}
-          <FadeIn>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
-              {contactCards.map((card) => (
-                <div key={card.title} className={`bg-white rounded-2xl p-7 border-l-4 ${card.accent} hover-lift shadow-md`}>
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/15 to-gold/5 border-2 border-gold/25 flex items-center justify-center mb-5">
-                    <card.icon className="w-6 h-6 text-gold" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
+            {/* Colonna sinistra: Info */}
+            <FadeIn animation="slideRight">
+              <div className="space-y-5">
+                {/* Dove Siamo */}
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-5 bg-white rounded-2xl p-6 border border-charcoal/[0.06] shadow-sm hover-lift group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-burgundy/10 border border-burgundy/20 flex items-center justify-center shrink-0 group-hover:bg-burgundy/15 transition-colors">
+                    <MapPin className="w-5 h-5 text-burgundy" />
                   </div>
-                  <h3 className="font-serif text-xl text-espresso mb-2">{card.title}</h3>
-                  <p className="text-warm-grey text-lg mb-2">{card.content}</p>
-                  {card.sub && <p className="text-warm-grey/80 text-base mb-2">{card.sub}</p>}
-                  <a
-                    href={card.action.href}
-                    {...(card.action.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                    className="text-base text-burgundy hover:text-gold transition-colors font-medium inline-flex items-center gap-1"
-                  >
-                    {card.action.label} <span>&rarr;</span>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-
-          {/* Orari */}
-          <FadeIn delay={100}>
-            <div className="bg-white rounded-2xl p-8 hover-lift mb-14 max-w-lg mx-auto border border-charcoal/[0.08] shadow-md">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <Clock className="w-5 h-5 text-gold" />
-                <h3 className="font-serif text-xl text-espresso">Orari di Apertura</h3>
-              </div>
-              <div className="divide-y divide-charcoal/[0.04]">
-                {restaurant.openingHours.map((h) => (
-                  <div key={h.days} className="flex items-center justify-between py-3">
-                    <span className="text-base font-medium text-espresso">{h.days}</span>
-                    <span className="text-base text-warm-grey">
-                      {h.lunch === 'Chiuso' ? 'Chiuso' : `${h.lunch} / ${h.dinner}`}
+                  <div>
+                    <h3 className="font-serif text-lg text-espresso mb-1">Dove Siamo</h3>
+                    <p className="text-warm-grey text-base">{restaurant.address}</p>
+                    <span className="text-burgundy text-sm font-medium mt-1 inline-flex items-center gap-1">
+                      Ottieni indicazioni <span>&rarr;</span>
                     </span>
                   </div>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
+                </a>
 
-          {/* Google Maps */}
-          <FadeIn>
-            <div className="rounded-2xl overflow-hidden shadow-lg mb-14">
+                {/* Telefono */}
+                <a
+                  href={`tel:${restaurant.phone}`}
+                  className="flex items-start gap-5 bg-white rounded-2xl p-6 border border-charcoal/[0.06] shadow-sm hover-lift group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0 group-hover:bg-gold/15 transition-colors">
+                    <Phone className="w-5 h-5 text-gold-dark" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-espresso mb-1">Telefono</h3>
+                    <p className="text-warm-grey text-base">{restaurant.phoneDisplay}</p>
+                    <span className="text-warm-grey/60 text-sm">Lun-Sab 12:00-15:00, 19:30-02:00</span>
+                  </div>
+                </a>
+
+                {/* Email */}
+                <a
+                  href={`mailto:${restaurant.email}`}
+                  className="flex items-start gap-5 bg-white rounded-2xl p-6 border border-charcoal/[0.06] shadow-sm hover-lift group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-warm-grey/10 border border-warm-grey/20 flex items-center justify-center shrink-0 group-hover:bg-warm-grey/15 transition-colors">
+                    <Mail className="w-5 h-5 text-warm-grey" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-espresso mb-1">Email</h3>
+                    <p className="text-warm-grey text-base">{restaurant.email}</p>
+                    <span className="text-warm-grey/60 text-sm">Risposta entro 24h</span>
+                  </div>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href={restaurant.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-5 bg-white rounded-2xl p-6 border border-charcoal/[0.06] shadow-sm hover-lift group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0 group-hover:bg-green-500/15 transition-colors">
+                    <MessageCircle className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-espresso mb-1">WhatsApp</h3>
+                    <p className="text-warm-grey text-base">Contattaci rapidamente</p>
+                    <span className="text-green-600 text-sm font-medium mt-1 inline-flex items-center gap-1">
+                      Apri Chat <span>&rarr;</span>
+                    </span>
+                  </div>
+                </a>
+
+                {/* Orari */}
+                <div className="bg-white rounded-2xl p-6 border border-charcoal/[0.06] shadow-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                      <Clock className="w-5 h-5 text-gold-dark" />
+                    </div>
+                    <h3 className="font-serif text-lg text-espresso">Orari di Apertura</h3>
+                  </div>
+                  <div className="divide-y divide-charcoal/[0.04]">
+                    {restaurant.openingHours.map((h) => (
+                      <div key={h.days} className="flex items-center justify-between py-3">
+                        <span className="text-base font-medium text-espresso">{h.days}</span>
+                        <span className="text-base text-warm-grey">
+                          {h.lunch === 'Chiuso' ? 'Chiuso' : `${h.lunch} / ${h.dinner}`}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Colonna destra: Mappa */}
+            <FadeIn animation="slideLeft" delay={150} className="h-full">
               <LazyGoogleMap
                 src={restaurant.googleMapsEmbed}
                 title="La Taverna degli Amici - Mappa"
+                className="rounded-2xl overflow-hidden shadow-lg h-full min-h-[400px]"
               />
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Form Contatto */}
+      <section className="py-20 md:py-28 bg-charcoal-deep relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dark" />
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <FadeIn>
+            <div className="text-center mb-10">
+              <span className="font-sc tracking-widest text-gold/80 text-sm block mb-4 uppercase">Scrivici</span>
+              <h2 className="font-serif font-normal text-3xl md:text-5xl text-cream mb-4 tracking-tight leading-[1.1]">
+                Inviaci un Messaggio
+              </h2>
+              <div className="ornament-line mb-6">
+                <div className="w-1.5 h-1.5 rotate-45 bg-gold/40" />
+              </div>
+              <p className="text-cream/70 text-base">
+                Compila il form e ti risponderemo entro 24 ore
+              </p>
             </div>
           </FadeIn>
-
-          {/* Form */}
           <FadeIn delay={100}>
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-8">
-                <h2 className="font-serif font-normal text-3xl md:text-4xl text-espresso mb-3">Inviaci un Messaggio</h2>
-                <p className="font-serif italic text-base text-warm-grey/70">
-                  Compila il form e ti risponderemo entro 24 ore
-                </p>
-              </div>
-              <ContactForm />
-            </div>
+            <ContactForm />
           </FadeIn>
         </div>
       </section>

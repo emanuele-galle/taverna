@@ -3,26 +3,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import NewsletterForm from '@/components/NewsletterForm'
 
 export default function Footer() {
   return (
     <footer className="bg-charcoal-deep text-white">
-      {/* Newsletter Band */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="font-serif text-xl text-cream mb-1">Resta Aggiornato</h3>
-              <p className="text-sm text-white/75">Novit&agrave;, eventi e offerte speciali direttamente nella tua inbox.</p>
-            </div>
-            <div className="w-full max-w-sm">
-              <NewsletterForm />
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -167,6 +151,9 @@ export default function Footer() {
             >
               Gestisci Cookie
             </button>
+            <Link href="/admin" className="text-sm text-white/60 hover:text-gold/70 transition-colors">
+              Admin
+            </Link>
             <span className="text-white/20">|</span>
             <a href="https://fodisrl.it/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/60 hover:text-gold/70 transition-colors">
               by Fodi S.r.l.

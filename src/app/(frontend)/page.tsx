@@ -106,8 +106,8 @@ export default async function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {whyChoose.map((item, i) => (
-              <FadeIn key={item.title} delay={i * 120} animation="scaleUp">
-                <div className="text-center p-10 md:p-12 rounded-2xl glass-card-strong hover-lift border-animated group shadow-[0_8px_40px_rgba(0,0,0,0.25)]">
+              <FadeIn key={item.title} delay={i * 120} animation="scaleUp" className="h-full">
+                <div className="h-full flex flex-col text-center p-10 md:p-12 rounded-2xl glass-card-strong hover-lift border-animated group shadow-[0_8px_40px_rgba(0,0,0,0.25)]">
                   <div className="w-18 h-18 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold/30 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
                     <item.icon className="w-8 h-8 text-gold" />
                   </div>
@@ -117,7 +117,7 @@ export default async function HomePage() {
                     className="font-serif font-normal text-5xl text-gradient-gold block mb-3"
                   />
                   <h3 className="font-serif text-xl text-gold mb-3">{item.title}</h3>
-                  <p className="text-cream/85 text-lg leading-relaxed">{item.desc}</p>
+                  <p className="text-cream/85 text-lg leading-relaxed flex-1">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
