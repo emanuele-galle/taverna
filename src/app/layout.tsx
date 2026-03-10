@@ -69,6 +69,22 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it" className={`${lora.variable} ${outfit.variable} ${dmSans.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if('serviceWorker' in navigator){
+                navigator.serviceWorker.getRegistrations().then(function(r){
+                  r.forEach(function(reg){reg.unregister()})
+                });
+                caches.keys().then(function(k){
+                  k.forEach(function(name){caches.delete(name)})
+                });
+              }
+            `,
+          }}
+        />
+      </head>
       <body className="antialiased">
         {children}
         <CookieConsent />
