@@ -56,19 +56,19 @@ export default function MenuGrid({ items }: { items: MenuItem[] }) {
         counts={counts}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+      <div className="py-8 sm:py-10 space-y-12 sm:space-y-16">
         {Object.entries(groupedItems).map(([category, categoryItems]) => (
           <section key={category}>
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="font-serif font-normal text-2xl md:text-3xl text-espresso whitespace-nowrap">
+            <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-8">
+              <h2 className="font-serif font-normal text-xl sm:text-2xl md:text-3xl text-espresso whitespace-nowrap">
                 {category}
               </h2>
               <div className="flex-1 h-px bg-gradient-to-r from-gold/30 to-transparent" />
-              <span className="text-warm-grey/70 text-sm font-sc tracking-wider">
+              <span className="text-warm-grey/70 text-xs sm:text-sm font-sc tracking-wider">
                 {categoryItems.length}
               </span>
             </div>
-            <div className="bg-white rounded-2xl border border-charcoal/[0.06] shadow-sm px-6 md:px-8">
+            <div className="bg-white rounded-xl sm:rounded-2xl border border-charcoal/[0.06] shadow-sm px-3 sm:px-6 md:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-12">
                 {categoryItems.map((item) => (
                   <MenuCard key={item.name} item={item} />

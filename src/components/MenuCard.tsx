@@ -15,28 +15,28 @@ interface MenuItem {
 
 export default function MenuCard({ item }: { item: MenuItem }) {
   return (
-    <div className="group py-4 border-b border-charcoal/[0.06] last:border-b-0 hover:bg-parchment/40 -mx-4 px-4 rounded-lg transition-colors duration-200">
-      <div className="flex items-baseline gap-3">
-        <h3 className="font-serif text-lg md:text-xl text-espresso leading-snug">
+    <div className="group py-3 sm:py-4 border-b border-charcoal/[0.06] last:border-b-0 hover:bg-parchment/40 -mx-2 sm:-mx-4 px-2 sm:px-4 rounded-lg transition-colors duration-200">
+      <div className="flex items-baseline gap-2 sm:gap-3">
+        <h3 className="font-serif text-base sm:text-lg md:text-xl text-espresso leading-snug">
           {item.name}
         </h3>
         {/* Dietary icons inline */}
-        <span className="flex items-center gap-1 shrink-0">
+        <span className="flex items-center gap-0.5 sm:gap-1 shrink-0">
           {item.isVegan && (
-            <span className="w-5 h-5 rounded-full bg-green-600 text-white text-[10px] font-bold flex items-center justify-center" title="Vegano">VV</span>
+            <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-green-600 text-white text-[9px] sm:text-[10px] font-bold flex items-center justify-center" title="Vegano">VV</span>
           )}
           {item.isVegetarian && !item.isVegan && (
-            <span className="w-5 h-5 rounded-full bg-green-500 text-white text-[10px] font-bold flex items-center justify-center" title="Vegetariano">V</span>
+            <span className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-green-500 text-white text-[9px] sm:text-[10px] font-bold flex items-center justify-center" title="Vegetariano">V</span>
           )}
           {item.isSpicy && (
-            <span className="text-red-500 text-sm" title="Piccante">🌶</span>
+            <span className="text-red-500 text-xs sm:text-sm" title="Piccante">🌶</span>
           )}
           {item.isChefSpecial && (
-            <span className="text-gold text-sm" title="Consigliato">★</span>
+            <span className="text-gold text-xs sm:text-sm" title="Consigliato">★</span>
           )}
         </span>
-        <span className="flex-1 border-b border-dotted border-charcoal/15 min-w-[30px] mb-1" />
-        <span className="text-lg font-serif text-gold-dark font-semibold whitespace-nowrap tabular-nums">
+        <span className="hidden sm:block flex-1 border-b border-dotted border-charcoal/15 min-w-[30px] mb-1" />
+        <span className="ml-auto text-base sm:text-lg font-serif text-gold-dark font-semibold whitespace-nowrap tabular-nums">
           {formatPrice(item.price)}
         </span>
       </div>
